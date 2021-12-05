@@ -17,7 +17,9 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalMovement;
     private Vector3 velocity;
     private bool isJumping;
-    public bool isGrounded;
+    private bool isGrounded;
+    private bool isRoll;
+
 
     private float lastPosY = 0;
 
@@ -28,16 +30,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump") == true && isGrounded == true)
+        if (Input.GetKeyDown(KeyCode.DownArrow) == true && isGrounded == true)
         {
-            isJumping = true;
+            isRoll = true;
+            animator.SetBool("isRoll", isRoll);
+            StartCoroutine(waitRoll());
         }
+        if (Input.GetButtonDown("Jump") == true && isGrounded == true && isRoll == false)
+            isJumping = true;
 
         Flip(rb.velocity.x);
 
         float characterVelocityX = Mathf.Abs(rb.velocity.x);
         float characterVelocityY = Mathf.Abs(rb.velocity.y);
-        if (characterVelocityY > 0.2)
+        if (characterVelocityY > 0.2 && isRoll == false)
         {
             if (lastPosY < transform.position.y && isGrounded == false)
                 animator.SetBool("isRise", true);
@@ -55,18 +61,24 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
 
         MovePlayer(horizontalMovement);
-        Debug.Log(message: transform.position.y + " " + lastPosY);
     }
 
     void MovePlayer(float _horizontalMovement)
     {
-        Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
 
-        if (isJumping == true && isGrounded == true)
+        if (isRoll == false)
         {
-            rb.AddForce(new Vector2(0f, jumpForce));
-            isJumping = false;
+            Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
+            rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
+            if (isJumping == true && isGrounded == true)
+            {
+                rb.AddForce(new Vector2(0f, jumpForce));
+                isJumping = false;
+            }
+        }else
+        {
+            Vector3 targetVelocity = new Vector2(rb.velocity.x + 2, rb.velocity.y);
+            rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
         }
     }
 
@@ -80,6 +92,13 @@ public class PlayerMovement : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+    }
+
+    private IEnumerator waitRoll()
+    {
+        yield return new WaitForSeconds(0.40f);
+        isRoll = false;
+        animator.SetBool("isRoll", false);
     }
 
     private void OnDrawGizmos()
