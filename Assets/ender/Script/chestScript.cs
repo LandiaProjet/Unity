@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class chestScript : MonoBehaviour
 {
+    public bool isOpen = false;
     public Animator animator;
     public Collider2D collision;
 
@@ -30,5 +31,6 @@ public class chestScript : MonoBehaviour
         animator.SetTrigger("Open");
         yield return new WaitForSeconds(0.2f);
         collision.enabled = false;
+        isOpen = true;
     }
 }

@@ -3,7 +3,6 @@ using System.Collections;
 
 public class DestroyScript : MonoBehaviour
 {
-    public bool isDestroyed = false;
     public Animator animator;
     public Collider2D collision;
 
