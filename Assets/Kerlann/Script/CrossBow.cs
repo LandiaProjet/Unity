@@ -25,11 +25,17 @@ public class CrossBow : MonoBehaviour
         {
             Shoot();
         }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            StartCoroutine(Destroy());
+        }
     }
 
-    public void SetDeath()
+    private IEnumerator Destroy()
     {
-        animator.SetBool("isDead", true);
+        animator.SetTrigger("Destroy");
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 
     private void Shoot()
