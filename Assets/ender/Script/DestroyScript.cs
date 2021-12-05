@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class BarrelScript : MonoBehaviour
+public class DestroyScript : MonoBehaviour
 {
     public bool isDestroyed = false;
     public Animator animator;
