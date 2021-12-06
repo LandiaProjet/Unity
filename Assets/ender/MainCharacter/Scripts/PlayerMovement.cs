@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping;
     private bool isGrounded;
     private bool isRoll;
+    private bool isDie = false;
 
 
     private float lastPosY = 0;
@@ -30,37 +31,47 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow) == true && isGrounded == true)
+        if(Input.GetKeyDown(KeyCode.A) == true)
         {
-            isRoll = true;
-            animator.SetBool("isRoll", isRoll);
-            StartCoroutine(waitRoll());
+            setDie(true);
         }
-        if (Input.GetButtonDown("Jump") == true && isGrounded == true && isRoll == false)
-            isJumping = true;
-
-        Flip(rb.velocity.x);
-
-        float characterVelocityX = Mathf.Abs(rb.velocity.x);
-        float characterVelocityY = Mathf.Abs(rb.velocity.y);
-        if (characterVelocityY > 0.2 && isRoll == false)
+        if (!isDie)
         {
-            if (lastPosY < transform.position.y && isGrounded == false)
-                animator.SetBool("isRise", true);
-            else
-                animator.SetBool("isRise", false);
-            animator.SetBool("isFall", !isGrounded);
-            lastPosY = transform.position.y;
+            if (Input.GetKeyDown(KeyCode.DownArrow) == true && isGrounded == true)
+            {
+                isRoll = true;
+                animator.SetBool("isRoll", isRoll);
+                StartCoroutine(waitRoll());
+            }
+            if (Input.GetButtonDown("Jump") == true && isGrounded == true && isRoll == false)
+                isJumping = true;
+
+            Flip(rb.velocity.x);
+
+            float characterVelocityX = Mathf.Abs(rb.velocity.x);
+            float characterVelocityY = Mathf.Abs(rb.velocity.y);
+            if (characterVelocityY > 0.2 && isRoll == false)
+            {
+                if (lastPosY < transform.position.y && isGrounded == false)
+                    animator.SetBool("isRise", true);
+                else
+                    animator.SetBool("isRise", false);
+                animator.SetBool("isFall", !isGrounded);
+                lastPosY = transform.position.y;
+            }
+            animator.SetFloat("Speed", characterVelocityX);
         }
-        animator.SetFloat("Speed", characterVelocityX);
     }
 
     void FixedUpdate()
     {
-        horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
+        if (!isDie)
+        {
+            horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
 
-        MovePlayer(horizontalMovement);
+            MovePlayer(horizontalMovement);
+        }
     }
 
     void MovePlayer(float _horizontalMovement)
@@ -77,7 +88,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }else
         {
-            Vector3 targetVelocity = new Vector2(rb.velocity.x + 2, rb.velocity.y);
+            float velocityRoll = (spriteRenderer.flipX) ? -10 : 10;
+            Vector3 targetVelocity = new Vector2(velocityRoll, rb.velocity.y);
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
         }
     }
@@ -99,6 +111,13 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.40f);
         isRoll = false;
         animator.SetBool("isRoll", false);
+    }
+
+    public void setDie(bool value)
+    {
+        rb.velocity = new Vector2(0, 0);
+        isDie = value;
+        animator.SetBool("isDie", value);
     }
 
     private void OnDrawGizmos()
