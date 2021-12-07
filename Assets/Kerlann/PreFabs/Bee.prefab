@@ -184,5 +184,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4556748219236092522, guid: dd899c680024ee24e8399495136e1f57, type: 3}
-  speed: 100
+  speed: 200
   nextWaypointDistance: 3
