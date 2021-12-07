@@ -9,8 +9,7 @@ public class CrossBow : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public SpriteRenderer sprite;
-
-    private bool _isShoot;
+    
     private void Start()
     {
         animator = transform.GetComponent<Animator>();
@@ -19,12 +18,6 @@ public class CrossBow : MonoBehaviour
     }
     void Update()
     {
-        AnimatorStateInfo animState = animator.GetCurrentAnimatorStateInfo(0);
-        float currentTime = animState.normalizedTime % 1;
-        if (Math.Abs(currentTime - 0.80) < 0.01)
-        {
-            Shoot();
-        }
         if (Input.GetKeyDown(KeyCode.H))
         {
             StartCoroutine(Destroy());
@@ -38,11 +31,9 @@ public class CrossBow : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void Shoot()
+    public void Shoot()
     {
-        if (_isShoot) return;
         var arrow = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        _isShoot = true;
         StartCoroutine(DeleteAfterShoot(arrow));
     }
     
@@ -50,7 +41,6 @@ public class CrossBow : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         Destroy(arrowObject);
-        _isShoot = false;
     }
     
 }
