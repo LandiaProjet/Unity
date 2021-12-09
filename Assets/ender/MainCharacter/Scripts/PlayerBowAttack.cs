@@ -21,7 +21,7 @@ public class PlayerBowAttack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            if (playerMovement.isGrounded)
+            if (playerMovement.isGrounded && !playerMovement.isAttack)
                 StartCoroutine(playAnimationShoot());
         }
     }
