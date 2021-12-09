@@ -9,15 +9,16 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    public bool isAttack;
 
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask collisionLayers;
+    public bool isGrounded;
 
     private float horizontalMovement;
     private Vector3 velocity;
     private bool isJumping;
-    private bool isGrounded;
     private bool isRoll;
     private bool isDie = false;
 
@@ -35,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         {
             setDie(true);
         }
-        if (!isDie)
+        if (!isDie && !isAttack)
         {
             if (Input.GetKeyDown(KeyCode.DownArrow) == true && isGrounded == true)
             {
@@ -65,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isDie)
+        if (!isDie && !isAttack)
         {
             horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);

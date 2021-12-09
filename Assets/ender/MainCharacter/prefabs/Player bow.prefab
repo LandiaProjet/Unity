@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &379814701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 379814702}
+  m_Layer: 6
+  m_Name: SpawnArrowPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &379814702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379814701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.41, y: -0.016, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3691175561641081406}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3691175561641081404
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,6 +44,7 @@ GameObject:
   - component: {fileID: 3691175561641081407}
   - component: {fileID: 3691175561641081401}
   - component: {fileID: 3691175561641081402}
+  - component: {fileID: 24241219730515242}
   m_Layer: 6
   m_Name: Player bow
   m_TagString: Player
@@ -33,6 +64,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3691175561887940445}
+  - {fileID: 379814702}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 3ae046cf9567a3641bc00d360fa3b219, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52c5860604db7e0449eb6ef73713d64d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,8 +132,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.28686738, y: 0.0064235926}
-  m_Size: {x: 1.0726275, y: 1.6176748}
+  m_Offset: {x: -0.028686523, y: 0.17608535}
+  m_Size: {x: 1.1300011, y: 1.6225922}
   m_Direction: 0
 --- !u!50 &3691175561641081407
 Rigidbody2D:
@@ -141,11 +173,13 @@ MonoBehaviour:
   rb: {fileID: 3691175561641081407}
   animator: {fileID: 3691175561641081402}
   spriteRenderer: {fileID: 3691175561641081405}
+  isAttack: 0
   groundCheck: {fileID: 3691175561887940445}
   groundCheckRadius: 0.4
   collisionLayers:
     serializedVersion: 2
     m_Bits: 1
+  isGrounded: 0
 --- !u!95 &3691175561641081402
 Animator:
   serializedVersion: 3
@@ -156,7 +190,7 @@ Animator:
   m_GameObject: {fileID: 3691175561641081404}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 82e798baac185f6469a886c618341561, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3f02b4854138226499b142f9f1921cce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -165,6 +199,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &24241219730515242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691175561641081404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76aa0d098954e454f9728e745f672d4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Arrow: {fileID: 495055129115922385, guid: 8e9c58e0406383c40b58cfd0100d4a0f, type: 3}
+  ArrowSpawn: {fileID: 379814702}
+  sprite: {fileID: 3691175561641081405}
+  animator: {fileID: 3691175561641081402}
+  rb: {fileID: 3691175561641081407}
+  playerMovement: {fileID: 3691175561641081401}
 --- !u!1 &3691175561887940444
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3691175561887940444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28, y: -0.555, z: 0}
+  m_LocalPosition: {x: -0.083, y: -0.358, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3691175561641081406}
