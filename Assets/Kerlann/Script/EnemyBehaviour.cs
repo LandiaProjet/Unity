@@ -163,6 +163,7 @@ public class EnemyBehaviour : MonoBehaviour
         }
         else
         {
+            anim.SetBool("canWalk", true);
             reachedEndOfPath = false;
         }
 
