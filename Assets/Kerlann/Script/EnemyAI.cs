@@ -6,7 +6,8 @@ public class EnemyAI : MonoBehaviour
 {
 
     public Transform target;
-
+    private Animator anim;
+    
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
 
@@ -21,14 +22,16 @@ public class EnemyAI : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
         InvokeRepeating("UpdatePath", 0f, .5f);
+        anim.SetBool("Fly", true);
     }
 
     void UpdatePath()
     {
-        if(seeker.IsDone())
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+        if(seeker.IsDone() && target != null)
+            seeker.StartPath(rb.position, target.position + new Vector3(0,0.75f,0), OnPathComplete);
     }
 
     private void OnPathComplete(Path p)
@@ -47,11 +50,13 @@ public class EnemyAI : MonoBehaviour
 
         if (currentWaypoint >= path.vectorPath.Count)
         {
+            anim.SetBool("Attack", true);
             reachedEndOfPath = true;
             return;
         }
         else
         {
+            anim.SetBool("Attack", false);
             reachedEndOfPath = false;
         }
 
@@ -73,6 +78,15 @@ public class EnemyAI : MonoBehaviour
         } else if (force.x <= -0.01f)
         {
             transform.localScale = new Vector3(1f,1f,1f);
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            target = other.gameObject.transform;
         }
     }
 }
