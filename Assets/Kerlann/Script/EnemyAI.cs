@@ -17,7 +17,12 @@ public class EnemyAI : MonoBehaviour
 
     Seeker seeker;
     Rigidbody2D rb;
-
+    
+    private bool attackMode;
+    private bool cooling;
+    private float intTimer;
+    public float timer;
+    
     private void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -50,14 +55,7 @@ public class EnemyAI : MonoBehaviour
 
         if (currentWaypoint >= path.vectorPath.Count)
         {
-            anim.SetBool("Attack", true);
-            reachedEndOfPath = true;
             return;
-        }
-        else
-        {
-            anim.SetBool("Attack", false);
-            reachedEndOfPath = false;
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
@@ -79,14 +77,68 @@ public class EnemyAI : MonoBehaviour
         {
             transform.localScale = new Vector3(1f,1f,1f);
         }
+        
+        float distanceWithPlayer = Vector2.Distance (transform.position, target.transform.position);
+
+        if (distanceWithPlayer < 2.5)
+        {
+            Attack();
+        }
+        else
+        {
+            StopAttack();
+        }
+
+        if (cooling)
+        {
+            Cooldown();
+            anim.SetBool("Attack", false);
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("Player"))
         {
             target = other.gameObject.transform;
         }
+    }
+    
+    private void StopAttack()
+    {
+        cooling = false;
+        attackMode = false;
+        anim.SetBool("Attack", false);
+    }
+    
+    private void Attack()
+    {
+        timer = intTimer;
+        attackMode = true;
+        
+        anim.SetBool("Attack", true);
+    }
+    
+        
+    public void TriggerCooling()
+    {
+        cooling = true;
+    }
+    
+    void Cooldown()
+    {
+        timer -= Time.deltaTime;
+
+        if (timer <= 0 && cooling && attackMode)
+        {
+            cooling = false;
+            timer = intTimer;
+        }
+    }
+
+    public void TakeDamage()
+    {
+        //damamge
+        
     }
 }
