@@ -30,7 +30,8 @@ public class EnemyAI : MonoBehaviour
         anim = GetComponent<Animator>();
 
         InvokeRepeating("UpdatePath", 0f, .5f);
-        anim.SetBool("Fly", true);
+
+        intTimer = timer;
     }
 
     void UpdatePath()
@@ -52,7 +53,13 @@ public class EnemyAI : MonoBehaviour
     {
         if(path == null)
             return;
-
+        
+        if (cooling)
+        {
+            Cooldown();
+            anim.SetBool("Attack", false);
+        }
+        
         if (currentWaypoint >= path.vectorPath.Count)
         {
             return;
@@ -82,17 +89,12 @@ public class EnemyAI : MonoBehaviour
 
         if (distanceWithPlayer < 2.5)
         {
-            Attack();
+            if(!cooling)
+                Attack();
         }
         else
         {
             StopAttack();
-        }
-
-        if (cooling)
-        {
-            Cooldown();
-            anim.SetBool("Attack", false);
         }
     }
     
@@ -101,6 +103,8 @@ public class EnemyAI : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             target = other.gameObject.transform;
+            if(anim.GetBool("Fly") != null)
+                anim.SetBool("Fly", true);
         }
     }
     
