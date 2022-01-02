@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6589597927256900310}
   - component: {fileID: 6589597927256900304}
   - component: {fileID: 6589597927256900307}
+  - component: {fileID: 3043837009314272781}
   m_Layer: 6
   m_Name: Player sword
   m_TagString: Player
@@ -141,11 +142,13 @@ MonoBehaviour:
   rb: {fileID: 6589597927256900310}
   animator: {fileID: 6589597927256900307}
   spriteRenderer: {fileID: 6589597927256900308}
+  isAttack: 0
   groundCheck: {fileID: 6589597927480133556}
   groundCheckRadius: 0.4
   collisionLayers:
     serializedVersion: 2
     m_Bits: 1
+  isGrounded: 0
 --- !u!95 &6589597927256900307
 Animator:
   serializedVersion: 3
@@ -165,6 +168,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3043837009314272781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6589597927256900309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29dd08e6627f8fb41b6be407db244317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 6589597927256900308}
+  animator: {fileID: 6589597927256900307}
+  rb: {fileID: 6589597927256900310}
+  playerMovement: {fileID: 6589597927256900304}
 --- !u!1 &6589597927480133557
 GameObject:
   m_ObjectHideFlags: 0
