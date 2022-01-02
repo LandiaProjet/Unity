@@ -105,6 +105,8 @@ public class EnemyAI : MonoBehaviour
             target = other.gameObject.transform;
             if(anim.GetBool("Fly") != null)
                 anim.SetBool("Fly", true);
+            if(anim.GetBool("canWalk") != null)
+                anim.SetBool("canWalk", true);
         }
     }
     

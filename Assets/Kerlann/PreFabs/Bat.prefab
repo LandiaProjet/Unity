@@ -179,7 +179,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 200
   nextWaypointDistance: 3
-  timer: 0
+  timer: 2
 --- !u!114 &3759974136372925268
 MonoBehaviour:
   m_ObjectHideFlags: 0
