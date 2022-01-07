@@ -32,6 +32,7 @@ public class EnemyAI : MonoBehaviour
         InvokeRepeating("UpdatePath", 0f, .5f);
 
         intTimer = timer;
+
     }
 
     void UpdatePath()
