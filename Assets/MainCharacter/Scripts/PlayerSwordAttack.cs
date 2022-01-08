@@ -22,6 +22,10 @@ public class PlayerSwordAttack : MonoBehaviour
         }
     }
 
+    public void Attack() {
+        StartCoroutine(playAnimationAttack(1));
+    }
+
     private IEnumerator playAnimationAttack(int number)
     {
         animator.Play("Player_attack_" + number);

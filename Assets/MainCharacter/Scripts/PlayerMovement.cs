@@ -26,11 +26,15 @@ public class PlayerMovement : MonoBehaviour
     private float lastPosY = 0;
 
     public MovementJoystick movementJoystick;
-    public float playerSpeed;
 
     void Start()
     {
         Flip(rb.velocity.x);
+    }
+
+    public void Jump(){
+        if (isGrounded == true && isRoll == false)
+            isJumping = true;
     }
 
     private void Update()
@@ -71,10 +75,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isDie && !isAttack)
         {
-            horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+             if(movementJoystick.joystickVec.y != 0)
+            {
+                horizontalMovement = movementJoystick.joystickVec.x * moveSpeed * Time.deltaTime;
+            }
+            else
+            {
+                horizontalMovement = 0;
+            }
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
 
-            MovePlayer(horizontalMovement);
+            MovePlayer(movementJoystick.joystickVec.x * moveSpeed);
         }
         
     }
@@ -82,14 +93,6 @@ public class PlayerMovement : MonoBehaviour
     void MovePlayer(float _horizontalMovement)
     {
 
-        if(movementJoystick.joystickVec.y != 0)
-        {
-            rb.velocity = new Vector2(movementJoystick.joystickVec.x * playerSpeed, movementJoystick.joystickVec.y * playerSpeed);
-        }
-        else
-        {
-            rb.velocity = Vector2.zero;
-        }
         if (isRoll == false)
         {
             Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
@@ -99,12 +102,12 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(new Vector2(0f, jumpForce));
                 isJumping = false;
             }
-        }else
-        {
+        } else {
             float velocityRoll = (spriteRenderer.flipX) ? -10 : 10;
             Vector3 targetVelocity = new Vector2(velocityRoll, rb.velocity.y);
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
         }
+    
     }
 
     void Flip(float _velocityX)
