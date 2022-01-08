@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
 
     private float lastPosY = 0;
 
+    public MovementJoystick movementJoystick;
+    public float playerSpeed;
+
     void Start()
     {
         Flip(rb.velocity.x);
@@ -73,11 +76,20 @@ public class PlayerMovement : MonoBehaviour
 
             MovePlayer(horizontalMovement);
         }
+        
     }
 
     void MovePlayer(float _horizontalMovement)
     {
 
+        if(movementJoystick.joystickVec.y != 0)
+        {
+            rb.velocity = new Vector2(movementJoystick.joystickVec.x * playerSpeed, movementJoystick.joystickVec.y * playerSpeed);
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
         if (isRoll == false)
         {
             Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
