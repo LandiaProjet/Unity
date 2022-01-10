@@ -1210,9 +1210,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2edec2568aea5e248b091f2222099c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1123117220}
   timeOffset: 0.2
-  posOffset: {x: 0, y: 0, z: 0}
+  minCameraPos: {x: -20, y: 0, z: 0}
+  maxCameraPos: {x: 20, y: 50, z: 0}
 --- !u!81 &100911886
 AudioListener:
   m_ObjectHideFlags: 0
