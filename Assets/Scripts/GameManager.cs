@@ -8,11 +8,12 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject[] dontDestroyOnLoad;
 
-    public static HudManager hudManager = new HudManager();
+    public static HudManager hudManager;
 
     private void Awake() {
         instance = this;
         //Set les valeurs par default
+        hudManager = gameObject.GetComponent<HudManager>();
         hudManager.reset();
 
 
