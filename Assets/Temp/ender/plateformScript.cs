@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class plateformScript : MonoBehaviour
 {
-    public Collider2D collider2D;
+    public Collider2D co;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,13 +12,22 @@ public class plateformScript : MonoBehaviour
         {
             if (transform.position.y < collision.transform.position.y)
             {
-                collider2D.isTrigger = false;
+                co.isTrigger = false;
+            }
+            else
+            {
+                co.isTrigger = true;
             }
         }
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        co.isTrigger = true;
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collider2D.isTrigger = false;
+        co.isTrigger = true;
     }
 }
