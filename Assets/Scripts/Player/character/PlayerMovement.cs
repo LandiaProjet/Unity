@@ -84,8 +84,12 @@ public class PlayerMovement : MonoBehaviour
                 horizontalMovement = 0;
             }
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
-
-            MovePlayer(movementJoystick.joystickVec.x * moveSpeed);
+            float h = Input.GetAxis("Horizontal");
+            if(h != 0){
+                MovePlayer(h * moveSpeed); 
+            } else {
+               MovePlayer(movementJoystick.joystickVec.x * moveSpeed); 
+            }
         }
         
     }
