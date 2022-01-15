@@ -8,7 +8,8 @@ namespace Database{
         public static Database database = new Database();
 
         private void Awake() {
-            float test = database.gameData.health;
+            database.gameData.health = 10;
+            database.SaveData();
         }
     }
 }

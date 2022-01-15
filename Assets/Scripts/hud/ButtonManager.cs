@@ -12,32 +12,38 @@ public class ButtonManager : MonoBehaviour
     public Sprite sword;
     public Sprite arrow;
 
+    public string mode;
+
     private void Start()
     {
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
+        player = GameObject.FindGameObjectWithTag("Player");
 
-        Image image = Icon.GetComponentInChildren<Image>();
-        EventTrigger trigger = ButtonAttack.GetComponent<EventTrigger>();
-        EventTrigger.Entry entry = new EventTrigger.Entry();
-        entry.eventID = EventTriggerType.PointerClick;
+       
+    }
 
-        PlayerSwordAttack playerSwordAttack;
-        PlayerBowAttack playerBowAttack;
+    void Update() {
+        if(PlayerManager.instance.mode != this.mode){
+            if (PlayerManager.instance.mode == "idle")
+            {
+                ButtonAttack.SetActive(false);
+                return;
+            }
+            ButtonAttack.SetActive(true);
+            Image image = Icon.GetComponentInChildren<Image>();
+            EventTrigger trigger = ButtonAttack.GetComponent<EventTrigger>();
+            EventTrigger.Entry entry = new EventTrigger.Entry();
+            entry.eventID = EventTriggerType.PointerClick;
+            PlayerAttack playerAttack = player.GetComponent<PlayerAttack>();
 
-        if (playerBowAttack = player.GetComponent<PlayerBowAttack>())
-        {
-            entry.callback.AddListener((data) => { playerBowAttack.shoot(); });
+            entry.callback.AddListener((data) => { playerAttack.Attack(); });
             trigger.triggers.Add(entry);
-            image.sprite = arrow;
-        } else if (playerSwordAttack = player.GetComponent<PlayerSwordAttack>())
-        {
-            entry.callback.AddListener((data) => { playerSwordAttack.Attack(); });
-            trigger.triggers.Add(entry);
-            image.sprite = sword;
-        }
-        else
-        {
-            Destroy(ButtonAttack);
+            if (PlayerManager.instance.mode == "sword")
+            {
+                image.sprite = sword;
+            } else if (PlayerManager.instance.mode == "bow")
+            {
+                image.sprite = arrow;
+            }
         }
     }
 }

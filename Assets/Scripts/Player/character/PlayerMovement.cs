@@ -27,6 +27,19 @@ public class PlayerMovement : MonoBehaviour
 
     public MovementJoystick movementJoystick;
 
+    public static PlayerMovement instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de PlayerMovement dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
+
     void Start()
     {
         Flip(rb.velocity.x);
