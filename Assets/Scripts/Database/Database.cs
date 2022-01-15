@@ -18,7 +18,7 @@ namespace Database{
 
         private void CreateGameData()
         {
-            gameData = new GameData(100f, 3);
+            gameData = new GameData(100f, 3,0);
         }
 
         private void SetPaths()
