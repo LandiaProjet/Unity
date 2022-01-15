@@ -8,6 +8,7 @@ public class FadeTransition : MonoBehaviour
 
     public void EnableFadeTransition(float time)
     {
+        gameObject.SetActive(true);
         StartCoroutine(FadeIn(time));
     }
 
@@ -16,5 +17,6 @@ public class FadeTransition : MonoBehaviour
         animator.SetBool("FadeIn", true);
         yield return new WaitForSeconds(time);
         animator.SetBool("FadeIn", false);
+        gameObject.SetActive(false);
     }
 }
