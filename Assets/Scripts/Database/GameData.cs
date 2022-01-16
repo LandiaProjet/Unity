@@ -8,12 +8,14 @@ namespace Database{
     {
         public float health;
         public int level;
+        public List<List<int>> Inventory;
 
         private Database database;
 
         private void Start()
         {
             database = new Database("SaveData.json", this);
+            database.SaveData();
         }
     }
 }
