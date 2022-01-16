@@ -12,15 +12,12 @@ public class GameManager : MonoBehaviour
 
     private void Awake() {
         instance = this;
-        //Set les valeurs par default
-        hudManager = gameObject.GetComponent<HudManager>();
-        hudManager.reset();
+
+     /*   hudManager = gameObject.GetComponent<HudManager>();
+        hudManager.reset();*/
 
 
         DontDestroyOnLoad(gameObject);
-        foreach(var obj in dontDestroyOnLoad){
-            DontDestroyOnLoad(obj);
-        }
     }
 
     void Update()

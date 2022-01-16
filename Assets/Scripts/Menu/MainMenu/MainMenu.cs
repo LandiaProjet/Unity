@@ -7,6 +7,8 @@ public class MainMenu : MonoBehaviour
 
     public GameObject settingsPanel;
 
+    public GameObject missionPanel;
+
     public Slider xpBar;
     public GameObject levelText;
 
@@ -15,9 +17,9 @@ public class MainMenu : MonoBehaviour
     public GameObject healTimeText;
   
     private void Start() {
-        SetXpBar(0.1f);
-        SetLevel("10");
-        SetHealText("10");
+        SetXpBar(PlayerManager.instance.playerData.experience);
+        SetLevel(PlayerManager.instance.playerData.level.ToString());
+        SetHealText(PlayerManager.instance.playerData.health.ToString());
         SetHealTimeText("500");
         SetMoneyText("1000");
     }
@@ -32,6 +34,14 @@ public class MainMenu : MonoBehaviour
 
     public void CloseSettings(){
         settingsPanel.SetActive(false);
+    }
+
+    public void OpenMission(){
+        missionPanel.SetActive(true);
+    }
+
+    public void CloseMission(){
+        missionPanel.SetActive(false);
     }
 
     public void SetXpBar(float value){
