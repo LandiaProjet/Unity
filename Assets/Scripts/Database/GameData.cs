@@ -4,22 +4,16 @@ using UnityEngine;
 
 namespace Database{
 
-    public class GameData
+    public class GameData : MonoBehaviour
     {
         public float health;
         public int level;
-        public float xp;
 
-        public GameData(float health, int level, float xp)
-        {
-            this.health = health;
-            this.level = level;
-            this.xp = xp;
-        }
+        private Database database;
 
-        public override string ToString()
+        private void Start()
         {
-            return "health:" + health + " | level:" + level;
+            database = new Database("SaveData.json", this);
         }
     }
 }

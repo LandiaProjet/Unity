@@ -2,38 +2,16 @@ using System.IO;
 using UnityEngine;
 
 namespace Database{
-    public class Database : MonoBehaviour
+    public class Database
     {
-        public GameData gameData;
+        public string persistentPath;
+        public Object data;
 
-        private string path = "";
-        private string persistentPath = "";
-
-        // Start is called before the first frame update
-        void Start()
+        public Database(string nameFile, Object data)
         {
-            CreateGameData();
-            SetPaths();
-        }
-
-        private void CreateGameData()
-        {
-            gameData = new GameData(100f, 3,0);
-        }
-
-        private void SetPaths()
-        {
-            path = Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json";
-            persistentPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveData.json";
-        }
-
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.S))
-                SaveData();
-
-            if (Input.GetKeyDown(KeyCode.L))
-                LoadData();
+            persistentPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + nameFile;
+            this.data = data;
+            LoadData();
         }
 
         public void SaveData()
@@ -41,7 +19,7 @@ namespace Database{
             string savePath = persistentPath;
 
             Debug.Log("Path save : " + savePath);
-            string json = JsonUtility.ToJson(gameData);
+            string json = JsonUtility.ToJson(data);
             Debug.Log(json);
 
             using StreamWriter writer = new StreamWriter(savePath);
@@ -53,8 +31,7 @@ namespace Database{
             using StreamReader reader = new StreamReader(persistentPath);
             string json = reader.ReadToEnd();
 
-            GameData data = JsonUtility.FromJson<GameData>(json);
-            Debug.Log(data.ToString());
+            JsonUtility.FromJsonOverwrite(json, data);
         }
     }
 }
