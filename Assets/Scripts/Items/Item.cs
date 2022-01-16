@@ -9,10 +9,10 @@ public class Item : ScriptableObject
     public Sprite Icon;
     public string Name;
     public string Description;
-    public string Count;
+    public int Count;
 
-    public object Clone()
+    public Item Clone()
     {
-        return this.MemberwiseClone();
+        return (Item) MemberwiseClone();
     }
 }
