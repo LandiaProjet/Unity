@@ -28,6 +28,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start() {
         respawnPoint = GameObject.FindGameObjectWithTag("Respawn");
+        mode = "idle";
     }
 
     void Update()

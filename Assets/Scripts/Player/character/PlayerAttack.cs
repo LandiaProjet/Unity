@@ -23,25 +23,24 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.H))
                 StartCoroutine(playAnimationAttack(1));
-            if (Input.GetKeyDown(KeyCode.B))
-                StartCoroutine(playAnimationAttack(2));
-            if (Input.GetKeyDown(KeyCode.C))
-                StartCoroutine(playAnimationAttack(3));
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-                StartCoroutine(playAnimationShoot());
-            }
         }
     }
 
     public void Attack() {
-        if(PlayerManager.instance.mode == "sword"){
-            StartCoroutine(playAnimationAttack(1));
-        } else if(PlayerManager.instance.mode == "bow"){
-            StartCoroutine(playAnimationShoot());
+        if (playerMovement.isGrounded && !playerMovement.isAttack)
+        {
+            if (PlayerManager.instance.mode == "sword") {
+                StartCoroutine(playAnimationAttack(1));
+            } else if (PlayerManager.instance.mode == "bow") {
+                StartCoroutine(playAnimationShoot());
+            }
         }
+        
     }
 
+    /**
+     * Bow Attack
+     */
     private IEnumerator playAnimationShoot()
     {
         animator.Play("Player_attack1");
@@ -57,6 +56,9 @@ public class PlayerAttack : MonoBehaviour
         var arrow = Instantiate(Arrow, ArrowSpawn.position, ArrowSpawn.rotation);
     }
 
+    /**
+     * Sword Attack
+     */
     private IEnumerator playAnimationAttack(int number)
     {
         animator.Play("Player_attack_" + number);

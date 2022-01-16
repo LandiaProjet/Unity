@@ -89,13 +89,13 @@ public class PlayerMovement : MonoBehaviour
         if (!isDie && !isAttack)
         {
              if(movementJoystick.joystickVec.y != 0)
-            {
+             {
                 horizontalMovement = movementJoystick.joystickVec.x * moveSpeed * Time.deltaTime;
-            }
-            else
-            {
+             }
+             else
+             {
                 horizontalMovement = 0;
-            }
+             }
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
             float h = Input.GetAxis("Horizontal");
             if(h != 0){
