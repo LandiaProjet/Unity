@@ -8,17 +8,14 @@ public class LevelSystem {
     public event EventHandler OnExperienceChanged;
     public event EventHandler OnLevelChanged;
 
-    private static readonly int[] experiencePerLevel = new[] { 100, 120, 140, 160, 180, 200, 220, 250, 300, 400 };
+    private static readonly int[] experiencePerLevel = new[] { 100, 120, 140, 160, 180, 200, 220, 250, 300, 400, 500 };
 
     public LevelSystem() {}
 
     public void AddExperience(int amount) {
         if (!IsMaxLevel()) {
-            Debug.Log("test is max");
             PlayerData.getData().experience += amount;
-            Debug.Log(PlayerData.getData().experience);
             while (!IsMaxLevel() && PlayerData.getData().experience >= GetExperienceToNextLevel(PlayerData.getData().level)) {
-                // Enough experience to level up
                 PlayerData.getData().experience -= GetExperienceToNextLevel(PlayerData.getData().level);
                 PlayerData.getData().level++;
                 if (OnLevelChanged != null) OnLevelChanged(this, EventArgs.Empty);

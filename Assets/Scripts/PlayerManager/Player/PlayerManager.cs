@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour
         mode = "idle";
 
         //test Level
-        levelSystem.AddExperience(100);
+        levelSystem.AddExperience(500);
         Debug.Log("test-"+levelSystem.GetExperience());
         PlayerData.getData().database.SaveData();
     }
