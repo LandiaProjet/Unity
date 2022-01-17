@@ -5,26 +5,32 @@ using UnityEngine.SceneManagement;
 public class LoadingTransition : MonoBehaviour
 {
     float extraTime = 1;
+    bool sceneLoad;
 
     private void OnEnable()
     {
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        if (sceneLoad == true)
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        else
+            StartCoroutine(endLoading());
     }
 
     private void OnDisable()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        if (sceneLoad == true)
+            SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    public void startLoading(float extraTime)
+    public void startLoading(float extraTime, bool sceneLoad = true)
     {
-        gameObject.SetActive(true);
+        this.sceneLoad = sceneLoad;
         this.extraTime = extraTime;
+        gameObject.SetActive(true);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log("c bon");
         StartCoroutine(endLoading());
     }
 

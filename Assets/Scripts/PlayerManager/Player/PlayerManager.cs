@@ -14,10 +14,6 @@ public class PlayerManager : MonoBehaviour
 
     public string mode;
 
-    private GameObject respawnPoint;
-
-    public PlayerData playerData;
-
     private void Awake()
     {
         if (instance != null)
@@ -25,32 +21,21 @@ public class PlayerManager : MonoBehaviour
             Debug.LogWarning("Il y a plus d'une instance de PlayerManager dans la scène");
             return;
         }
-  
         instance = this;
     }
 
     private void Start() {
-        playerData = GetComponent<PlayerData>();
-        respawnPoint = GameObject.FindGameObjectWithTag("Respawn");
         mode = "idle";
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-            Respawn();
         if (Input.GetKeyDown(KeyCode.C))
             changePlayer("bow");
         if (Input.GetKeyDown(KeyCode.V))
             changePlayer("sword");
         if (Input.GetKeyDown(KeyCode.B))
             changePlayer("idle");
-    }
-
-    void Respawn(){
-        if(respawnPoint != null){
-            PlayerMovement.instance.transform.position = new Vector2(respawnPoint.transform.position.x, respawnPoint.transform.position.y);
-        }
     }
 
     void changePlayer(string mode){

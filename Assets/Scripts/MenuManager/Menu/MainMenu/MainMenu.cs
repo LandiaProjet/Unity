@@ -17,9 +17,9 @@ public class MainMenu : MonoBehaviour
     public GameObject healTimeText;
   
     private void Start() {
-        SetXpBar(PlayerManager.instance.playerData.experience);
-        SetLevel(PlayerManager.instance.playerData.level.ToString());
-        SetHealText(PlayerManager.instance.playerData.health.ToString());
+        SetXpBar(PlayerData.getData().experience);
+        SetLevel(PlayerData.getData().level.ToString());
+        SetHealText(PlayerData.getData().health.ToString());
         SetHealTimeText("500");
         SetMoneyText("1000");
     }

@@ -4,6 +4,18 @@ public class MenuManager : MonoBehaviour
 {
     public GameObject canvas;
 
+    public static MenuManager instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de MenuManager dans la scène");
+            return;
+        }
+        instance = this;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
