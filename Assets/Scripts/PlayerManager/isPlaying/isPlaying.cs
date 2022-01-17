@@ -6,6 +6,10 @@ public class isPlaying : MonoBehaviour
 {
     public static isPlaying instance;
 
+    public float shield;
+    public List<Item> award;
+    public float time;
+
     private void Awake()
     {
         if (instance != null)
@@ -15,6 +19,4 @@ public class isPlaying : MonoBehaviour
         }
         instance = this;
     }
-
-
 }

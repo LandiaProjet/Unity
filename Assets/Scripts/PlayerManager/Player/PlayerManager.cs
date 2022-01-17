@@ -16,7 +16,6 @@ public class PlayerManager : MonoBehaviour
 
     private GameObject respawnPoint;
 
-    private Database database;
     public PlayerData playerData;
 
     private void Awake()
@@ -28,13 +27,10 @@ public class PlayerManager : MonoBehaviour
         }
   
         instance = this;
-
-        playerData = new PlayerData();
     }
 
     private void Start() {
-        database = new Database("Player.json", playerData);
-        
+        playerData = GetComponent<PlayerData>();
         respawnPoint = GameObject.FindGameObjectWithTag("Respawn");
         mode = "idle";
     }
