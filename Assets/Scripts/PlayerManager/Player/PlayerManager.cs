@@ -38,6 +38,14 @@ public class PlayerManager : MonoBehaviour
         PlayerData.getData().database.SaveData();
     }
 
+    private void OnEnable() {
+        MenuManager.instance.OpenMenu("HUD");
+    }
+
+    private void OnDisable() {
+        MenuManager.instance.CloseMenu("HUD");
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.C))
