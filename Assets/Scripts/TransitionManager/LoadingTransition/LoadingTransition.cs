@@ -30,7 +30,6 @@ public class LoadingTransition : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("c bon");
         StartCoroutine(endLoading());
     }
 

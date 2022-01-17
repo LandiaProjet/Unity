@@ -5,17 +5,18 @@ using UnityEngine.UI;
 
 public class parallaxScript : MonoBehaviour
 {
-    public Transform cam;
     public float speed;
     
     private GameObject[][] background = new GameObject[5][];
+    private Transform cam;
     private GameObject player;
     private Vector2 positionPlayer;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        positionPlayer = player.transform.position;
+        cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        positionPlayer = new Vector2(0, 0);
         int children = transform.childCount;
         for (int i = 0; i < children; i++)
         {
@@ -29,6 +30,11 @@ public class parallaxScript : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            return;
+        }
         if (Mathf.Abs(positionPlayer.x - player.transform.position.x) > 0.01)
         {
             for (int i = 0; i < background.Length; i++)

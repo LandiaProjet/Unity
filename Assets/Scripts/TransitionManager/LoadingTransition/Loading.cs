@@ -9,6 +9,7 @@ public class Loading : MonoBehaviour
 
     private void OnEnable()
     {
+        slider.value = 0;
         StartCoroutine(onLoad());
     }
 

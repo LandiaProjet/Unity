@@ -17,14 +17,16 @@ public class MainMenu : MonoBehaviour
     public GameObject healTimeText;
   
     private void Start() {
-        SetXpBar(PlayerData.getData().experience);
+        /*SetXpBar(PlayerData.getData().experience);
         SetLevel(PlayerData.getData().level.ToString());
         SetHealText(PlayerData.getData().health.ToString());
         SetHealTimeText("500");
-        SetMoneyText("1000");
+        SetMoneyText("1000");*/
     }
 
     public void PlayGame(){
+        TransitionManager.instance.loadingTransition.startLoading(2f, true);
+        MenuManager.instance.CloseMenu("MainMenu");
         SceneManager.LoadScene(1);
     }
     

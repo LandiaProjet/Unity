@@ -22,6 +22,7 @@ public class PlayerSpawn : MonoBehaviour
         if (sceneName != SceneManager.GetActiveScene().name)
         {
             spawnPlayer();
+            sceneName = SceneManager.GetActiveScene().name;
         }
     }
 
@@ -30,12 +31,16 @@ public class PlayerSpawn : MonoBehaviour
         respawnPoint = GameObject.FindGameObjectWithTag("Respawn");
         if (respawnPoint == null)
         {
-            player.SetActive(false);
+            if (player.activeSelf == true)
+                player.SetActive(false);
         }
         else
         {
-            player.SetActive(true);
-            PlayerMovement.instance.transform.position = new Vector2(respawnPoint.transform.position.x, respawnPoint.transform.position.y);
+            if (player.activeSelf == false)
+            {
+                player.SetActive(true);
+                PlayerMovement.instance.transform.position = new Vector2(respawnPoint.transform.position.x, respawnPoint.transform.position.y);
+            }
         }
     }
 }

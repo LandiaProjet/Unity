@@ -16,18 +16,6 @@ public class MenuManager : MonoBehaviour
         instance = this;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            OpenMenu("HUD", 0);
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            OpenMenu("PauseMenu", 1);
-        }
-    }
-
     public bool OpenMenu(string name, int zIndex = 0)
     {
         foreach (Transform child in canvas.transform)
