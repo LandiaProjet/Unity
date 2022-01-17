@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7ad4e837c08284a957e6d9edb2d7f9, type: 3}
   m_Name: Chrono
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 641d81dd73e1a4e4589c096af17ec3df, type: 3}
-  Name: Chrono
-  Description: Chrono
-  Count: 0
+  icon: {fileID: 21300000, guid: 715d6ea1f8c8a45c487d18da0f6ec237, type: 3}
+  name: 
+  description: 
+  count: 0

@@ -6,10 +6,10 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "Item", menuName = "Inventory/Item")]
 public class Item : ScriptableObject
 {
-    public Sprite Icon;
-    public string Name;
-    public string Description;
-    public int Count;
+    public Sprite icon;
+    public string name;
+    public string description;
+    public int count;
 
     public Item Clone()
     {
