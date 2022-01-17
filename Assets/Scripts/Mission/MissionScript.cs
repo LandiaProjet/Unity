@@ -13,9 +13,9 @@ public class Mission
 public class MissionScript : MonoBehaviour
 {
     public List<string> MissionsString;
+    public long timeStamp;
 
     private Database database;
-
     private List<Mission> missions;
 
     private void Start()
