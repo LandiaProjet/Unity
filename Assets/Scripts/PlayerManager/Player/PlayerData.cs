@@ -6,17 +6,16 @@ public class PlayerData : MonoBehaviour
     public float money;
 
     public int level;
-    public float experience;
-    public float experienceToNextLevel;
+    public int experience;
 
-    private Database database;
+    public Database database;
     private static PlayerData instance;
 
     private void Awake()
     {
         if (instance != null)
         {
-            Debug.LogWarning("Il y a plus d'une instance de PlayerData dans la scène");
+            Debug.LogWarning("Il y a plus d'une instance de PlayerData dans la scï¿½ne");
             return;
         }
         instance = this;

@@ -4,11 +4,6 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-
-    public GameObject settingsPanel;
-
-    public GameObject missionPanel;
-
     public Slider xpBar;
     public GameObject levelText;
 
@@ -17,11 +12,11 @@ public class MainMenu : MonoBehaviour
     public GameObject healTimeText;
   
     private void Start() {
-        /*SetXpBar(PlayerData.getData().experience);
         SetLevel(PlayerData.getData().level.ToString());
         SetHealText(PlayerData.getData().health.ToString());
-        SetHealTimeText("500");
-        SetMoneyText("1000");*/
+        SetHealTimeText("FULL");
+        SetMoneyText(string.Format("{0:#,0}", PlayerData.getData().money));
+        SetXpBar(PlayerManager.instance.levelSystem.GetExperienceNormalized());
     }
 
     public void PlayGame(){
@@ -30,20 +25,19 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
     
-    public void OpenSettings(){
-        settingsPanel.SetActive(true);
+    public void ToggleSettings(bool isOpen){
+        if(isOpen){
+            MenuManager.instance.OpenMenu("Settings", 5);
+        } else {
+            MenuManager.instance.CloseMenu("Settings");
+        }
     }
-
-    public void CloseSettings(){
-        settingsPanel.SetActive(false);
-    }
-
-    public void OpenMission(){
-        missionPanel.SetActive(true);
-    }
-
-    public void CloseMission(){
-        missionPanel.SetActive(false);
+    public void ToggleMission(bool isOpen){
+        if(isOpen){
+            MenuManager.instance.OpenMenu("Mission", 5);
+        } else {
+            MenuManager.instance.CloseMenu("Mission");
+        }
     }
 
     public void SetXpBar(float value){
@@ -51,18 +45,18 @@ public class MainMenu : MonoBehaviour
     }
 
     public void SetLevel(string text){
-        levelText.GetComponent<TMPro.TextMeshProUGUI>().text = text;
+        levelText.GetComponent<TMPro.TextMeshProUGUI>().SetText(text);
     }
 
     public void SetMoneyText(string text){
-        moneyText.GetComponent<TMPro.TextMeshProUGUI>().text = text;
+        moneyText.GetComponent<TMPro.TextMeshProUGUI>().SetText(text);
     }
 
     public void SetHealText(string text){
-        healText.GetComponent<TMPro.TextMeshProUGUI>().text = text;
+        healText.GetComponent<TMPro.TextMeshProUGUI>().SetText(text);
     }
 
     public void SetHealTimeText(string text){
-        healTimeText.GetComponent<TMPro.TextMeshProUGUI>().text = text;
+        healTimeText.GetComponent<TMPro.TextMeshProUGUI>().SetText(text);
     }
 }
