@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Mission
 {
     public int itemId;
@@ -12,27 +13,14 @@ public class Mission
 
 public class MissionScript : MonoBehaviour
 {
-    public List<string> MissionsString;
     public long timeStamp;
 
     private Database database;
-    private List<Mission> missions;
+    private List<Mission> missions = new List<Mission>();
 
     private void Start()
     {
         database = new Database("Missions.json", this);
-        InitMissions();
-    }
-
-    private void InitMissions()
-    {
-        missions = new List<Mission>();
-
-        for (int i = 0; i < MissionsString.Count; i++)
-        {
-            Mission mission = JsonUtility.FromJson<Mission>(MissionsString[i]);
-            missions.Add(mission);
-        }
     }
 
     public void addMission(int itemId, int objectiveId, int count)
@@ -42,7 +30,6 @@ public class MissionScript : MonoBehaviour
         
         Mission mission = new Mission { itemId = itemId, objectiveId = objectiveId, countMax = count, count = 0 };
         missions.Add(mission);
-        MissionsString.Add(JsonUtility.ToJson(mission));
         database.SaveData();
     }
 
@@ -51,7 +38,6 @@ public class MissionScript : MonoBehaviour
         if (missions.Count <= index || index < 0)
             return;
         missions.RemoveAt(index);
-        MissionsString.RemoveAt(index);
         database.SaveData();
     }
 

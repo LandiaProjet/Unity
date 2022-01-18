@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using UnityEngine;
 
@@ -5,9 +6,9 @@ using UnityEngine;
 public class Database
 {
     public string persistentPath;
-    public Object data;
+    public UnityEngine.Object data;
 
-    public Database(string nameFile, Object data)
+    public Database(string nameFile, UnityEngine.Object data)
     {
         persistentPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + nameFile;
         this.data = data;
@@ -16,29 +17,37 @@ public class Database
 
     public void SaveData()
     {
-        string savePath = persistentPath;
+        try{
+            string json = JsonUtility.ToJson(data);
 
-        Debug.Log("Path save : " + savePath);
-        string json = JsonUtility.ToJson(data);
-        Debug.Log(json);
-
-        using StreamWriter writer = new StreamWriter(savePath);
-        writer.Write(json);
+            using StreamWriter writer = new StreamWriter(persistentPath);
+            writer.Write(json);
+        } catch (Exception e)
+        {
+            Debug.LogError(e.ToString());
+        }
     }
 
     public void LoadData()
     {
         try
         {
-            using StreamReader reader = new StreamReader(persistentPath);
-                
-            string json = reader.ReadToEnd();
+            if (File.Exists(persistentPath))
+            {
+                using StreamReader reader = new StreamReader(persistentPath);
+                    
+                string json = reader.ReadToEnd();
 
-            JsonUtility.FromJsonOverwrite(json, data);
+                JsonUtility.FromJsonOverwrite(json, data);
+            } else {
+                Debug.LogError("Create file"); 
+                SaveData();
+            }
         }
-        catch (FileNotFoundException e)
+        catch (Exception e)
         {
-            Debug.Log(e.ToString());
+            Debug.LogError(e.ToString());
+            SaveData();
         }
     }
 }
