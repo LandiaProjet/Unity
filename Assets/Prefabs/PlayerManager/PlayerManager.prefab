@@ -47,7 +47,6 @@ MonoBehaviour:
   money: 0
   level: 0
   experience: 0
-  experienceToNextLevel: 0
 --- !u!1 &6725711167149109957
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d3e57a28179c846aa5124e449d46d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventoryString: []
+  inventory: []
 --- !u!1 &6725711168049598571
 GameObject:
   m_ObjectHideFlags: 0

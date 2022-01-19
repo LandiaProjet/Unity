@@ -8,5 +8,6 @@ public class MainMenuScene : MonoBehaviour
     {
         MenuManager.instance.OpenMenu("MainMenu");
         TransitionManager.instance.loadingTransition.startLoading(5f, false);
+        MenuManager.instance.OpenMenu("PauseMenu", 8);
     }
 }

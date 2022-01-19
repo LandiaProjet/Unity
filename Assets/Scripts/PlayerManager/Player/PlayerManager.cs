@@ -56,6 +56,22 @@ public class PlayerManager : MonoBehaviour
             changePlayer("idle");
     }
 
+    public void SwitchModePlayer()
+    {
+        switch (mode)
+        {
+            case "sword":
+                changePlayer("bow");
+                break;
+            case "bow":
+                changePlayer("idle");
+                break;
+            case "idle":
+                changePlayer("sword");
+                break;
+        }
+    }
+
     void changePlayer(string mode){
         switch(mode){
             case "sword":
