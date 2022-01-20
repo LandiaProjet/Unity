@@ -11,6 +11,7 @@ public class Database
     public Database(string nameFile, UnityEngine.Object data)
     {
         persistentPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + nameFile;
+        Debug.Log(persistentPath);
         this.data = data;
         LoadData();
     }
