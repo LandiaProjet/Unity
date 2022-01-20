@@ -26,6 +26,11 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         database = new Database("Level.json", this);
+     //   addLevel(0, 3, true);
+       // addLevel(1, 1, false);
+        //addLevel(2, 2, false);
+        if (onChangedCallback != null)
+            onChangedCallback.Invoke();
     }
 
     public void addLevel(int id, int star, bool isFinish)
@@ -67,10 +72,13 @@ public class LevelManager : MonoBehaviour
             {
                 TransitionManager.instance.loadingTransition.startLoading(1f);
                 SceneManager.LoadScene(Levels.instance.levels[id].idScene);
-                // Activé le isPlaying
+                // Activï¿½ le isPlaying
                 return true;
             }
         }
         return false;
     }
+
+    public delegate void OnChanged();
+	public OnChanged onChangedCallback;
 }
