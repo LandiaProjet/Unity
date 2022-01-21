@@ -72,7 +72,7 @@ public class LevelManager : MonoBehaviour
             {
                 TransitionManager.instance.loadingTransition.startLoading(1f);
                 SceneManager.LoadScene(Levels.instance.levels[id].idScene);
-                // Activ� le isPlaying
+                isPlaying.instance.stats = Stats.inGame;
                 return true;
             }
         }

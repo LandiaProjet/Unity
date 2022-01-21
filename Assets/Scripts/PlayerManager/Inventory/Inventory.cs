@@ -34,7 +34,6 @@ public class Inventory : MonoBehaviour
         addItem(1);
     }
 
-
     public void addItem(int id)
     {
         if (id < 0 || id >= Items.instance.items.Length)
