@@ -1,37 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 public class InteractionScript : MonoBehaviour
 {
-    public GameObject ButtonInteraction;
-    public GameObject Icon;
-
     public float Radius;
     public LayerMask collisionLayers;
     public Sprite sprite;
 
-    private bool inside;
+    public InteractManager interactManager;
+    public bool inited = false;
 
-    private Image image;
-    private EventTrigger trigger;
-    private EventTrigger.Entry entry;
-
-    void Start()
-    {
-        inside = false;
-        image = Icon.GetComponentInChildren<Image>();
-        trigger = ButtonInteraction.GetComponent<EventTrigger>();
-        entry = new EventTrigger.Entry
-        {
-            eventID = EventTriggerType.PointerClick
-        };
-    }
+    private bool inside = false;
 
     private void FixedUpdate()
     {
+        if (inited == false)
+            return;
         Collider2D[] CircleResult = Physics2D.OverlapCircleAll(transform.position, Radius, collisionLayers);
 
         if (CircleResult != null && CircleResult.Length >= 1)
@@ -39,19 +22,19 @@ public class InteractionScript : MonoBehaviour
             if (inside == false)
             {
                 inside = true;
-                entry.callback.AddListener((data) => { Execute(); });
-                trigger.triggers.Add(entry);
-                image.sprite = sprite;
-                ButtonInteraction.SetActive(true);
+                interactManager.entry.callback.AddListener((data) => { Execute(); });
+                interactManager.trigger.triggers.Add(interactManager.entry);
+                interactManager.image.sprite = sprite;
+                interactManager.InteractButton.SetActive(true);
             }
         } else
         {
             if (inside == true)
             {
                 inside = false;
-                trigger.triggers.RemoveRange(0, trigger.triggers.Count);
-                entry.callback.RemoveAllListeners();
-                ButtonInteraction.SetActive(false);
+                interactManager.trigger.triggers.RemoveRange(0, interactManager.trigger.triggers.Count);
+                interactManager.entry.callback.RemoveAllListeners();
+                interactManager.InteractButton.SetActive(false);
             }
         }
     }
