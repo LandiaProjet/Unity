@@ -21,7 +21,10 @@ public class InteractManager : MonoBehaviour
             return;
         }
         instance = this;
+    }
 
+    private void OnEnable()
+    {
         InteractionScript[] components = Resources.FindObjectsOfTypeAll<InteractionScript>();
 
         image = Icon.GetComponentInChildren<Image>();
