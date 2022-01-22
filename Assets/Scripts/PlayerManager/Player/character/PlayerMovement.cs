@@ -46,8 +46,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void Jump(){
-        if (isGrounded == true && isRoll == false)
-            isJumping = true;
+        if (isGrounded == true)
+        {
+            rb.AddForce(new Vector2(0f, jumpForce));
+        }
     }
 
     private void Update()
@@ -114,11 +116,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
-            if (isJumping == true && isGrounded == true)
-            {
-                rb.AddForce(new Vector2(0f, jumpForce));
-                isJumping = false;
-            }
         } else {
             float velocityRoll = (spriteRenderer.flipX) ? -10 : 10;
             Vector3 targetVelocity = new Vector2(velocityRoll, rb.velocity.y);
