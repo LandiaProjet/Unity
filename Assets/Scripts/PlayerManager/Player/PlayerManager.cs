@@ -58,6 +58,8 @@ public class PlayerManager : MonoBehaviour
 
     public void SwitchModePlayer()
     {
+        if (isPlaying.instance.stats != Stats.inGame)
+            return;
         switch (mode)
         {
             case "sword":

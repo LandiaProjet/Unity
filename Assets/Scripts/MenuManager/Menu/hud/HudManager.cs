@@ -5,14 +5,22 @@ using UnityEngine.UI;
 
 public class HudManager : MonoBehaviour
 {
-
     public Slider shield;
-
     public GameObject star;
-
     public GameObject arrow;
 
-    //Set le shield dans le menu qui ne peut pas dépasser 1
+    public static HudManager instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de HudManager dans la scène");
+            return;
+        }
+        instance = this;
+    }
+
     public void SetShield(float value){
         shield.value = Mathf.Max(value, 1);
     }
@@ -23,11 +31,5 @@ public class HudManager : MonoBehaviour
 
     public void SetArrow(string text){
         arrow.GetComponent<TMPro.TextMeshProUGUI>().text = text;
-    }
-    
-    public void reset(){
-        SetShield(1);
-        SetStar("0");
-        SetArrow("0");
     }
 }

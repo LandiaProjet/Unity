@@ -16,8 +16,8 @@ public class isPlaying : MonoBehaviour
     public static isPlaying instance;
 
     public float shield;
-    public List<Item> award;
-    public List<Slot> inventory;
+    public List<Slot> award = new List<Slot>();
+    public List<Slot> inventory = new List<Slot>();
     public float time;
 
     public Stats stats;
@@ -42,11 +42,30 @@ public class isPlaying : MonoBehaviour
         if (stats == Stats.inGame)
         {
             time += Time.fixedDeltaTime;
-            Debug.Log(time);
+            //teststart
+            StartCoroutine(dommage());
+            //testend
         }
     }
 
-    public void addItem(int id)
+    //functiontest
+    IEnumerator dommage()
+    {
+        while (shield >= 0)
+        {
+            yield return new WaitForSeconds(1f);
+            addDommage(1f);
+        }
+    }
+
+    public void startLevel()
+    {
+        time = 0;
+        shield = 100f;
+        instance.stats = Stats.inGame;
+    }
+
+    public void addItem(int id, List<Slot> inventory)
     {
         if (id < 0 || id >= Items.instance.items.Length)
             return;
@@ -62,7 +81,7 @@ public class isPlaying : MonoBehaviour
         inventory.Add(slot);
     }
 
-    public void deleteItem(int id)
+    public void deleteItem(int id, List<Slot> inventory)
     {
         if (id < 0 || id >= Items.instance.items.Length)
             return;
@@ -80,5 +99,32 @@ public class isPlaying : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void addDommage(float dommage)
+    {
+        if (stats != Stats.inGame)
+            return;
+
+        shield -= dommage;
+
+        HudManager.instance.SetShield(shield);
+        if (shield <= 0)
+        {
+            stats = Stats.Ending;
+            PlayerMovement.instance.setDie(true);
+        }
+    }
+
+    public void addHealth(int health)
+    {
+        if (stats != Stats.inGame)
+            return;
+
+        shield += health;
+
+        HudManager.instance.SetShield(shield);
+        if (shield > 100)
+            shield = 100;
     }
 }
