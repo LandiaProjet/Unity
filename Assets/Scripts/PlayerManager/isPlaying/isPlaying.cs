@@ -20,6 +20,8 @@ public class isPlaying : MonoBehaviour
     public List<Slot> inventory = new List<Slot>();
     public float time;
     public int star;
+    public int credit;
+    public int exp;
 
     public int idLevel;
 
@@ -71,6 +73,8 @@ public class isPlaying : MonoBehaviour
         instance.stats = Stats.inGame;
         time = Levels.instance.levels[idLevel].secondTimeMax;
         star = 3;
+        exp = 0;
+        credit = 0;
         var ts = TimeSpan.FromSeconds(time);
         HudManager.instance.initGame(string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds), "0");
     }
