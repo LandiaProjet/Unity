@@ -80,6 +80,7 @@ public class isPlaying : MonoBehaviour
         stats = Stats.Ending;
         PlayerMovement.instance.setDie(true);
         HudManager.instance.stopGame();
+        MenuManager.instance.OpenMenu("PopupDefeat", 10);
     }
 
     public void addItem(int id, List<Slot> inventory)
