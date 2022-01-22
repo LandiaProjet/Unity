@@ -41,7 +41,8 @@ public class InteractionScript : MonoBehaviour
 
     private void Execute()
     {
-        Debug.Log("yes");
+        interactManager.InteractButton.SetActive(false);
+        LevelManager.instance.openLevel(0);
     }
 
     private void OnDrawGizmos()

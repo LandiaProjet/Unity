@@ -6,15 +6,28 @@ using UnityEngine.EventSystems;
 
 public class ButtonManager : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject ButtonSwitch;
     public GameObject ButtonAttack;
     public GameObject Icon;
 
-    public Image image;
     public Sprite sword;
     public Sprite arrow;
 
-    public string mode = "";
+    private string mode = "";
+    private GameObject player;
+    private Image image;
+
+    public static ButtonManager instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de ButtonManager dans la scène");
+            return;
+        }
+        instance = this;
+    }
 
     private void Start()
     {
@@ -30,6 +43,8 @@ public class ButtonManager : MonoBehaviour
     }
 
     void Update() {
+        if (isPlaying.instance.stats != Stats.inGame)
+            return;
         if(PlayerManager.instance.mode != mode){
             if (PlayerManager.instance.mode == "idle")
             {
@@ -46,5 +61,11 @@ public class ButtonManager : MonoBehaviour
             }
             mode = PlayerManager.instance.mode;
         }
+    }
+
+    public void ToggleAdditionalButton(bool value)
+    {
+        ButtonAttack.SetActive(value);
+        ButtonSwitch.SetActive(value);
     }
 }
