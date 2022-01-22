@@ -401,7 +401,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shield: 0
   award: []
+  inventory: []
   time: 0
+  star: 0
+  idLevel: 0
+  stats: 0
 --- !u!1 &6725711168828186755
 GameObject:
   m_ObjectHideFlags: 0

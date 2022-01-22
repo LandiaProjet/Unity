@@ -64,6 +64,8 @@ public class isPlaying : MonoBehaviour
 
     public void startLevel(int idLevel)
     {
+        award = new List<Slot>();
+        inventory = new List<Slot>();
         this.idLevel = idLevel;
         shield = 100f;
         instance.stats = Stats.inGame;
