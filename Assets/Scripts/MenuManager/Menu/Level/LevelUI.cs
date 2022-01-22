@@ -8,41 +8,98 @@ public class LevelUI : MonoBehaviour
 
 	LevelManager levelManager;
 
-	LevelSlot[] slots;
-
     public Sprite completLevel;
     public Sprite defaultLevel;
 
     public Sprite completStar;
     public Sprite defaultStar;
 
+	public GameObject prefab;
+
+	LevelButton[] levelButtons;
+
+	private int totalPage = 0;
+
+	private int page = 0;
+
+	private int pageItem = 4;
+
+	public GameObject nextButton;
+	public GameObject backButton;
+
+	public GameObject pageNavigation;
+
 	void Start () {
 		levelManager = LevelManager.instance;
-		levelManager.onChangedCallback += UpdateUI;
 
-
-		slots = itemsParent.GetComponentsInChildren<LevelSlot>();
+		Refresh();
 	}
-	
-	void UpdateUI ()
-	{
-		for (int i = 0; i < slots.Length; i++)
-		{
-			if (i < levelManager.slotLevels.Count)
-			{
-                Debug.Log("UPDATE ICI");
-                SlotLevel slot = levelManager.slotLevels[i];
-				slots[i].AddLevel(slot, slot.isFinish ? completLevel : defaultLevel, completStar, defaultStar);
-			} else
-			{
-                Debug.Log("UPDATE" + slots.Length);
-				slots[i].ClearSlot(defaultLevel);
-			}
+
+	public void StartLevel(int level){
+		//si le level est égal au level débloquer
+		Debug.Log("Start Level n°" + level);
+		if(level == PlayerData.getData().level){
+			
 		}
+	}
+
+	private void OnEnable() {
+		levelButtons = GetComponentsInChildren<LevelButton>();
+	}
+
+	public void ClickNext(){
+		page+=1;
+		Refresh();
+		ChangeNavigation(page);
+	}
+
+	public void ClickBack(){
+		page-=1;
+		Refresh();
+		ChangeNavigation(page);
 	}
 
     public void CloseUI(){
         MenuManager.instance.CloseMenu("Level");
     }
+
+	public void Refresh(){
+		totalPage = levelManager.slotLevels.Count / pageItem;
+
+		int index = page * pageItem;
+
+		for(int i = 0; i < levelButtons.Length; i++){
+			int level = index + i + 1;
+
+			if(level <= levelManager.slotLevels.Count){
+				levelButtons[i].gameObject.SetActive(true);
+				levelButtons[i].Setup(this, level, levelManager.slotLevels[i].star, level<=2);
+			}
+		}
+
+		CheckButton();
+	}
     
+
+	private void CheckButton(){
+		backButton.SetActive(page > 0);
+		nextButton.SetActive(page < totalPage);
+	}
+
+	private void ChangeNavigation(int page){
+		switch(page){
+			case 1:
+				pageNavigation.transform.position = new Vector3(-75,0,0);
+				break;
+			case 2:
+				pageNavigation.transform.position = new Vector3(-25,0,0);
+				break;
+			case 3:
+				pageNavigation.transform.position = new Vector3(25,0,0);
+				break;
+			case 4:
+				pageNavigation.transform.position = new Vector3(75,0,0);
+				break;
+		}
+	}
 }
