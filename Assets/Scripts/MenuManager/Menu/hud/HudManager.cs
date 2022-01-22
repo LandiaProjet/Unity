@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HudManager : MonoBehaviour
 {
-    public GameObject area;
+    public GameObject areaInformation;
     public Slider shield;
     public GameObject star;
     public GameObject arrow;
@@ -23,11 +23,18 @@ public class HudManager : MonoBehaviour
         instance = this;
     }
 
-    public void init(string time, string arrow)
+    public void initGame(string time, string arrow)
     {
         SetTime(time);
         SetArrow(arrow);
-        area.SetActive(true);
+        areaInformation.SetActive(true);
+        ButtonManager.instance.ToggleAdditionalButton(true);
+    }
+
+    public void stopGame()
+    {
+        areaInformation.SetActive(false);
+        ButtonManager.instance.ToggleAdditionalButton(false);
     }
 
     public void SetShield(float value){

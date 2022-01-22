@@ -70,14 +70,14 @@ public class isPlaying : MonoBehaviour
         time = Levels.instance.levels[idLevel].secondTimeMax;
         star = 3;
         var ts = TimeSpan.FromSeconds(time);
-        HudManager.instance.init(string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds), "0");
+        HudManager.instance.initGame(string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds), "0");
     }
 
     public void endLevel()
     {
         stats = Stats.Ending;
         PlayerMovement.instance.setDie(true);
-        HudManager.instance.area.SetActive(false);
+        HudManager.instance.stopGame();
     }
 
     public void addItem(int id, List<Slot> inventory)

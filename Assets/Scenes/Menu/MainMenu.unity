@@ -231,11 +231,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1281930204 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4119227029967257849, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
-  m_PrefabInstance: {fileID: 5673637900044747836}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &364805066705573824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -304,10 +299,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1119792512, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
-      propertyPath: area
-      value: 
-      objectReference: {fileID: 1281930204}
     - target: {fileID: 5673637900132872030, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
       propertyPath: m_Name
       value: GameController
