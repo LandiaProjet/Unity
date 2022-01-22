@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +19,9 @@ public class isPlaying : MonoBehaviour
     public List<Slot> award = new List<Slot>();
     public List<Slot> inventory = new List<Slot>();
     public float time;
+    public int star;
+
+    public int idLevel;
 
     public Stats stats;
 
@@ -41,28 +44,40 @@ public class isPlaying : MonoBehaviour
     {
         if (stats == Stats.inGame)
         {
-            time += Time.fixedDeltaTime;
-            //teststart
-            StartCoroutine(dommage());
-            //testend
+            time -= Time.fixedDeltaTime;
+            if (star != 0 && Levels.instance.levels[idLevel].timeStar[star - 1] > time)
+            {
+                star--;
+                HudManager.instance.SetStar(star.ToString());
+            }
+            if (star < 3 && Levels.instance.levels[idLevel].timeStar[star] < time)
+            {
+                star++;
+                HudManager.instance.SetStar(star.ToString());
+            }
+            var ts = TimeSpan.FromSeconds(time);
+            HudManager.instance.SetTime(string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds));
+            if (time <= 0)
+                endLevel();
         }
     }
 
-    //functiontest
-    IEnumerator dommage()
+    public void startLevel(int idLevel)
     {
-        while (shield >= 0)
-        {
-            yield return new WaitForSeconds(1f);
-            addDommage(1f);
-        }
-    }
-
-    public void startLevel()
-    {
-        time = 0;
+        this.idLevel = idLevel;
         shield = 100f;
         instance.stats = Stats.inGame;
+        time = Levels.instance.levels[idLevel].secondTimeMax;
+        star = 3;
+        var ts = TimeSpan.FromSeconds(time);
+        HudManager.instance.init(string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds), "0");
+    }
+
+    public void endLevel()
+    {
+        stats = Stats.Ending;
+        PlayerMovement.instance.setDie(true);
+        HudManager.instance.area.SetActive(false);
     }
 
     public void addItem(int id, List<Slot> inventory)
@@ -110,10 +125,7 @@ public class isPlaying : MonoBehaviour
 
         HudManager.instance.SetShield(shield);
         if (shield <= 0)
-        {
-            stats = Stats.Ending;
-            PlayerMovement.instance.setDie(true);
-        }
+            endLevel();
     }
 
     public void addHealth(int health)
