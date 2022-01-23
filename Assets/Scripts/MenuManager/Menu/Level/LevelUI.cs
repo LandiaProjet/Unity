@@ -29,7 +29,7 @@ public class LevelUI : MonoBehaviour
         rtPage = Pages.GetComponent<RectTransform>();
         Stages.Add(Instantiate(Stage, Pages.transform));
         rtPrev = Stages[0].GetComponent<RectTransform>();
-        for (int i = 0, c = 0, p = 0; i < 100; i++, c++)
+        for (int i = 0, c = 0, p = 0; i < Levels.instance.levels.Length; i++, c++)
         {
             button = Instantiate(levelButton, Stages[p].transform);
             Buttons.Add(button);
