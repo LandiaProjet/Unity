@@ -42,7 +42,7 @@ public class InteractionScript : MonoBehaviour
     private void Execute()
     {
         interactManager.InteractButton.SetActive(false);
-        LevelManager.instance.openLevel(0);
+        MenuManager.instance.OpenMenu("Level", 10);
     }
 
     private void OnDrawGizmos()

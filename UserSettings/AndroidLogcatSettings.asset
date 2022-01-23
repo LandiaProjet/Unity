@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R58MA32FSPW",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 32062,
+        "processId": 9111,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -24,6 +24,12 @@
             "deviceId": "R58MA32FSPW",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 32062,
+            "exited": false
+        },
+        {
+            "deviceId": "R58MA32FSPW",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 9111,
             "exited": false
         }
     ],

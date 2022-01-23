@@ -7,6 +7,7 @@ public class LevelButton : MonoBehaviour
 {
 
 	private Image image;
+	private Button button;
 
 	public GameObject lockButton;
 	public GameObject starButton;
@@ -14,7 +15,8 @@ public class LevelButton : MonoBehaviour
 	public LevelUI levelUI;
 
 	private void Start() {
-		image = this.gameObject.GetComponent<Image>();	
+		button = gameObject.GetComponent<Button>();
+		image = gameObject.GetComponent<Image>();	
 	}
 
 	private int level = 0;
@@ -25,6 +27,7 @@ public class LevelButton : MonoBehaviour
 		this.levelUI = levelUI;
 
 		if(isUnLock){
+			button.enabled = true;
 			lockButton.gameObject.SetActive(false);
 			text.gameObject.SetActive(true);
 			starButton.gameObject.SetActive(true);
@@ -35,6 +38,7 @@ public class LevelButton : MonoBehaviour
 			}
 			text.SetText(level.ToString());
 		} else {
+			button.enabled = false;
 			lockButton.gameObject.SetActive(true);
 			text.gameObject.SetActive(false);
 			starButton.gameObject.SetActive(false);
@@ -43,7 +47,7 @@ public class LevelButton : MonoBehaviour
 	}
 
 	public void OnClick(){
-		levelUI.StartLevel(level);
+		levelUI.StartLevel(level - 1);
 	}
 
 }

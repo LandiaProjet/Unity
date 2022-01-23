@@ -38,9 +38,9 @@ public class LevelUI : MonoBehaviour
 	public void StartLevel(int level){
 		//si le level est égal au level débloquer
 		Debug.Log("Start Level n°" + level);
-		if(level == PlayerData.getData().level){
-			
-		}
+		MenuManager.instance.CloseMenu("Level");
+		TransitionManager.instance.loadingTransition.startLoading(1f);
+		LevelManager.instance.openLevel(level);
 	}
 
 	private void OnEnable() {
