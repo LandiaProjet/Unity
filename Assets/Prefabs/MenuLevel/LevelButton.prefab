@@ -571,7 +571,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5290472281547503348}
         m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
-        m_MethodName: OnClick
+        m_MethodName: onClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -608,10 +608,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9061c98b357529344850f4d50e2115f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockButton: {fileID: 3674289887741497878}
-  starButton: {fileID: 1209991342501884003}
-  levelUI: {fileID: 0}
-  text: {fileID: 9149907018025111457}
+  idLevel: 0
+  Key: {fileID: 3171763560422643863}
+  Background: {fileID: 836500997322332492}
+  Completed: {fileID: 21300000, guid: bd9f2d89ca95f4d8aa4af543e31dcda3, type: 3}
+  Text: {fileID: 9149907018025111457}
+  Star: {fileID: 1209991342501884003}
 --- !u!1 &9213995373310647361
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6280114629970128305
 RectTransform:
   m_ObjectHideFlags: 0

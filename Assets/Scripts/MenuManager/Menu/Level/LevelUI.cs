@@ -4,102 +4,100 @@ using UnityEngine;
 
 public class LevelUI : MonoBehaviour
 {
-	public Transform itemsParent;
+	public GameObject Pages;
+	public GameObject Stage;
+	public GameObject levelButton;
 
-	LevelManager levelManager;
+    public GameObject prevPageButton;
+    public GameObject nextPageButton;
 
-    public Sprite completLevel;
-    public Sprite defaultLevel;
+    public PageNavigationScript PageNavi;
 
-    public Sprite completStar;
-    public Sprite defaultStar;
+    int countPage = 0;
+    bool onAnimation = false;
 
-	public GameObject prefab;
+    private List<GameObject> Stages = new List<GameObject>();
+    private List<GameObject> Buttons = new List<GameObject>();
+    private RectTransform rtPage;
 
-	LevelButton[] levelButtons;
+    private void Start()
+    {
+        GameObject button;
+        RectTransform rtPrev;
+        RectTransform rtNext;
 
-	private int totalPage = 0;
-
-	private int page = 0;
-
-	private int pageItem = 4;
-
-	public GameObject nextButton;
-	public GameObject backButton;
-
-	public GameObject pageNavigation;
-
-	void Start () {
-		levelManager = LevelManager.instance;
-
-		Refresh();
-	}
-
-	public void StartLevel(int level){
-		//si le level est égal au level débloquer
-		Debug.Log("Start Level n°" + level);
-		MenuManager.instance.CloseMenu("Level");
-		TransitionManager.instance.loadingTransition.startLoading(1f);
-		LevelManager.instance.openLevel(level);
-	}
-
-	private void OnEnable() {
-		levelButtons = GetComponentsInChildren<LevelButton>();
-	}
-
-	public void ClickNext(){
-		page+=1;
-		Refresh();
-		ChangeNavigation(page);
-	}
-
-	public void ClickBack(){
-		page-=1;
-		Refresh();
-		ChangeNavigation(page);
-	}
-
-    public void CloseUI(){
-        MenuManager.instance.CloseMenu("Level");
+        rtPage = Pages.GetComponent<RectTransform>();
+        Stages.Add(Instantiate(Stage, Pages.transform));
+        rtPrev = Stages[0].GetComponent<RectTransform>();
+        for (int i = 0, c = 0, p = 0; i < 100; i++, c++)
+        {
+            button = Instantiate(levelButton, Stages[p].transform);
+            Buttons.Add(button);
+            button.GetComponent<LevelButton>().InitButton(i);
+            if (c == 17)
+            {
+                Stages.Add(Instantiate(Stage, Pages.transform));
+                p++;
+                rtNext = Stages[p].GetComponent<RectTransform>();
+                rtNext.transform.localPosition = new Vector2(rtPrev.transform.localPosition.x + 3000, rtPrev.transform.localPosition.y);
+                rtPrev = rtNext;
+                c = -1;
+            }
+        }
+        if (Stages.Count > 1)
+            nextPageButton.SetActive(true);
+        PageNavi.generateNavigation(Stages.Count);
     }
 
-	public void Refresh(){
-		totalPage = levelManager.slotLevels.Count / pageItem;
+    public void nextPage()
+    {
+        if (onAnimation == true && Stages.Count - 1 >= countPage + 1)
+            return;
+        onAnimation = true;
+        prevPageButton.SetActive(true);
+        countPage++;
+        PageNavi.movePosition(true);
+        if (Stages.Count - 1 <= countPage)
+            nextPageButton.SetActive(false);
+        StartCoroutine(animationNextPage());
+    }
 
-		int index = page * pageItem;
+    public void prevPage()
+    {
+        if (onAnimation == true && Stages.Count <= 0)
+            return;
+        onAnimation = true;
+        nextPageButton.SetActive(true);
+        countPage--;
+        PageNavi.movePosition(false);
+        if (countPage <= 0)
+            prevPageButton.SetActive(false);
+        StartCoroutine(animationPrevPage());
+    }
 
-		for(int i = 0; i < levelButtons.Length; i++){
-			int level = index + i + 1;
+    private IEnumerator animationNextPage()
+    {
+        int count = 0;
 
-			if(level <= levelManager.slotLevels.Count){
-				levelButtons[i].gameObject.SetActive(true);
-				levelButtons[i].Setup(this, level, levelManager.slotLevels[i].star, level<=2);
-			}
-		}
+        while (count < 3000)
+        {
+            rtPage.transform.localPosition = new Vector2(rtPage.transform.localPosition.x - 100, rtPage.transform.localPosition.y);
+            count += 100;
+            yield return new WaitForSeconds(.005f);
+        }
+        onAnimation = false;
+    }
 
-		CheckButton();
-	}
-    
+    private IEnumerator animationPrevPage()
+    {
+        int count = 0;
 
-	private void CheckButton(){
-		backButton.SetActive(page > 0);
-		nextButton.SetActive(page < totalPage);
-	}
-
-	private void ChangeNavigation(int page){
-		switch(page){
-			case 1:
-				pageNavigation.transform.position = new Vector3(-75,0,0);
-				break;
-			case 2:
-				pageNavigation.transform.position = new Vector3(-25,0,0);
-				break;
-			case 3:
-				pageNavigation.transform.position = new Vector3(25,0,0);
-				break;
-			case 4:
-				pageNavigation.transform.position = new Vector3(75,0,0);
-				break;
-		}
-	}
+        while (count < 3000)
+        {
+            rtPage.transform.localPosition = new Vector2(rtPage.transform.localPosition.x + 100, rtPage.transform.localPosition.y);
+            count += 100;
+            yield return new WaitForSeconds(.005f);
+        }
+        onAnimation = false;
+    }
 }

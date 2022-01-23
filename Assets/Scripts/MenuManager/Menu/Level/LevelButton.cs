@@ -1,53 +1,45 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
 public class LevelButton : MonoBehaviour
 {
+    public int idLevel;
+    public Image Key;
+    public Image Background;
+    public Sprite Completed;
+    public TMPro.TextMeshProUGUI Text;
+    public GameObject Star;
 
-	private Image image;
-	private Button button;
+    private SlotLevel levelInfo;
+    private bool isActive = false;
 
-	public GameObject lockButton;
-	public GameObject starButton;
+    public void InitButton(int idLevel)
+    {
+        this.idLevel = idLevel;
+        Text.text = this.idLevel.ToString();
+        Text.enabled = false;
+        Refresh();
+    }
 
-	public LevelUI levelUI;
+    public void Refresh()
+    {
+        if (LevelManager.instance.slotLevels.Count <= idLevel || idLevel < 0)
+            return;
+        Text.enabled = true;
+        isActive = true;
+        levelInfo = LevelManager.instance.slotLevels[idLevel];
+        Key.enabled = false;
+        if (!levelInfo.isFinish)
+            return;
+        Background.sprite = Completed;
+        Star.SetActive(true);
+    }
 
-	private void Start() {
-		button = gameObject.GetComponent<Button>();
-		image = gameObject.GetComponent<Image>();	
-	}
-
-	private int level = 0;
-	public TMPro.TextMeshProUGUI text;
-    public void Setup(LevelUI levelUI, int level, int starCount, bool isUnLock)
-	{
-		this.level = level;
-		this.levelUI = levelUI;
-
-		if(isUnLock){
-			button.enabled = true;
-			lockButton.gameObject.SetActive(false);
-			text.gameObject.SetActive(true);
-			starButton.gameObject.SetActive(true);
-			image.sprite = levelUI.completLevel;
-			for (int i = 0; i < starCount; i++)
-			{
-				transform.GetChild(1).GetChild(i).gameObject.GetComponent<Image>().sprite = levelUI.completStar;
-			}
-			text.SetText(level.ToString());
-		} else {
-			button.enabled = false;
-			lockButton.gameObject.SetActive(true);
-			text.gameObject.SetActive(false);
-			starButton.gameObject.SetActive(false);
-			image.sprite = levelUI.defaultLevel;
-		}
-	}
-
-	public void OnClick(){
-		levelUI.StartLevel(level - 1);
-	}
-
+    public void onClick()
+    {
+        if (isActive == false)
+            return;
+        MenuManager.instance.CloseMenu("Level");
+        LevelManager.instance.openLevel(idLevel);
+    }
 }

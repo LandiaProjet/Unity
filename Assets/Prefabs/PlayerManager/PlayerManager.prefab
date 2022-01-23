@@ -173,7 +173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6725711168664862863
 Transform:
   m_ObjectHideFlags: 0
@@ -404,6 +404,8 @@ MonoBehaviour:
   inventory: []
   time: 0
   star: 0
+  credit: 0
+  exp: 0
   idLevel: 0
   stats: 0
 --- !u!1 &6725711168828186755
