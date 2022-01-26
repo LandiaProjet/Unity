@@ -27,11 +27,14 @@ public class isPlaying : MonoBehaviour
 
     public Stats stats;
 
+    public delegate void OnItemChanged();
+	public OnItemChanged onItemChangedCallback;
+
     private void Awake()
     {
         if (instance != null)
         {
-            Debug.LogWarning("Il y a plus d'une instance de isPlaying dans la scène");
+            Debug.LogWarning("Il y a plus d'une instance de isPlaying dans la scï¿½ne");
             return;
         }
         instance = this;
@@ -87,7 +90,7 @@ public class isPlaying : MonoBehaviour
         MenuManager.instance.OpenMenu("PopupDefeat", 10);
     }
 
-    public void addItem(int id, List<Slot> inventory)
+    public void addItem(int id)
     {
         if (id < 0 || id >= Items.instance.items.Length)
             return;
@@ -101,9 +104,11 @@ public class isPlaying : MonoBehaviour
         }
         Slot slot = new Slot { count = 1, id = id };
         inventory.Add(slot);
+        if (onItemChangedCallback != null)
+            onItemChangedCallback.Invoke();
     }
 
-    public void deleteItem(int id, List<Slot> inventory)
+    public void deleteItem(int id)
     {
         if (id < 0 || id >= Items.instance.items.Length)
             return;
@@ -121,6 +126,8 @@ public class isPlaying : MonoBehaviour
                 }
             }
         }
+        if (onItemChangedCallback != null)
+            onItemChangedCallback.Invoke();
     }
 
     public void addDommage(float dommage)

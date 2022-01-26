@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryUI : MonoBehaviour
+public class InventoryExchangeUI : MonoBehaviour
 {
 	public Transform itemsParent;
 
     public TMPro.TextMeshProUGUI text;	
 
-	Inventory inventory;
+	isPlaying inventoryExchange;
 
 	InventorySlot[] slots;
 
 	void Start () {
-		inventory = Inventory.instance;
-		inventory.onItemChangedCallback += UpdateUI;
+		inventoryExchange = isPlaying.instance;
+		inventoryExchange.onItemChangedCallback += UpdateUI;
 
 
 		slots = itemsParent.GetComponentsInChildren<InventorySlot>();
@@ -26,9 +26,9 @@ public class InventoryUI : MonoBehaviour
 	{
 		for (int i = 0; i < slots.Length; i++)
 		{
-			if (i < inventory.inventory.Count)
+			if (i < inventoryExchange.inventory.Count)
 			{
-                Slot slot = inventory.inventory[i];
+                Slot slot = inventoryExchange.inventory[i];
                 Item item = Items.instance.items[slot.id];
                 item.count = slot.count;
 				slots[i].AddItem(item);
@@ -37,7 +37,7 @@ public class InventoryUI : MonoBehaviour
 				slots[i].ClearSlot();
 			}
 		}
-        text.SetText("<color=#F8913F>"+inventory.inventory.Count+"</color> / " + slots.Length);
+        text.SetText("<color=#F8913F>"+inventoryExchange.inventory.Count+"</color> / " + slots.Length);
 	}
 
     public void CloseUI(){

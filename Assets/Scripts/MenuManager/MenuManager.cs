@@ -10,7 +10,7 @@ public class MenuManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogWarning("Il y a plus d'une instance de MenuManager dans la scène");
+            Debug.LogWarning("Il y a plus d'une instance de MenuManager dans la scï¿½ne");
             return;
         }
         instance = this;
@@ -22,7 +22,7 @@ public class MenuManager : MonoBehaviour
         {
             if (child.gameObject.name == name)
             {
-                if (child.gameObject.activeSelf == true)
+                if (child.gameObject.activeSelf)
                     return false;
                 child.gameObject.SetActive(true);
                 child.SetSiblingIndex(zIndex);
@@ -34,7 +34,7 @@ public class MenuManager : MonoBehaviour
 
     public bool OpenMenu(GameObject game, int zIndex = 0)
     {
-        if (game.activeSelf == false)
+        if (!game.activeSelf)
         {
             game.SetActive(true);
             game.transform.SetSiblingIndex(zIndex);
@@ -49,7 +49,7 @@ public class MenuManager : MonoBehaviour
         {
             if (child.gameObject.name == name)
             {
-                if (child.gameObject.activeSelf == false)
+                if (child.gameObject.activeSelf)
                     return false;
                 child.gameObject.SetActive(false);
                 return true;
@@ -60,10 +60,22 @@ public class MenuManager : MonoBehaviour
 
     public bool CloseMenu(GameObject game, Transform parent)
     {
-        if (game.activeSelf == true)
+        if (game.activeSelf)
         {
             game.SetActive(false);
             return true;
+        }
+        return false;
+    }
+
+    public bool isOpen(string name)
+    {
+        foreach (Transform child in canvas.transform)
+        {
+            if (child.gameObject.name == name)
+            {
+                return child.gameObject.activeSelf;
+            }
         }
         return false;
     }

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7ad4e837c08284a957e6d9edb2d7f9, type: 3}
   m_Name: Clover
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
-  Name: 
-  Description: 
-  Count: 0
+  id: 3
+  icon: {fileID: 0}
+  name: 
+  description: 
+  count: 0

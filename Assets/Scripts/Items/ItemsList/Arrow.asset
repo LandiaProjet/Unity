@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7ad4e837c08284a957e6d9edb2d7f9, type: 3}
   m_Name: Arrow
   m_EditorClassIdentifier: 
+  id: 2
   icon: {fileID: 21300000, guid: f9370a85701a54a6694e1269307d1681, type: 3}
   name: "Fl\xE8che"
   description: tire
