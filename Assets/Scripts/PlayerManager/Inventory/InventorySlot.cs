@@ -10,9 +10,12 @@ public class InventorySlot : MonoBehaviour {
 
 	Item item;
 
+	public int id;
+
 	public void AddItem (Item newItem)
 	{
 		this.item = newItem;
+		this.id = newItem.id;
         text.SetText(this.item.count.ToString());
 		icon.sprite = this.item.icon;
 		icon.enabled = true;
@@ -21,8 +24,8 @@ public class InventorySlot : MonoBehaviour {
 
 	public void ClearSlot ()
 	{
-		item = null;
-
+		this.item = null;
+		this.id = -1;
         text.SetText("");
 		icon.sprite = null;
 		icon.enabled = false;
@@ -32,6 +35,7 @@ public class InventorySlot : MonoBehaviour {
 
 	public void UseItem ()
 	{
+		Debug.Log("item = " + this.id);
 		if (this.item != null)
 		{
 			Debug.Log("test2");
