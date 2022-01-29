@@ -17,3 +17,4 @@ MonoBehaviour:
   name: "Fl\xE8che"
   description: tire
   count: 0
+  limitExchange: 32

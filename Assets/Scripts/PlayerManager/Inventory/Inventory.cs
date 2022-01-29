@@ -79,6 +79,17 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public int GetCount(int id){
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            if (inventory[i].id == id)
+            {
+                return inventory[i].count;
+            }
+        }
+        return 0;
+    }
+
     public List<Slot> getInventory()
     {
         return inventory;

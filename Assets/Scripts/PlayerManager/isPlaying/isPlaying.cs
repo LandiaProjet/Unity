@@ -99,6 +99,8 @@ public class isPlaying : MonoBehaviour
             if (inventory[i].id == id)
             {
                 inventory[i].count++;
+                if (onItemChangedCallback != null)
+                    onItemChangedCallback.Invoke();
                 return;
             }
         }
@@ -128,6 +130,17 @@ public class isPlaying : MonoBehaviour
         }
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
+    }
+
+    public int GetCount(int id){
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            if (inventory[i].id == id)
+            {
+                return inventory[i].count;
+            }
+        }
+        return 0;
     }
 
     public void addDommage(float dommage)

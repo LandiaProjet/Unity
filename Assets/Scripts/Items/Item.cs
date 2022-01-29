@@ -9,6 +9,8 @@ public class Item : ScriptableObject
     public string description;
     public int count;
 
+    public int limitExchange;
+
     public Item Clone()
     {
         return (Item) MemberwiseClone();

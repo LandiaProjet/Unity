@@ -17,3 +17,4 @@ MonoBehaviour:
   name: Arc
   description: 
   count: 3
+  limitExchange: 1

@@ -42,8 +42,13 @@ public class InventorySlot : MonoBehaviour {
             if(MenuManager.instance.isOpen("Exchange")){
 				Debug.Log("test3");
 				//action dans l'exchange;
-				isPlaying.instance.addItem(item.id);
-				Inventory.instance.deleteItem(item.id);
+
+				if(isPlaying.instance.GetCount(item.id) < item.limitExchange){
+					isPlaying.instance.addItem(item.id);
+					Inventory.instance.deleteItem(item.id);
+				} else {
+					Debug.LogError("Item limit !");
+				}
 			} else {
 				Debug.Log("test4");
 				//action dans l'inventaire
