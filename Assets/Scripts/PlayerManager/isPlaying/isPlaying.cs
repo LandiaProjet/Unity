@@ -67,7 +67,7 @@ public class isPlaying : MonoBehaviour
             var ts = TimeSpan.FromSeconds(time);
             HudManager.instance.SetTime(string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds));
             if (time <= 0)
-                endLevel();
+                OnDefeat();
         }
     }
 
@@ -93,6 +93,17 @@ public class isPlaying : MonoBehaviour
         stats = Stats.Ending;
         PlayerMovement.instance.setDie(true);
         HudManager.instance.stopGame();
+    }
+
+    public void OnDefeat()
+    {
+        endLevel();
+        MenuManager.instance.OpenMenu("PopupDefeat", 10);
+    }
+
+    public void OnVictory()
+    {
+        endLevel();
         MenuManager.instance.OpenMenu("PopupVictory", 10);
     }
 
@@ -158,7 +169,7 @@ public class isPlaying : MonoBehaviour
 
         HudManager.instance.SetShield(shield);
         if (shield <= 0)
-            endLevel();
+            OnDefeat();
     }
 
     public void addHealth(int health)

@@ -151,6 +151,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
         isDie = value;
         animator.SetBool("isDie", value);
+        animator.Play("Player_idle");
     }
 
     private void OnDrawGizmos()
