@@ -12,6 +12,10 @@ public class RecommandedItems : MonoBehaviour
     {
         ItemRecommanded[] itemsList = Levels.instance.levels[isPlaying.instance.idLevel].itemsRecommanded;
 
+        foreach (Transform child in contents.transform)
+        {
+            Destroy(child.gameObject);
+        }
         if (itemsList == null)
             return;
         foreach (ItemRecommanded iditem in itemsList)

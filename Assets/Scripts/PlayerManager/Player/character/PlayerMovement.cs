@@ -56,7 +56,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.A) == true)
         {
-            setDie(true);
+            Debug.Log(isDie);
+            setDie(!isDie);
         }
         if (!isDie && !isAttack)
         {
@@ -99,6 +100,8 @@ public class PlayerMovement : MonoBehaviour
                 horizontalMovement = 0;
              }
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
+            if (isGrounded == true)
+                isPlaying.instance.lastPoint = transform.position;
             float h = Input.GetAxis("Horizontal");
             if(h != 0){
                 MovePlayer(h * moveSpeed); 

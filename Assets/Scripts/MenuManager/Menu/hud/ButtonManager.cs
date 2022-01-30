@@ -46,26 +46,34 @@ public class ButtonManager : MonoBehaviour
         if (isPlaying.instance.stats != Stats.inGame)
             return;
         if(PlayerManager.instance.mode != mode){
-            if (PlayerManager.instance.mode == "idle")
-            {
-                ButtonAttack.SetActive(false);
-                mode = PlayerManager.instance.mode;
-                return;
-            }
-            ButtonAttack.SetActive(true);
-            if (PlayerManager.instance.mode == "sword") {
-                image.sprite = sword;
-            } else if (PlayerManager.instance.mode == "bow")
-            {
-                image.sprite = arrow;
-            }
-            mode = PlayerManager.instance.mode;
+            checkButtonType();
         }
+    }
+
+    void checkButtonType()
+    {
+        if (PlayerManager.instance.mode == "idle")
+        {
+            ButtonAttack.SetActive(false);
+            mode = PlayerManager.instance.mode;
+            return;
+        }
+        ButtonAttack.SetActive(true);
+        if (PlayerManager.instance.mode == "sword")
+        {
+            image.sprite = sword;
+        }
+        else if (PlayerManager.instance.mode == "bow")
+        {
+            image.sprite = arrow;
+        }
+        mode = PlayerManager.instance.mode;
     }
 
     public void ToggleAdditionalButton(bool value)
     {
         ButtonAttack.SetActive(value);
         ButtonSwitch.SetActive(value);
+        checkButtonType();
     }
 }

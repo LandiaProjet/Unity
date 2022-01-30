@@ -10,6 +10,19 @@ public class PlayerSpawn : MonoBehaviour
     private GameObject respawnPoint;
     private string sceneName;
 
+
+    public static PlayerSpawn instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de isPlaying dans la scene");
+            return;
+        }
+        instance = this;
+    }
+
     void Start()
     {
         sceneName = SceneManager.GetActiveScene().name;

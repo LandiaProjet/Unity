@@ -23,10 +23,17 @@ public class HudManager : MonoBehaviour
         instance = this;
     }
 
-    public void initGame(string time, string arrow)
+    public void initGame(string time, string arrow, int star)
     {
         SetTime(time);
         SetArrow(arrow);
+        SetStar(star.ToString());
+        areaInformation.SetActive(true);
+        ButtonManager.instance.ToggleAdditionalButton(true);
+    }
+
+    public void RecoveryGame()
+    {
         areaInformation.SetActive(true);
         ButtonManager.instance.ToggleAdditionalButton(true);
     }

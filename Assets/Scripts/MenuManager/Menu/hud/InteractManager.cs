@@ -1,6 +1,8 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class InteractManager : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class InteractManager : MonoBehaviour
     public EventTrigger trigger;
     public EventTrigger.Entry entry;
 
+    private string sceneName;
+
     void Start()
     {
         if (instance != null)
@@ -23,7 +27,27 @@ public class InteractManager : MonoBehaviour
         instance = this;
     }
 
+    void Update()
+    {
+        if (sceneName != SceneManager.GetActiveScene().name)
+        {
+            StartCoroutine(waitforApply());
+            sceneName = SceneManager.GetActiveScene().name;
+        }
+    }
+
     private void OnEnable()
+    {
+        applyChange();
+    }
+
+    IEnumerator waitforApply()
+    {
+        yield return new WaitForSeconds(2f);
+        applyChange();
+    }
+
+    public void applyChange()
     {
         InteractionScript[] components = Resources.FindObjectsOfTypeAll<InteractionScript>();
 

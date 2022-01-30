@@ -58,6 +58,15 @@ public class MenuManager : MonoBehaviour
         return false;
     }
 
+    public void CloseAllMenu()
+    {
+        foreach (Transform child in canvas.transform)
+        {
+            if (child.gameObject.activeSelf == true)
+                child.gameObject.SetActive(false);
+        }
+    }
+
     public bool CloseMenu(GameObject game, Transform parent)
     {
         if (game.activeSelf)

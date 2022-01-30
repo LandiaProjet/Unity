@@ -74,7 +74,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    void changePlayer(string mode){
+    public void changePlayer(string mode){
         switch(mode){
             case "sword":
                 this.mode = mode;

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,6 +23,9 @@ public class isPlaying : MonoBehaviour
     public int star;
     public int credit;
     public int exp;
+
+    public Vector2 lastPoint;
+    public bool immunity;
 
     public int idLevel;
 
@@ -76,12 +80,12 @@ public class isPlaying : MonoBehaviour
         instance.stats = Stats.Starting;
         MenuManager.instance.OpenMenu("Exchange", 10);
         time = Levels.instance.levels[idLevel].secondTimeMax;
+        immunity = false;
         star = 3;
         exp = 0;
         credit = 0;
         var ts = TimeSpan.FromSeconds(time);
-        HudManager.instance.SetStar(star.ToString());
-        HudManager.instance.initGame(string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds), "0");
+        HudManager.instance.initGame(string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds), "0", star);
     }
 
     public void endLevel()
@@ -89,7 +93,7 @@ public class isPlaying : MonoBehaviour
         stats = Stats.Ending;
         PlayerMovement.instance.setDie(true);
         HudManager.instance.stopGame();
-        MenuManager.instance.OpenMenu("PopupDefeat", 10);
+        MenuManager.instance.OpenMenu("PopupVictory", 10);
     }
 
     public void addItem(int id)
@@ -147,7 +151,7 @@ public class isPlaying : MonoBehaviour
 
     public void addDommage(float dommage)
     {
-        if (stats != Stats.inGame)
+        if (stats != Stats.inGame || immunity)
             return;
 
         shield -= dommage;
@@ -167,5 +171,12 @@ public class isPlaying : MonoBehaviour
         HudManager.instance.SetShield(shield);
         if (shield > 100)
             shield = 100;
+    }
+
+    public IEnumerator StartImmunity(float time)
+    {
+        immunity = true;
+        yield return new WaitForSeconds(time);
+        immunity = false;
     }
 }
