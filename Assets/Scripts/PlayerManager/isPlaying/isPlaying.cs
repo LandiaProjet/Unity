@@ -73,12 +73,14 @@ public class isPlaying : MonoBehaviour
         inventory = new List<Slot>();
         this.idLevel = idLevel;
         shield = 100f;
-        instance.stats = Stats.inGame;
+        instance.stats = Stats.Starting;
+        MenuManager.instance.OpenMenu("Exchange", 10);
         time = Levels.instance.levels[idLevel].secondTimeMax;
         star = 3;
         exp = 0;
         credit = 0;
         var ts = TimeSpan.FromSeconds(time);
+        HudManager.instance.SetStar(star.ToString());
         HudManager.instance.initGame(string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds), "0");
     }
 

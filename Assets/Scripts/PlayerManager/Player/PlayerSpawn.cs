@@ -39,8 +39,8 @@ public class PlayerSpawn : MonoBehaviour
             if (player.activeSelf == false)
             {
                 player.SetActive(true);
-                PlayerMovement.instance.transform.position = new Vector2(respawnPoint.transform.position.x, respawnPoint.transform.position.y);
             }
+            PlayerMovement.instance.transform.position = new Vector2(respawnPoint.transform.position.x, respawnPoint.transform.position.y);
         }
     }
 }

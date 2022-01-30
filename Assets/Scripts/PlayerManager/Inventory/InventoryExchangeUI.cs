@@ -41,8 +41,9 @@ public class InventoryExchangeUI : MonoBehaviour
         text.SetText("<color=#F8913F>"+inventoryExchange.inventory.Count+"</color> / " + slots.Length);
 	}
 
-    public void CloseUI(){
-        MenuManager.instance.CloseMenu("Inventory");
-    }
-    
+	public void onCloseUI()
+    {
+		MenuManager.instance.CloseMenu("Exchange");
+		isPlaying.instance.stats = Stats.inGame;
+	}
 }
