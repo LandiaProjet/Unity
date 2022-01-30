@@ -15,3 +15,8 @@ MonoBehaviour:
   idScene: 2
   secondTimeMax: 30
   timeStar: 0f0000001400000019000000
+  itemsRecommanded:
+  - count: 5
+    id: 0
+  - count: 10
+    id: 3

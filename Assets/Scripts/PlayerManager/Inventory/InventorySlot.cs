@@ -36,7 +36,7 @@ public class InventorySlot : MonoBehaviour {
 					isPlaying.instance.addItem(item.id);
 					Inventory.instance.deleteItem(item.id);
 				} else {
-					Debug.LogError("Item limit !");
+					Debug.Log("Item limit !");
 				}
 			} else {
 				//action des cases de l'inventaire dans le menu d'inventaire
