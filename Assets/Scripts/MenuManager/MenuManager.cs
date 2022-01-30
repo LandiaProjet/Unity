@@ -49,7 +49,7 @@ public class MenuManager : MonoBehaviour
         {
             if (child.gameObject.name == name)
             {
-                if (child.gameObject.activeSelf)
+                if (child.gameObject.activeSelf == false)
                     return false;
                 child.gameObject.SetActive(false);
                 return true;

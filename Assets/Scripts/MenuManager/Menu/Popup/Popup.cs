@@ -72,6 +72,7 @@ public class Popup : MonoBehaviour
         foreach (GameObject button in buttons)
             if (button.activeSelf == true)
                 button.SetActive(false);
-        MenuManager.instance.CloseMenu("Popup");
+        Debug.Log(MenuManager.instance.CloseMenu("Popup"));
+        //MenuManager.instance.CloseMenu("Popup");
     }
 }
