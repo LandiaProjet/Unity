@@ -6,11 +6,19 @@ public class InventoryUI : MonoBehaviour
 {
 	public Transform itemsParent;
 
-    public TMPro.TextMeshProUGUI text;	
+    public TMPro.TextMeshProUGUI text;
+
+	public GameObject inventoryDescription;
 
 	Inventory inventory;
 
 	InventorySlot[] slots;
+
+	public static InventoryUI instance;
+	
+	private void Awake() {
+		instance = this;
+	}
 
 	void Start () {
 		inventory = Inventory.instance;
@@ -43,5 +51,17 @@ public class InventoryUI : MonoBehaviour
     public void CloseUI(){
         MenuManager.instance.CloseMenu("Inventory");
     }
+
+	public void OpenDesription(Item item){
+		inventoryDescription.SetActive(true);
+		InventoryItemDescriptionUI itemDescription = inventoryDescription.GetComponent<InventoryItemDescriptionUI>();
+		itemDescription.itemName.SetText(item.name);
+		itemDescription.itemDescription.SetText(item.description);
+		itemDescription.itemIcon.sprite = item.icon;
+	}
+
+	public void CloseDescription(){
+		inventoryDescription.SetActive(false);
+	}
     
 }

@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 0
   icon: {fileID: 21300000, guid: f9370a85701a54a6694e1269307d1681, type: 3}
   name: Arc
-  description: 
-  count: 3
+  description: "arc qui tire des fl\xE8che"
+  count: 7
   limitExchange: 1

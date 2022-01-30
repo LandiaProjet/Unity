@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 3
   icon: {fileID: 0}
   name: Clover
-  description: 
+  description: clover
   count: 0
   limitExchange: 1
