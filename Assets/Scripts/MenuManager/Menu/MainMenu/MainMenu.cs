@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void PlayGame(){
-        TransitionManager.instance.loadingTransition.startLoading(2f, true);
+        TransitionManager.instance.loadingTransition.startLoading(0.1f, true);
         MenuManager.instance.CloseMenu("MainMenu");
         SceneManager.LoadScene(1);
     }

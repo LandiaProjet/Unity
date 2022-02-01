@@ -91,14 +91,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isDie && !isAttack)
         {
-             if(movementJoystick.joystickVec.y != 0)
-             {
+            if(movementJoystick != null && movementJoystick.joystickVec.y != 0)
+            {
                 horizontalMovement = movementJoystick.joystickVec.x * moveSpeed * Time.deltaTime;
-             }
-             else
-             {
+            }
+            else
+            {
                 horizontalMovement = 0;
-             }
+            }
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
             if (isGrounded == true)
                 isPlaying.instance.lastPoint = transform.position;
