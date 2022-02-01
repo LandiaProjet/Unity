@@ -35,6 +35,6 @@ public class Bird : MonoBehaviour
 
     void Update() {
         if(active)
-            rb.AddForce(new Vector3(sprite.flipX ? -1f : 1f, 1.5f, 0));
+            rb.AddForce(new Vector3(sprite.flipX ? -0.2f : 0.2f, 0.5f, 0), ForceMode2D.Impulse);
     }
 }
