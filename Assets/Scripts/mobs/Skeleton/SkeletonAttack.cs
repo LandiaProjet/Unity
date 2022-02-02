@@ -8,16 +8,6 @@ public class SkeletonAttack : MonoBehaviour, ISkeletonAttack
     public Animator animator;
     public Rigidbody2D rb;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void onAttack()
     {
         StartCoroutine(playAnimationAttack(1));

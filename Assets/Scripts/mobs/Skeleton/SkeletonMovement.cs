@@ -7,7 +7,7 @@ public interface ISkeletonAttack
     public void onAttack();
 }
 
-public class SkeletonMovement : MonoBehaviour
+public class SkeletonMovement : Enemy
 {
     public MonoBehaviour AttackScript;
     private ISkeletonAttack skeletonAttack;
@@ -25,6 +25,7 @@ public class SkeletonMovement : MonoBehaviour
     public bool isDie;
     public bool isAttack;
     public float speed;
+    public float dommage;
 
     private void Start()
     {
@@ -61,11 +62,22 @@ public class SkeletonMovement : MonoBehaviour
     {
         if (_velocityX > 0.1f)
         {
-            sprite.flipX = false;
+            transform.localScale = new Vector2(1, transform.localScale.y);
         }
         else if (_velocityX < -0.1f)
         {
-            sprite.flipX = true;
+            transform.localScale = new Vector2(-1, transform.localScale.y);
+        }
+    }
+
+    void Attack()
+    {
+        Collider2D[] AttackCircleResult = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRadius, collisionLayers);
+
+        if (AttackCircleResult != null && AttackCircleResult.Length >= 1)
+        {
+            isPlaying.instance.addDommage(dommage);
+            Debug.Log("touch");
         }
     }
 
