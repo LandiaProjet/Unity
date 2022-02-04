@@ -13,12 +13,14 @@ public class InteractionScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (inited == false)
-            return;
         Collider2D[] CircleResult = Physics2D.OverlapCircleAll(transform.position, Radius, collisionLayers);
 
         if (CircleResult != null && CircleResult.Length >= 1)
         {
+            if (inited == false)
+            {
+                InteractManager.instance.applyChange();
+            }
             if (inside == false)
             {
                 inside = true;

@@ -15,7 +15,6 @@ public class InteractManager : MonoBehaviour
     public EventTrigger trigger;
     public EventTrigger.Entry entry;
 
-    private string sceneName;
 
     void Start()
     {
@@ -27,15 +26,6 @@ public class InteractManager : MonoBehaviour
         instance = this;
     }
 
-    void Update()
-    {
-        if (sceneName != SceneManager.GetActiveScene().name)
-        {
-            StartCoroutine(waitforApply());
-            sceneName = SceneManager.GetActiveScene().name;
-        }
-    }
-
     private void OnEnable()
     {
         applyChange();
@@ -43,7 +33,7 @@ public class InteractManager : MonoBehaviour
 
     IEnumerator waitforApply()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
         applyChange();
     }
 
