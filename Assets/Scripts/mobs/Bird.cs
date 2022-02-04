@@ -26,15 +26,10 @@ public class Bird : MonoBehaviour
 
     IEnumerator Actived()
     {
+        rb.AddForce(new Vector3(sprite.flipX ? -2f : 2f, 2.5f, 0), ForceMode2D.Impulse);
         animator.SetTrigger("Fly");
         active = true;
         yield return new WaitForSeconds(5f);
         Destroy(this.gameObject);
-    }
-    
-
-    void Update() {
-        if(active)
-            rb.AddForce(new Vector3(sprite.flipX ? -0.2f : 0.2f, 0.5f, 0), ForceMode2D.Impulse);
     }
 }
