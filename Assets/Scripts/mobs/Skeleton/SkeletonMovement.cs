@@ -39,7 +39,6 @@ public class SkeletonMovement : Enemy
 
     void FixedUpdate()
     {
-
         if (!isAttack)
         {
             Collider2D[] AttackCircleResult = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRadius, collisionLayers);
@@ -54,6 +53,24 @@ public class SkeletonMovement : Enemy
                 direction.y = rb.velocity.y;
                 rb.velocity = direction;
             }
+        }
+        else
+        {
+            FlipByPlayer();
+        }
+    }
+
+    void FlipByPlayer()
+    {
+        float directionX = transform.position.x - PlayerMovement.instance.transform.position.x;
+
+        if (directionX < 0)
+        {
+            transform.localScale = new Vector2(1, transform.localScale.y);
+        }
+        else
+        {
+            transform.localScale = new Vector2(-1, transform.localScale.y);
         }
     }
 
