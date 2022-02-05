@@ -7,7 +7,7 @@ public class skeletonArcherAttack : MonoBehaviour, ISkeletonAttack
     public SkeletonMovement skeletonMovement;
     public Animator animator;
     public Rigidbody2D rb;
-    public GameObject Arrow;
+    public GameObject arrowPrefabs;
 
     public void onAttack()
     {
@@ -19,7 +19,14 @@ public class skeletonArcherAttack : MonoBehaviour, ISkeletonAttack
         Quaternion rotation = new Quaternion();
 
         rotation.z = (skeletonMovement.transform.localScale.x > 0) ? 0 : 180;
-        var arrow = Instantiate(Arrow, skeletonMovement.AttackPoint.position, rotation);
+        GameObject arrow = Instantiate(arrowPrefabs, skeletonMovement.AttackPoint.position, rotation);
+        Arrow arrowScript = arrow.GetComponent<Arrow>();
+        arrowScript.launchArrow(50f, onHit);
+    }
+
+    void onHit()
+    {
+        Debug.Log("c'est bon");
     }
 
     private IEnumerator PlayAnimationAttack()

@@ -385,7 +385,7 @@ MonoBehaviour:
   skeletonMovement: {fileID: 1310833363}
   animator: {fileID: 1310833362}
   rb: {fileID: 1310833364}
-  Arrow: {fileID: 495055129115922385, guid: 8e9c58e0406383c40b58cfd0100d4a0f, type: 3}
+  arrowPrefabs: {fileID: 495055129115922385, guid: 8e9c58e0406383c40b58cfd0100d4a0f, type: 3}
 --- !u!95 &1310833362
 Animator:
   serializedVersion: 3
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 1453154878}
   m_Layer: 0
   m_Name: Fondation
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
