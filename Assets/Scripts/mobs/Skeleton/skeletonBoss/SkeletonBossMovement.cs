@@ -2,12 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ISkeletonAttack
-{
-    public void onAttack();
-}
-
-public class SkeletonMovement : Enemy
+public class SkeletonBossMovement : MonoBehaviour
 {
     public MonoBehaviour AttackScript;
     private ISkeletonAttack skeletonAttack;
@@ -25,6 +20,7 @@ public class SkeletonMovement : Enemy
     public bool isDie;
     public bool isAttack;
     public float speed;
+    public float dommage;
 
     private void Start()
     {
@@ -49,7 +45,9 @@ public class SkeletonMovement : Enemy
             if (AttackCircleResult != null && AttackCircleResult.Length >= 1)
             {
                 skeletonAttack.onAttack();
-            } else if (TrackCircleResult != null && TrackCircleResult.Length >= 1) {
+            }
+            else if (TrackCircleResult != null && TrackCircleResult.Length >= 1)
+            {
                 Vector2 direction = (TrackCircleResult[0].transform.position - transform.position).normalized * speed;
                 direction.y = rb.velocity.y;
                 rb.velocity = direction;
