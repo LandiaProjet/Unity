@@ -2565,6 +2565,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!61 &1234146265 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8145944884825124672, guid: 149cce7b96165964296870f5c992ff4e, type: 3}
+  m_PrefabInstance: {fileID: 4164662473392183705}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1462196641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2728,6 +2733,26 @@ PrefabInstance:
     - target: {fileID: 7221744601885661732, guid: 149cce7b96165964296870f5c992ff4e, type: 3}
       propertyPath: speed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7221744601885661732, guid: 149cce7b96165964296870f5c992ff4e, type: 3}
+      propertyPath: timer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7221744601885661732, guid: 149cce7b96165964296870f5c992ff4e, type: 3}
+      propertyPath: boxCollider2D
+      value: 
+      objectReference: {fileID: 1234146265}
+    - target: {fileID: 7623792722212552955, guid: 149cce7b96165964296870f5c992ff4e, type: 3}
+      propertyPath: m_Size.x
+      value: 5.237213
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623792722212552955, guid: 149cce7b96165964296870f5c992ff4e, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.07244384
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145944884825124672, guid: 149cce7b96165964296870f5c992ff4e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 149cce7b96165964296870f5c992ff4e, type: 3}
