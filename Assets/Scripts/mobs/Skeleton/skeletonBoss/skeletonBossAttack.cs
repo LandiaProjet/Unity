@@ -15,11 +15,11 @@ public class skeletonBossAttack : MonoBehaviour, ISkeletonAttack
 
     private IEnumerator playAnimationAttack(int number)
     {
-        animator.Play("Skeleton_attack_" + number);
+        animator.Play("Skeleton_Boss_attack_" + number);
         skeletonMovement.isAttack = true;
         rb.velocity = new Vector2(0, 0);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + 0.2f);
-        animator.Play("Skeleton_idle");
+        animator.Play("Skeleton_Boss_idle");
         skeletonMovement.isAttack = false;
     }
 }
