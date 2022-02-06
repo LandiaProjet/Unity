@@ -45,5 +45,6 @@ public class InventoryExchangeUI : MonoBehaviour
     {
 		MenuManager.instance.CloseMenu("Exchange");
 		isPlaying.instance.stats = Stats.inGame;
+		isPlaying.instance.ReloadArrow();
 	}
 }

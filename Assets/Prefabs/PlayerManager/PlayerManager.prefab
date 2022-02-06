@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6725711167149109956}
   m_Layer: 6
-  m_Name: SpawnArrowPoint
+  m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6725711167149109957}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47000027, y: -0.016000032, z: 0}
+  m_LocalPosition: {x: 0.381, y: -0.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6725711168664862863}
@@ -101,7 +101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6725711167187652802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.011, y: -0.555, z: 0}
+  m_LocalPosition: {x: -0.279, y: -0.789, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6725711168664862863}
@@ -173,7 +173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6725711168664862863
 Transform:
   m_ObjectHideFlags: 0
@@ -254,8 +254,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0064235926}
-  m_Size: {x: 1.13, y: 1.567153}
+  m_Offset: {x: -0.21417129, y: -0.21981448}
+  m_Size: {x: 1.0443313, y: 1.5056185}
   m_Direction: 0
 --- !u!50 &6725711168049598486
 Rigidbody2D:
@@ -297,7 +297,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 6725711168049598484}
   isAttack: 0
   groundCheck: {fileID: 6725711167187652801}
-  groundCheckRadius: 0.4
+  groundCheckRadius: 0.3
   collisionLayers:
     serializedVersion: 2
     m_Bits: 1
@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Arrow: {fileID: 495055129115922385, guid: 8e9c58e0406383c40b58cfd0100d4a0f, type: 3}
-  ArrowSpawn: {fileID: 6725711167149109956}
+  AttackPoint: {fileID: 6725711167149109956}
   sprite: {fileID: 6725711168049598484}
   animator: {fileID: 6725711168049598568}
   rb: {fileID: 6725711168049598486}
@@ -366,6 +366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6725711168671641309}
   - component: {fileID: 6725711168671641308}
+  - component: {fileID: 1534867827}
   m_Layer: 0
   m_Name: isPlaying
   m_TagString: Untagged
@@ -406,8 +407,22 @@ MonoBehaviour:
   star: 0
   credit: 0
   exp: 0
+  lastPoint: {x: 0, y: 0}
+  immunity: 0
   idLevel: 0
   stats: 0
+--- !u!114 &1534867827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6725711168671641310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c6367f79987de49920b30f2f7c2c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6725711168828186755
 GameObject:
   m_ObjectHideFlags: 0

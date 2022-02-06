@@ -131,11 +131,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_velocityX > 0.1f)
         {
-            spriteRenderer.flipX = false;
+            transform.localScale = new Vector2(1, transform.localScale.y);
         }
         else if (_velocityX < -0.1f)
         {
-            spriteRenderer.flipX = true;
+            transform.localScale = new Vector2(-1, transform.localScale.y);
         }
     }
 

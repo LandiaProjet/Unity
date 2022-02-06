@@ -5,17 +5,11 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public GameObject Arrow;
-    public Transform ArrowSpawn;
+    public Transform AttackPoint;
     public SpriteRenderer sprite;
     public Animator animator;
     public Rigidbody2D rb;
     public PlayerMovement playerMovement;
-
-    void Start()
-    {
-        if (!sprite.flipX)
-            ArrowSpawn.Rotate(180, 0, 180);
-    }
 
     void Update()
     {
@@ -43,17 +37,32 @@ public class PlayerAttack : MonoBehaviour
      */
     private IEnumerator playAnimationShoot()
     {
-        animator.Play("Player_attack1");
-        playerMovement.isAttack = true;
-        rb.velocity = new Vector2(0, 0);
-        yield return new WaitForSeconds(1.2f);
-        animator.Play("Player_idle");
-        playerMovement.isAttack = false;
+        if (HudManager.instance.getArrow() > 0)
+        {
+            animator.Play("Player_attack1");
+            playerMovement.isAttack = true;
+            rb.velocity = new Vector2(0, 0);
+            yield return new WaitForSeconds(1.2f);
+            animator.Play("Player_idle");
+            playerMovement.isAttack = false;
+        }
     }
 
     public void shoot()
     {
-        var arrow = Instantiate(Arrow, ArrowSpawn.position, ArrowSpawn.rotation);
+        if (HudManager.instance.getArrow() <= 0)
+            return;
+        if (transform.localScale.x == -1)
+            AttackPoint.Rotate(0, 0, 180);
+        GameObject arrow = Instantiate(Arrow, AttackPoint.position, AttackPoint.rotation);
+        Arrow arrowScript = arrow.GetComponent<Arrow>();
+        arrowScript.launchArrow(50f, onHit);
+        isPlaying.instance.RemoveArrow();
+    }
+
+    void onHit()
+    {
+        Debug.Log("c'est bon");
     }
 
     /**

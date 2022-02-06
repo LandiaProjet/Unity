@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -54,6 +53,11 @@ public class HudManager : MonoBehaviour
 
     public void SetArrow(string text){
         arrow.GetComponent<TMPro.TextMeshProUGUI>().text = text;
+    }
+
+    public int getArrow()
+    {
+        return Int32.Parse(arrow.GetComponent<TMPro.TextMeshProUGUI>().text);
     }
 
     public void SetTime(string text)

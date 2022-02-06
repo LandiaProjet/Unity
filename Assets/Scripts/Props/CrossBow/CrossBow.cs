@@ -33,10 +33,16 @@ public class CrossBow : MonoBehaviour
 
     public void Shoot()
     {
-        var arrow = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        StartCoroutine(DeleteAfterShoot(arrow));
+        GameObject arrow = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Arrow arrowScript = arrow.GetComponent<Arrow>();
+        arrowScript.launchArrow(50f, onHit);
     }
-    
+
+    void onHit()
+    {
+        Debug.Log("c'est bon");
+    }
+
     private IEnumerator DeleteAfterShoot(GameObject arrowObject)
     {
         yield return new WaitForSeconds(1f);

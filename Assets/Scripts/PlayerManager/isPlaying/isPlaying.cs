@@ -190,4 +190,23 @@ public class isPlaying : MonoBehaviour
         yield return new WaitForSeconds(time);
         immunity = false;
     }
+
+    public void ReloadArrow()
+    {
+        foreach (Slot slot in inventory)
+        {
+            if (slot.id == 2)
+            {
+                HudManager.instance.SetArrow(slot.count.ToString());
+                return;
+            }
+        }
+        HudManager.instance.SetArrow("0");
+    }
+
+    public void RemoveArrow()
+    {
+        deleteItem(2);
+        ReloadArrow();
+    }
 }
