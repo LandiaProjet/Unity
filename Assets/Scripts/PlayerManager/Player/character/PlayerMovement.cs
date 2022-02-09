@@ -46,9 +46,21 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void Jump(){
-        if (isGrounded == true)
+        if (isGrounded == true && isRoll == false)
         {
             rb.AddForce(new Vector2(0f, jumpForce));
+            isJumping = true;
+        }
+    }
+
+    public void Roll()
+    {
+        if (isGrounded == true)
+        {
+            isRoll = true;
+            animator.SetBool("isRoll", isRoll);
+            StartCoroutine(waitRoll());
+            StartCoroutine(ButtonManager.instance.DisableTemporaryRoll());
         }
     }
 
@@ -61,15 +73,6 @@ public class PlayerMovement : MonoBehaviour
         }
         if (!isDie && !isAttack)
         {
-            if (Input.GetKeyDown(KeyCode.DownArrow) == true && isGrounded == true)
-            {
-                isRoll = true;
-                animator.SetBool("isRoll", isRoll);
-                StartCoroutine(waitRoll());
-            }
-            if (Input.GetButtonDown("Jump") == true && isGrounded == true && isRoll == false)
-                isJumping = true;
-
             Flip(rb.velocity.x);
 
             float characterVelocityX = Mathf.Abs(rb.velocity.x);
@@ -101,7 +104,10 @@ public class PlayerMovement : MonoBehaviour
             }
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
             if (isGrounded == true)
+            {
                 isPlaying.instance.lastPoint = transform.position;
+                animator.SetBool("isFall", !isGrounded);
+            }
             float h = Input.GetAxis("Horizontal");
             if(h != 0){
                 MovePlayer(h * moveSpeed); 
@@ -120,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.velocity.y);
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
         } else {
-            float velocityRoll = (spriteRenderer.flipX) ? -10 : 10;
+            float velocityRoll = (transform.localScale.x == -1) ? -10 : 10;
             Vector3 targetVelocity = new Vector2(velocityRoll, rb.velocity.y);
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
         }
