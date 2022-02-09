@@ -75,9 +75,9 @@ GameObject:
   - component: {fileID: 1626242280766369831}
   - component: {fileID: 1626242280766369830}
   - component: {fileID: 1626242280766369824}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SkeletonShield
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -231,6 +231,8 @@ MonoBehaviour:
   isDie: 0
   isAttack: 0
   speed: 4
+  life: 0
+  nameDieAnimation: Skeleton_Shield_die
 --- !u!114 &1626242280766369824
 MonoBehaviour:
   m_ObjectHideFlags: 0

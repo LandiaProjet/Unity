@@ -32,7 +32,7 @@ public class skeletonBossAttack : MonoBehaviour, ISkeletonAttack
 
     private void FixedUpdate()
     {
-        if (skeletonMovement.isAttack && typeAttack == 3 && stun == false && touchDash == false)
+        if (skeletonMovement.isAttack && typeAttack == 3 && stun == false && touchDash == false && skeletonMovement.isDie == false)
         {
             Collider2D[] AttackCircleResult = Physics2D.OverlapCircleAll(skeletonMovement.AttackPoint.position, skeletonMovement.AttackRadius, skeletonMovement.collisionLayers);
 
@@ -66,7 +66,7 @@ public class skeletonBossAttack : MonoBehaviour, ISkeletonAttack
     {
         Collider2D[] TrackCircleResult = Physics2D.OverlapCircleAll(skeletonMovement.radarPoint.position, skeletonMovement.TrackRadius, skeletonMovement.collisionLayers);
 
-        if (TrackCircleResult != null && TrackCircleResult.Length >= 1)
+        if (TrackCircleResult != null && TrackCircleResult.Length >= 1 && skeletonMovement.isDie == false)
         {
             touchDash = false;
             skeletonMovement.isAttack = true;
@@ -105,7 +105,6 @@ public class skeletonBossAttack : MonoBehaviour, ISkeletonAttack
                     break;
             }
             isPlaying.instance.addDommage(dommage);
-            Debug.Log("touch");
             return true;
         }
         return false;
@@ -117,6 +116,8 @@ public class skeletonBossAttack : MonoBehaviour, ISkeletonAttack
         skeletonMovement.isAttack = true;
         rb.velocity = new Vector2(0, 0);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + 0.4f);
+        if (skeletonMovement.isDie == true)
+            yield break;
         animator.Play("Skeleton_Boss_idle");
         skeletonMovement.isAttack = false;
     }

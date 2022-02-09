@@ -33,7 +33,6 @@ public class SkeletonMageAttack : MonoBehaviour, ISkeletonAttack
         if (AttackCircleResult != null && AttackCircleResult.Length >= 1)
         {
             isPlaying.instance.addDommage(dommage);
-            Debug.Log("touch");
         }
     }
 
@@ -44,7 +43,6 @@ public class SkeletonMageAttack : MonoBehaviour, ISkeletonAttack
         if (AttackCircleResult != null && AttackCircleResult.Length >= 1)
         {
             isPlaying.instance.addDommage(dommage);
-            Debug.Log("touch");
         }
     }
 
@@ -55,6 +53,8 @@ public class SkeletonMageAttack : MonoBehaviour, ISkeletonAttack
         skeletonMovement.isAttack = true;
         rb.velocity = new Vector2(0, 0);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + 0.5f);
+        if (skeletonMovement.isDie == true)
+            yield break;
         if (countAttack > 5)
         {
             StartCoroutine(EscapePlayer());
@@ -74,6 +74,8 @@ public class SkeletonMageAttack : MonoBehaviour, ISkeletonAttack
         skeletonMovement.isAttack = true;
         rb.velocity = new Vector2(0, 0);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + 0.5f);
+        if (skeletonMovement.isDie == true)
+            yield break;
         if (countAttack > 5)
         {
             StartCoroutine(EscapePlayer());
@@ -92,29 +94,38 @@ public class SkeletonMageAttack : MonoBehaviour, ISkeletonAttack
         skeletonMovement.isAttack = true;
         rb.velocity = new Vector2(0, 0);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + 0.5f);
+        if (skeletonMovement.isDie == true)
+            yield break;
         transform.position = PlayerMovement.instance.transform.position;
         animator.Play("Skeleton_Mage_teleport_reverse");
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + 0.5f);
+        if (skeletonMovement.isDie == true)
+            yield break;
         animator.Play("Skeleton_Mage_idle");
         skeletonMovement.isAttack = false;
     }
 
     private IEnumerator EscapePlayer()
     {
-        Debug.Log("Escape");
         animator.Play("Skeleton_Mage_teleport");
         skeletonMovement.isAttack = true;
         rb.velocity = new Vector2(0, 0);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + 0.5f);
+        if (skeletonMovement.isDie == true)
+            yield break;
         Vector2 newPosition = PlayerMovement.instance.transform.position;
         newPosition.x += (Random.Range(1, 100) <= 50) ? -30 : 30;
         transform.position = newPosition;
         yield return new WaitForSeconds(10f);
+        if (skeletonMovement.isDie == true)
+            yield break;
         rb.velocity = new Vector2(0, 0);
         transform.position = PlayerMovement.instance.transform.position;
         rb.velocity = new Vector2(0, 0);
         animator.Play("Skeleton_Mage_teleport_reverse");
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + 0.5f);
+        if (skeletonMovement.isDie == true)
+            yield break;
         animator.Play("Skeleton_Mage_idle");
         skeletonMovement.isAttack = false;
     }

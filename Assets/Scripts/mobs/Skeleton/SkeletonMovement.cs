@@ -26,6 +26,8 @@ public class SkeletonMovement : Enemy
     public bool isAttack;
     public float speed;
 
+    public string nameDieAnimation;
+
     private void Start()
     {
         skeletonAttack = (ISkeletonAttack)AttackScript;
@@ -33,30 +35,36 @@ public class SkeletonMovement : Enemy
 
     private void Update()
     {
-        float characterVelocityX = Mathf.Abs(rb.velocity.x);
-        animator.SetFloat("Speed", characterVelocityX);
+        if (!isDie)
+        {
+            float characterVelocityX = Mathf.Abs(rb.velocity.x);
+            animator.SetFloat("Speed", characterVelocityX);
+        }
     }
 
     void FixedUpdate()
     {
-        if (!isAttack)
+        if (!isDie)
         {
-            Collider2D[] AttackCircleResult = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRadius, collisionLayers);
-            Collider2D[] TrackCircleResult = Physics2D.OverlapCircleAll(radarPoint.position, TrackRadius, collisionLayers);
-
-            Flip(rb.velocity.x);
-            if (AttackCircleResult != null && AttackCircleResult.Length >= 1)
+            if (!isAttack)
             {
-                skeletonAttack.onAttack();
-            } else if (TrackCircleResult != null && TrackCircleResult.Length >= 1) {
-                Vector2 direction = (TrackCircleResult[0].transform.position - transform.position).normalized * speed;
-                direction.y = rb.velocity.y;
-                rb.velocity = direction;
+                Collider2D[] AttackCircleResult = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRadius, collisionLayers);
+                Collider2D[] TrackCircleResult = Physics2D.OverlapCircleAll(radarPoint.position, TrackRadius, collisionLayers);
+
+                Flip(rb.velocity.x);
+                if (AttackCircleResult != null && AttackCircleResult.Length >= 1)
+                {
+                    skeletonAttack.onAttack();
+                } else if (TrackCircleResult != null && TrackCircleResult.Length >= 1) {
+                    Vector2 direction = (TrackCircleResult[0].transform.position - transform.position).normalized * speed;
+                    direction.y = rb.velocity.y;
+                    rb.velocity = direction;
+                }
             }
-        }
-        else
-        {
-            FlipByPlayer();
+            else
+            {
+                FlipByPlayer();
+            }
         }
     }
 
@@ -92,5 +100,15 @@ public class SkeletonMovement : Enemy
         Gizmos.DrawWireSphere(radarPoint.position, TrackRadius);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(AttackPoint.position, AttackRadius);
+    }
+
+    public override void onDie()
+    {
+        animator.Play(nameDieAnimation);
+        rb.velocity = new Vector2(0, 0);
+        isDie = true;
+        rb.simulated = false;
+        Collider2D collider = GetComponent<CapsuleCollider2D>();
+        collider.isTrigger = true;
     }
 }

@@ -6,10 +6,12 @@ public class PlayerAttack : MonoBehaviour
 {
     public GameObject Arrow;
     public Transform AttackPoint;
+    public float AttackRadius;
     public SpriteRenderer sprite;
     public Animator animator;
     public Rigidbody2D rb;
     public PlayerMovement playerMovement;
+    public LayerMask collisionLayers;
 
     void Update()
     {
@@ -56,13 +58,20 @@ public class PlayerAttack : MonoBehaviour
             AttackPoint.Rotate(0, 0, 180);
         GameObject arrow = Instantiate(Arrow, AttackPoint.position, AttackPoint.rotation);
         Arrow arrowScript = arrow.GetComponent<Arrow>();
-        arrowScript.launchArrow(50f, onHit);
+        arrowScript.launchArrow(50f);
         isPlaying.instance.RemoveArrow();
     }
 
-    void onHit()
+    void onHit(float damage)
     {
-        Debug.Log("c'est bon");
+        Collider2D[] AttackCircleResult = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRadius, collisionLayers);
+
+        if (AttackCircleResult != null && AttackCircleResult.Length >= 1)
+        {
+            Enemy enemy = AttackCircleResult[0].GetComponent<Enemy>();
+            enemy.ReceiveDommage(damage);
+            Debug.Log("touchSkeleton");
+        }
     }
 
     /**
@@ -76,5 +85,11 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         animator.Play("Player_idle");
         playerMovement.isAttack = false;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(AttackPoint.position, AttackRadius);
     }
 }

@@ -21,12 +21,7 @@ public class skeletonArcherAttack : MonoBehaviour, ISkeletonAttack
         rotation.z = (skeletonMovement.transform.localScale.x > 0) ? 0 : 180;
         GameObject arrow = Instantiate(arrowPrefabs, skeletonMovement.AttackPoint.position, rotation);
         Arrow arrowScript = arrow.GetComponent<Arrow>();
-        arrowScript.launchArrow(50f, onHit);
-    }
-
-    void onHit()
-    {
-        Debug.Log("c'est bon");
+        arrowScript.launchArrow(50f);
     }
 
     private IEnumerator PlayAnimationAttack()
@@ -35,6 +30,8 @@ public class skeletonArcherAttack : MonoBehaviour, ISkeletonAttack
         skeletonMovement.isAttack = true;
         rb.velocity = new Vector2(0, 0);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + 1f);
+        if (skeletonMovement.isDie == true)
+            yield break;
         animator.Play("Skeleton_Archer_idle");
         skeletonMovement.isAttack = false;
     }

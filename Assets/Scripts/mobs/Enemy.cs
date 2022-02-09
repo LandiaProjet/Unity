@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    float health { get; set; }
+    public float health;
 
     public virtual void ReceiveDommage(float damage){
         this.health -= damage;

@@ -45,9 +45,9 @@ GameObject:
   - component: {fileID: 7304369706039695459}
   - component: {fileID: 3841117364067360741}
   - component: {fileID: 3841117364067360739}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SkeletonBoss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,6 +182,8 @@ MonoBehaviour:
   isDie: 0
   isAttack: 0
   speed: 2
+  life: 0
+  nameDieAnimation: Skeleton_Boss_die
 --- !u!95 &3841117364067360741
 Animator:
   serializedVersion: 3

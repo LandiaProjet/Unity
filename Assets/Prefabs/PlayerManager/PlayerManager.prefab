@@ -352,10 +352,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Arrow: {fileID: 495055129115922385, guid: 8e9c58e0406383c40b58cfd0100d4a0f, type: 3}
   AttackPoint: {fileID: 6725711167149109956}
+  AttackRadius: 1.5
   sprite: {fileID: 6725711168049598484}
   animator: {fileID: 6725711168049598568}
   rb: {fileID: 6725711168049598486}
   playerMovement: {fileID: 6725711168049598487}
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &6725711168671641310
 GameObject:
   m_ObjectHideFlags: 0

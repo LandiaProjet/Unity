@@ -3,15 +3,18 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SubsystemsImplementation;
 
-public class CrossBow : MonoBehaviour
+public class CrossBow : Enemy
 {
     public Animator animator;
     public GameObject bulletPrefab;
     public Transform firePoint;
     public SpriteRenderer sprite;
+
+    public float life;
     
     private void Start()
     {
+        this.health = life;
         animator = transform.GetComponent<Animator>();
         if(!sprite.flipX)
             firePoint.Rotate(180,0,180);
@@ -27,7 +30,7 @@ public class CrossBow : MonoBehaviour
     private IEnumerator Destroy()
     {
         animator.SetTrigger("Destroy");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(10f);
         Destroy(gameObject);
     }
 
@@ -35,12 +38,7 @@ public class CrossBow : MonoBehaviour
     {
         GameObject arrow = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Arrow arrowScript = arrow.GetComponent<Arrow>();
-        arrowScript.launchArrow(50f, onHit);
-    }
-
-    void onHit()
-    {
-        Debug.Log("c'est bon");
+        arrowScript.launchArrow(50f);
     }
 
     private IEnumerator DeleteAfterShoot(GameObject arrowObject)
@@ -48,5 +46,9 @@ public class CrossBow : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Destroy(arrowObject);
     }
-    
+
+    public override void onDie()
+    {
+        StartCoroutine(Destroy());
+    }
 }

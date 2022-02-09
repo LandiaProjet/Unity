@@ -18,6 +18,7 @@ public class Slime : Enemy
     public float damage = 1f;
 
     public BoxCollider2D boxCollider2D;
+    public bool isDie;
  
     void Awake() {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -25,6 +26,8 @@ public class Slime : Enemy
     }
  
     private void FixedUpdate() {
+        if (isDie)
+            return;
         if (hasTarget) {
             float distance = Vector3.Distance(transform.position, target.transform.position);
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
@@ -37,6 +40,8 @@ public class Slime : Enemy
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
+        if (isDie)
+            return;
         if (collision.CompareTag("Player")) {  
             target = collision.gameObject;     
             hasTarget = true;   
@@ -56,7 +61,9 @@ public class Slime : Enemy
     }
 
     private void Damage(){
-        if(boxCollider2D.IsTouching(target.GetComponent<Collider2D>())){
+        if (isDie)
+            return;
+        if (boxCollider2D.IsTouching(target.GetComponent<Collider2D>())){
             isPlaying.instance.addDommage(this.damage);
             Debug.Log("damage !");
         }
@@ -64,5 +71,10 @@ public class Slime : Enemy
 
     public override void onDie(){
         anim.SetBool("isDead", true);
+        rb.velocity = new Vector2(0, 0);
+        isDie = true;
+        rb.simulated = false;
+        Collider2D collider = GetComponent<Collider2D>();
+        collider.isTrigger = true;
     }
 }

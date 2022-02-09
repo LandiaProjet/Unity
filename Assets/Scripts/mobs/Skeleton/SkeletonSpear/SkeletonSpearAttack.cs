@@ -21,7 +21,6 @@ public class SkeletonSpearAttack : MonoBehaviour, ISkeletonAttack
         if (AttackCircleResult != null && AttackCircleResult.Length >= 1)
         {
             isPlaying.instance.addDommage(dommage);
-            Debug.Log("touch");
         }
     }
 
@@ -31,6 +30,8 @@ public class SkeletonSpearAttack : MonoBehaviour, ISkeletonAttack
         skeletonMovement.isAttack = true;
         rb.velocity = new Vector2(0, 0);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + 0.2f);
+        if (skeletonMovement.isDie == true)
+            yield break;
         animator.Play("Skeleton_Spear_Idle");
         skeletonMovement.isAttack = false;
     }
