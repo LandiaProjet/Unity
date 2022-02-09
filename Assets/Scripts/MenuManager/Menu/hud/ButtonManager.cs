@@ -50,7 +50,7 @@ public class ButtonManager : MonoBehaviour
         }
     }
 
-    void checkButtonType()
+    public void checkButtonType()
     {
         if (PlayerManager.instance.mode == "idle")
         {

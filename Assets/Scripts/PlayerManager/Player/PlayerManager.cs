@@ -89,6 +89,7 @@ public class PlayerManager : MonoBehaviour
                 PlayerMovement.instance.animator.runtimeAnimatorController = runtimeAnimatorControllerIdle;
                 break;
         }
+        ButtonManager.instance.checkButtonType();
     }
 
     private void OnPlayerLevelChanged(object sender, System.EventArgs e){
