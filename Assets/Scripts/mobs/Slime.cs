@@ -18,34 +18,18 @@ public class Slime : Enemy
     public float damage = 1f;
 
     public BoxCollider2D boxCollider2D;
-
-    private bool cooling;
-    private float intTimer;
-    public float timer;
  
     void Awake() {
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
-
-        intTimer = timer;
     }
  
     private void FixedUpdate() {
-        if (cooling)
-        {
-            Cooldown();
-        //    anim.SetBool("Attack", false);
-        }
         if (hasTarget) {
             float distance = Vector3.Distance(transform.position, target.transform.position);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
             if (distance > 2) {
-                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
                 anim.SetBool("isRun", true);
-                StopAttack();
-            } else {
-                anim.SetBool("isRun", false);
-                if(!cooling)
-                    Attack();
             }
             Flip();
         }
@@ -70,30 +54,6 @@ public class Slime : Enemy
             transform.localScale = new Vector2(-1, transform.localScale.y);
         }
     }
-    
-    void Cooldown()
-    {
-        timer -= Time.deltaTime;
-
-        if (timer <= 0 && cooling)
-        {
-            cooling = false;
-            timer = intTimer;
-        }
-    }
-
-    private void StopAttack()
-    {
-        cooling = false;
-     //   anim.SetBool("Attack", false);
-    }
-    
-    private void Attack()
-    {
-        timer = intTimer;
-        
-      //  anim.SetBool("Attack", true);
-    }
 
     private void Damage(){
         if(boxCollider2D.IsTouching(target.GetComponent<Collider2D>())){
@@ -102,11 +62,6 @@ public class Slime : Enemy
         }
     }
 
-    public void TriggerCooling()
-    {
-        cooling = true;
-    }
-    
     public override void onDie(){
         anim.SetBool("isDead", true);
     }

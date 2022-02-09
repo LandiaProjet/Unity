@@ -26,7 +26,7 @@ public class Bird : MonoBehaviour
 
     IEnumerator Actived()
     {
-        rb.AddForce(new Vector3(sprite.flipX ? -20f : 20f, 20f, 0), ForceMode2D.Impulse);
+        rb.AddForce(new Vector3(sprite.flipX ? -4f : 4f, 3.5f, 0), ForceMode2D.Impulse);
         animator.SetTrigger("Fly");
         active = true;
         yield return new WaitForSeconds(5f);

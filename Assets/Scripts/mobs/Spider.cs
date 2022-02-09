@@ -34,16 +34,16 @@ public class Spider : Enemy
         if (cooling)
         {
             Cooldown();
-           // anim.SetBool("Attack", false);
+            anim.SetBool("Attack", false);
         }
         if (hasTarget) {
             float distance = Vector3.Distance(transform.position, target.transform.position);
             if (distance > 2) {
                 transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-                anim.SetBool("isRun", true);
+                anim.SetBool("canWalk", true);
                 StopAttack();
             } else {
-                anim.SetBool("isRun", false);
+                anim.SetBool("canWalk", false);
                 if(!cooling)
                     Attack();
             }
@@ -85,14 +85,14 @@ public class Spider : Enemy
     private void StopAttack()
     {
         cooling = false;
-      //  anim.SetBool("Attack", false);
+        anim.SetBool("Attack", false);
     }
     
     private void Attack()
     {
         timer = intTimer;
         
-        //anim.SetBool("Attack", true);
+        anim.SetBool("Attack", true);
     }
 
     private void Damage(){
@@ -107,7 +107,4 @@ public class Spider : Enemy
         cooling = true;
     }
     
-    public override void onDie(){
-        anim.SetBool("isDead", true);
-    }
 }
