@@ -27,14 +27,14 @@ public class MainMenu : MonoBehaviour
     
     public void ToggleSettings(bool isOpen){
         if(isOpen){
-            MenuManager.instance.OpenMenu("Settings", 5);
+            MenuManager.instance.OpenMenu("Settings", 15);
         } else {
             MenuManager.instance.CloseMenu("Settings");
         }
     }
     public void ToggleMission(bool isOpen){
         if(isOpen){
-            MenuManager.instance.OpenMenu("Mission", 5);
+            MenuManager.instance.OpenMenu("Mission", 15);
         } else {
             MenuManager.instance.CloseMenu("Mission");
         }
