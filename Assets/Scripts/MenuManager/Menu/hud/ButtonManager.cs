@@ -8,6 +8,7 @@ public class ButtonManager : MonoBehaviour
 {
     public GameObject ButtonSwitch;
     public GameObject ButtonAttack;
+    public GameObject ButtonRoll;
     public GameObject Icon;
 
     public Sprite sword;
@@ -75,5 +76,15 @@ public class ButtonManager : MonoBehaviour
         ButtonAttack.SetActive(value);
         ButtonSwitch.SetActive(value);
         checkButtonType();
+    }
+
+    public IEnumerator DisableTemporaryRoll()
+    {
+        if (ButtonRoll.activeSelf == true)
+        {
+            ButtonRoll.SetActive(false);
+            yield return new WaitForSeconds(5f);
+            ButtonRoll.SetActive(true);
+        }
     }
 }
