@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spider : Enemy
+public class Slime : Enemy
 {
 
     public Animator anim;
@@ -34,7 +34,7 @@ public class Spider : Enemy
         if (cooling)
         {
             Cooldown();
-           // anim.SetBool("Attack", false);
+        //    anim.SetBool("Attack", false);
         }
         if (hasTarget) {
             float distance = Vector3.Distance(transform.position, target.transform.position);
@@ -85,14 +85,14 @@ public class Spider : Enemy
     private void StopAttack()
     {
         cooling = false;
-      //  anim.SetBool("Attack", false);
+     //   anim.SetBool("Attack", false);
     }
     
     private void Attack()
     {
         timer = intTimer;
         
-        //anim.SetBool("Attack", true);
+      //  anim.SetBool("Attack", true);
     }
 
     private void Damage(){
