@@ -21,6 +21,8 @@ public class SkeletonSpearAttack : MonoBehaviour, ISkeletonAttack
         if (AttackCircleResult != null && AttackCircleResult.Length >= 1)
         {
             isPlaying.instance.addDommage(dommage);
+            Vector4 rotation = PlayerAttack.instance.EulerToQuaternion(new Vector3(0, 0, Random.Range(1, 360)));
+            Instantiate(PlayerAttack.instance.Impact, PlayerAttack.instance.transform.position, new Quaternion(rotation.x, rotation.y, rotation.z, rotation.w));
         }
     }
 

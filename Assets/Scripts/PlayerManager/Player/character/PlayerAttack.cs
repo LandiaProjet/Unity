@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public GameObject Arrow;
+    public GameObject Impact;
     public Transform AttackPoint;
     public float AttackRadius;
     public SpriteRenderer sprite;
@@ -12,6 +13,17 @@ public class PlayerAttack : MonoBehaviour
     public Rigidbody2D rb;
     public PlayerMovement playerMovement;
     public LayerMask collisionLayers;
+
+    public static PlayerAttack instance;
+    public void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Il y a plus d'une instance de PlayerAttack dans la scene");
+            return;
+        }
+        instance = this;
+    }
 
     void Update()
     {
@@ -70,8 +82,29 @@ public class PlayerAttack : MonoBehaviour
         {
             Enemy enemy = AttackCircleResult[0].GetComponent<Enemy>();
             enemy.ReceiveDommage(damage);
+            Vector4 rotation = EulerToQuaternion(new Vector3(0, 0, Random.Range(1, 360)));
+            Instantiate(Impact, enemy.transform.position, new Quaternion(rotation.x, rotation.y, rotation.z, rotation.w));
             Debug.Log("touchSkeleton");
         }
+    }
+
+    public Vector4 EulerToQuaternion(Vector3 p)
+    {
+        p.x *= Mathf.Deg2Rad;
+        p.y *= Mathf.Deg2Rad;
+        p.z *= Mathf.Deg2Rad;
+        Vector4 q;
+        float cy = Mathf.Cos(p.z * 0.5f);
+        float sy = Mathf.Sin(p.z * 0.5f);
+        float cr = Mathf.Cos(p.y * 0.5f);
+        float sr = Mathf.Sin(p.y * 0.5f);
+        float cp = Mathf.Cos(p.x * 0.5f);
+        float sp = Mathf.Sin(p.x * 0.5f);
+        q.w = cy * cr * cp + sy * sr * sp;
+        q.x = cy * cr * sp + sy * sr * cp;
+        q.y = cy * sr * cp - sy * cr * sp;
+        q.z = sy * cr * cp - cy * sr * sp;
+        return q;
     }
 
     /**

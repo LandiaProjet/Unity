@@ -105,6 +105,8 @@ public class skeletonBossAttack : MonoBehaviour, ISkeletonAttack
                     break;
             }
             isPlaying.instance.addDommage(dommage);
+            Vector4 rotation = PlayerAttack.instance.EulerToQuaternion(new Vector3(0, 0, Random.Range(1, 360)));
+            Instantiate(PlayerAttack.instance.Impact, PlayerAttack.instance.transform.position, new Quaternion(rotation.x, rotation.y, rotation.z, rotation.w));
             return true;
         }
         return false;

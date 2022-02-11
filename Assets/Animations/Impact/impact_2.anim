@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skeleton_Archer_die
+  m_Name: impact_2
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,19 +20,19 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 94d4d5b4e85375e4aad806dc09f0cb0e, type: 3}
-    - time: 0.083333336
-      value: {fileID: 21300000, guid: 5e9e3088049c31e408b580d0456c0fd1, type: 3}
-    - time: 0.16666667
-      value: {fileID: 21300000, guid: 8158cb3fb27eaf24499e9b22930c73e5, type: 3}
+      value: {fileID: 21300000, guid: 84cbf97a448d23846a68e460d5a963d0, type: 3}
+    - time: 0.05
+      value: {fileID: 21300000, guid: 1026c3aa1b632e342b79d212f6e56b46, type: 3}
+    - time: 0.1
+      value: {fileID: 21300000, guid: 58c94ffb2c8caf244a00e0a2cd99f7e9, type: 3}
+    - time: 0.15
+      value: {fileID: 21300000, guid: e4a5ccfe6db801e4d810ff993b33e459, type: 3}
+    - time: 0.2
+      value: {fileID: 21300000, guid: 4ccabb5b14fe63445baa7c708c638682, type: 3}
     - time: 0.25
-      value: {fileID: 21300000, guid: 6518d3ba2574cec40800fbeb91049dd4, type: 3}
-    - time: 0.33333334
-      value: {fileID: 21300000, guid: 244f926271c81cf4e827cba11452ab45, type: 3}
-    - time: 0.41666666
-      value: {fileID: 21300000, guid: a99ba33d448027f4c8b369ad7f3af40b, type: 3}
-    - time: 0.5
-      value: {fileID: 21300000, guid: 9dc3ddf5e784a084ba10a3c8e8404e6d, type: 3}
+      value: {fileID: 21300000, guid: 25a0c0c9085e4f64c87451dd9709cbfa, type: 3}
+    - time: 0.3
+      value: {fileID: 21300000, guid: 4792386ca30675a4493ca746a2c51b24, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -52,19 +52,19 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 94d4d5b4e85375e4aad806dc09f0cb0e, type: 3}
-    - {fileID: 21300000, guid: 5e9e3088049c31e408b580d0456c0fd1, type: 3}
-    - {fileID: 21300000, guid: 8158cb3fb27eaf24499e9b22930c73e5, type: 3}
-    - {fileID: 21300000, guid: 6518d3ba2574cec40800fbeb91049dd4, type: 3}
-    - {fileID: 21300000, guid: 244f926271c81cf4e827cba11452ab45, type: 3}
-    - {fileID: 21300000, guid: a99ba33d448027f4c8b369ad7f3af40b, type: 3}
-    - {fileID: 21300000, guid: 9dc3ddf5e784a084ba10a3c8e8404e6d, type: 3}
+    - {fileID: 21300000, guid: 84cbf97a448d23846a68e460d5a963d0, type: 3}
+    - {fileID: 21300000, guid: 1026c3aa1b632e342b79d212f6e56b46, type: 3}
+    - {fileID: 21300000, guid: 58c94ffb2c8caf244a00e0a2cd99f7e9, type: 3}
+    - {fileID: 21300000, guid: e4a5ccfe6db801e4d810ff993b33e459, type: 3}
+    - {fileID: 21300000, guid: 4ccabb5b14fe63445baa7c708c638682, type: 3}
+    - {fileID: 21300000, guid: 25a0c0c9085e4f64c87451dd9709cbfa, type: 3}
+    - {fileID: 21300000, guid: 4792386ca30675a4493ca746a2c51b24, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.51666665
+    m_StopTime: 0.3166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -83,4 +83,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.31666666
+    functionName: DestroyAfter
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
