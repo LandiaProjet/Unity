@@ -16,11 +16,14 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask collisionLayers;
     public bool isGrounded;
 
+    public Material impact;
+
     private float horizontalMovement;
     private Vector3 velocity;
     private bool isJumping;
     private bool isRoll;
     private bool isDie = false;
+    private Color BloodColor = new Color(0.29412f, 0.00392f, 0.00392f, 1);
 
 
     private float lastPosY = 0;
@@ -66,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A) == true)
+        if (Input.GetKeyDown(KeyCode.A) == true)
         {
             Debug.Log(isDie);
             setDie(!isDie);
@@ -158,6 +161,24 @@ public class PlayerMovement : MonoBehaviour
         isDie = value;
         animator.SetBool("isDie", value);
         animator.Play("Player_idle");
+    }
+
+    bool HitAnimationIsEnable;
+
+    public void HitAnimation()
+    {
+        if (HitAnimationIsEnable)
+            return;
+        HitAnimationIsEnable = true;
+        StartCoroutine(TransitionColor());
+    }
+
+    private IEnumerator TransitionColor()
+    {
+        spriteRenderer.color = BloodColor;
+        yield return new WaitForSeconds(0.3f);
+        spriteRenderer.color = Color.white;
+        HitAnimationIsEnable = false;
     }
 
     private void OnDrawGizmos()

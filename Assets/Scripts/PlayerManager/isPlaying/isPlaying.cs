@@ -164,9 +164,8 @@ public class isPlaying : MonoBehaviour
     {
         if (stats != Stats.inGame || immunity)
             return;
-
         shield -= dommage;
-
+        PlayerMovement.instance.HitAnimation();
         HudManager.instance.SetShield(shield);
         if (shield <= 0)
             OnDefeat();
