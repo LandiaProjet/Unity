@@ -6,7 +6,6 @@ public class Enemy : MonoBehaviour
     public float health;
 
     private SpriteRenderer sprite;
-    private Color BloodColor = new Color(0, 0, 0, 1);
 
     public virtual void ReceiveDommage(float damage){
         this.health -= damage;
@@ -18,24 +17,24 @@ public class Enemy : MonoBehaviour
 
     public virtual void onDie(){}
 
-    public virtual void HitAnimation()
+    bool HitAnimationIsEnable;
+
+    public void HitAnimation()
     {
+        if (HitAnimationIsEnable)
+            return;
         if (sprite == null)
             sprite = GetComponent<SpriteRenderer>();
-        StartCoroutine(TransitionColor(1f, BloodColor));
-        StartCoroutine(TransitionColor(1f, Color.white));
+        HitAnimationIsEnable = true;
+        StartCoroutine(TransitionColor());
     }
 
-    private IEnumerator TransitionColor(float time, Color color)
+    private IEnumerator TransitionColor()
     {
-        float fadeTime = 2;
-        float fadeStart = 0;
-
-        while (fadeStart < fadeTime)
-        {
-            fadeStart += time;
-            sprite.color = Color.Lerp(sprite.color, color, fadeStart);
-            yield return new WaitForSeconds(time);
-        }
+        Material before = sprite.material;
+        sprite.material = PlayerMovement.instance.impact;
+        yield return new WaitForSeconds(0.15f);
+        sprite.material = before;
+        HitAnimationIsEnable = false;
     }
 }

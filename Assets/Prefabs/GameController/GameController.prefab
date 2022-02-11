@@ -136,6 +136,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 5673637900132872031}
     m_Modifications:
     - target: {fileID: 6725711168049598487, guid: 04c4a6631687c1345ba5c38ed30a518b, type: 3}
+      propertyPath: impact
+      value: 
+      objectReference: {fileID: 2100000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
+    - target: {fileID: 6725711168049598487, guid: 04c4a6631687c1345ba5c38ed30a518b, type: 3}
       propertyPath: movementJoystick
       value: 
       objectReference: {fileID: 4119227029478911473}

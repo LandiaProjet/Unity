@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping;
     private bool isRoll;
     private bool isDie = false;
-    private Color BloodColor = new Color(0.29412f, 0.00392f, 0.00392f, 1);
+    private Color BloodColor = new Color(0.9098f, 0.18431f, 0.00392f, 1);
 
 
     private float lastPosY = 0;
@@ -176,7 +176,10 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator TransitionColor()
     {
         spriteRenderer.color = BloodColor;
-        yield return new WaitForSeconds(0.3f);
+        Material before = spriteRenderer.material;
+        spriteRenderer.material = impact;
+        yield return new WaitForSeconds(0.15f);
+        spriteRenderer.material = before;
         spriteRenderer.color = Color.white;
         HitAnimationIsEnable = false;
     }
