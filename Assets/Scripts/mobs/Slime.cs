@@ -76,5 +76,8 @@ public class Slime : Enemy
         rb.simulated = false;
         Collider2D collider = GetComponent<Collider2D>();
         collider.isTrigger = true;
+
+        Debug.Log("SPAWNER");
+        CoinSpawner.instance.SpawnCoins(4, this.transform);
     }
 }

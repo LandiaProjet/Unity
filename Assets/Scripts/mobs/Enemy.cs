@@ -15,7 +15,10 @@ public class Enemy : MonoBehaviour
             HitAnimation();
     }
 
-    public virtual void onDie(){}
+    public virtual void onDie(){
+        Debug.Log("SPAWNER");
+        CoinSpawner.instance.SpawnCoins(10, this.transform);
+    }
 
     bool HitAnimationIsEnable;
 
