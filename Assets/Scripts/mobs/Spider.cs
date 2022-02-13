@@ -106,5 +106,9 @@ public class Spider : Enemy
     {
         cooling = true;
     }
+
+    public override void onDie(){
+        anim.SetBool("isDead", true);
+    }
     
 }
