@@ -97,13 +97,36 @@ public class isPlaying : MonoBehaviour
 
     public void OnDefeat()
     {
+        if (stats != Stats.inGame)
+            return;
         endLevel();
         MenuManager.instance.OpenMenu("PopupDefeat", 10);
     }
 
     public void OnVictory()
     {
+        if (stats != Stats.inGame)
+            return;
+        SlotLevel levelInfo;
+
         endLevel();
+        levelInfo = LevelManager.instance.getLevel(idLevel);
+        if (levelInfo != null && levelInfo.star < star)
+            LevelManager.instance.editLevel(idLevel, star, true);
+        Debug.Log(Levels.instance.levels.Length > (idLevel + 1));
+        Debug.Log(LevelManager.instance.getLevel(idLevel) == null);
+        if (Levels.instance.levels.Length > (idLevel + 1) && LevelManager.instance.getLevel(idLevel) == null)
+        {
+            Level level = Levels.instance.levels[idLevel + 1];
+            if (level.RequiredStar > LevelManager.instance.getCountStar())
+            {
+                Popup.instance.openPopup("Alerte", "Vous devez débloquer " + level.RequiredStar.ToString() + " pour pouvoir passer au niveau suivant.", 20);
+            }
+            else
+            {
+                LevelManager.instance.addLevel(idLevel, 0, false);
+            }
+        }
         MenuManager.instance.OpenMenu("PopupVictory", 10);
     }
 

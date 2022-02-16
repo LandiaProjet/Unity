@@ -26,6 +26,8 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         database = new Database("Level.json", this);
+        if (slotLevels.Count == 0)
+            addLevel(0, 0, false);
     }
 
     public void addLevel(int id, int star, bool isFinish)
@@ -38,6 +40,20 @@ public class LevelManager : MonoBehaviour
         SlotLevel slot = new SlotLevel { id = id, isFinish = isFinish, star = star };
         slotLevels.Add(slot);
         database.SaveData();
+    }
+
+    public SlotLevel getLevel(int id)
+    {
+        if (id < 0 || id >= Levels.instance.levels.Length)
+            return null;
+        foreach (SlotLevel slotlevel in slotLevels)
+        {
+            if (slotlevel.id == id)
+            {
+                return slotlevel;
+            }
+        }
+        return null;
     }
 
     public void editLevel(int id, int star, bool isFinish)
@@ -72,5 +88,16 @@ public class LevelManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public int getCountStar()
+    {
+        int Star = 0;
+
+        foreach (SlotLevel slotLevel in slotLevels)
+        {
+            Star += slotLevel.star;
+        }
+        return Star;
     }
 }

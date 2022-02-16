@@ -16,4 +16,5 @@ public class Level : ScriptableObject
     public int secondTimeMax; // temps max que le joueur aura le droit pour terminer le level
     public int[] timeStar; // doit avoir 3 Elements à l'intérieur, le premier element représente la première étoile et ainsi de suite
     public ItemRecommanded[] itemsRecommanded; // la liste des items recommander
+    public int RequiredStar;
 }

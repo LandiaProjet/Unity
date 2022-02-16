@@ -20,6 +20,15 @@ public class LevelUI : MonoBehaviour
     private List<GameObject> Buttons = new List<GameObject>();
     private RectTransform rtPage;
 
+
+    private void OnEnable()
+    {
+        foreach (GameObject button in Buttons)
+        {
+            button.GetComponent<LevelButton>().Refresh();
+        }
+    }
+
     private void Start()
     {
         GameObject button;
@@ -56,7 +65,7 @@ public class LevelUI : MonoBehaviour
         onAnimation = true;
         prevPageButton.SetActive(true);
         countPage++;
-        PageNavi.movePosition(true);
+        PageNavi.movePosition(countPage, countPage - 1);
         if (Stages.Count - 1 <= countPage)
             nextPageButton.SetActive(false);
         StartCoroutine(animationNextPage());
@@ -69,7 +78,7 @@ public class LevelUI : MonoBehaviour
         onAnimation = true;
         nextPageButton.SetActive(true);
         countPage--;
-        PageNavi.movePosition(false);
+        PageNavi.movePosition(countPage, countPage + 1);
         if (countPage <= 0)
             prevPageButton.SetActive(false);
         StartCoroutine(animationPrevPage());

@@ -9,6 +9,7 @@ public class LevelButton : MonoBehaviour
     public Sprite Completed;
     public TMPro.TextMeshProUGUI Text;
     public GameObject Star;
+    public Sprite StarCompleted;
 
     private SlotLevel levelInfo;
     private bool isActive = false;
@@ -33,6 +34,10 @@ public class LevelButton : MonoBehaviour
             return;
         Background.sprite = Completed;
         Star.SetActive(true);
+        for (int i = 0; i < levelInfo.star; i++)
+        {
+            Star.transform.GetChild(i).gameObject.GetComponent<Image>().sprite = StarCompleted;
+        }
     }
 
     public void onClick()

@@ -614,6 +614,7 @@ MonoBehaviour:
   Completed: {fileID: 21300000, guid: bd9f2d89ca95f4d8aa4af543e31dcda3, type: 3}
   Text: {fileID: 9149907018025111457}
   Star: {fileID: 1209991342501884003}
+  StarCompleted: {fileID: 21300000, guid: 4ba32932c5e95473085578d10429742c, type: 3}
 --- !u!1 &9213995373310647361
 GameObject:
   m_ObjectHideFlags: 0
