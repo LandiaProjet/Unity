@@ -20,4 +20,4 @@ MonoBehaviour:
     id: 0
   - count: 10
     id: 3
-  RequiredStar: 10
+  RequiredStar: 3

@@ -41,9 +41,9 @@ public class Popup : MonoBehaviour
             closePopup();
         });
         // Exemple du popup
-        setButton("oui", ColorButton.Blue, () => { }, 0);
+        /*setButton("oui", ColorButton.Blue, () => { }, 0);
         setButton("non", ColorButton.Red, () => { }, 1);
-        openPopup("bonjour", "petite description", 8, 550);
+        openPopup("bonjour", "petite description", 8, 550);*/
     }
 
     public void setButton(string title, ColorButton color, UnityAction call, int zIndex)

@@ -91,7 +91,7 @@ public class isPlaying : MonoBehaviour
     public void endLevel()
     {
         stats = Stats.Ending;
-        PlayerMovement.instance.setDie(true);
+        PlayerMovement.instance.rb.simulated = false;
         HudManager.instance.stopGame();
     }
 
@@ -113,9 +113,8 @@ public class isPlaying : MonoBehaviour
         levelInfo = LevelManager.instance.getLevel(idLevel);
         if (levelInfo != null && levelInfo.star < star)
             LevelManager.instance.editLevel(idLevel, star, true);
-        Debug.Log(Levels.instance.levels.Length > (idLevel + 1));
-        Debug.Log(LevelManager.instance.getLevel(idLevel) == null);
-        if (Levels.instance.levels.Length > (idLevel + 1) && LevelManager.instance.getLevel(idLevel) == null)
+        TransferAllItemInMainInventory();
+        if (Levels.instance.levels.Length > (idLevel + 1) && LevelManager.instance.getLevel(idLevel + 1) == null)
         {
             Level level = Levels.instance.levels[idLevel + 1];
             if (level.RequiredStar > LevelManager.instance.getCountStar())
@@ -124,10 +123,21 @@ public class isPlaying : MonoBehaviour
             }
             else
             {
-                LevelManager.instance.addLevel(idLevel, 0, false);
+                LevelManager.instance.addLevel(idLevel + 1, 0, false);
             }
         }
         MenuManager.instance.OpenMenu("PopupVictory", 10);
+    }
+
+    public void TransferAllItemInMainInventory()
+    {
+        foreach (Slot slot in inventory)
+        {
+            for (int i = 0; i < slot.count; i++)
+            {
+                Inventory.instance.addItem(slot.id);
+            }
+        }
     }
 
     public void addItem(int id)

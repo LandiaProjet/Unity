@@ -43,8 +43,20 @@ public class LevelButton : MonoBehaviour
     public void onClick()
     {
         if (isActive == false)
-            return;
-        MenuManager.instance.CloseMenu("Level");
-        LevelManager.instance.openLevel(idLevel);
+        {
+            Popup.instance.openPopup("Alerte", "Vous devez débloquer " + Levels.instance.levels[idLevel].RequiredStar.ToString() + " pour pouvoir passer au niveau suivant.", 20);
+        }
+        else
+        {
+            Popup.instance.setButton("oui", ColorButton.Blue, () => {
+                Popup.instance.closePopup();
+                MenuManager.instance.CloseMenu("Level");
+                LevelManager.instance.openLevel(idLevel);
+            }, 0);
+            Popup.instance.setButton("non", ColorButton.Red, () => {
+                Popup.instance.closePopup();
+            }, 1);
+            Popup.instance.openPopup("Alerte", "être prêt ? Lorsque vous lancez la partie les items que vous mettrez en jeu ne pourront plus revenir jusqu'à la fin du jeu.", 20, 800);
+        }
     }
 }
