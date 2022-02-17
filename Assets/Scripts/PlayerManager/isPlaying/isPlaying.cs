@@ -92,7 +92,6 @@ public class isPlaying : MonoBehaviour
     {
         stats = Stats.Ending;
         PlayerMovement.instance.rb.simulated = false;
-        PlayerData.getData().health--;
         HudManager.instance.stopGame();
     }
 
@@ -101,6 +100,7 @@ public class isPlaying : MonoBehaviour
         if (stats != Stats.inGame)
             return;
         endLevel();
+        PlayerData.getData().RemoveHealth();
         MenuManager.instance.OpenMenu("PopupDefeat", 10);
     }
 

@@ -191,3 +191,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540a69d72c5d0494a8a91d9c5d660d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EffectCoin: {fileID: 5559241252468851655, guid: 42934ba85fea53f469850781ea9d4f59, type: 3}

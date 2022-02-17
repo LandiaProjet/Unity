@@ -51,6 +51,24 @@ public class PlayerData : MonoBehaviour
         }
     }
 
+    public void AddHealth()
+    {
+        health++;
+        database.SaveData();
+    }
+
+    public void RemoveHealth()
+    {
+        health--;
+        database.SaveData();
+    }
+
+    public void AddCredit(int credit)
+    {
+        money += credit;
+        database.SaveData();
+    }
+
     public string getTimeHealth()
     {
         if (health == 5)

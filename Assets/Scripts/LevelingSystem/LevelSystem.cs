@@ -17,6 +17,7 @@ public class LevelSystem {
             if (OnLevelChanged != null) OnLevelChanged(this, EventArgs.Empty);
         }
         if (OnExperienceChanged != null) OnExperienceChanged(this, EventArgs.Empty);
+        PlayerData.getData().database.SaveData();
     }
 
     public int GetLevelNumber() {

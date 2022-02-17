@@ -55,7 +55,7 @@ public class endingLevel : MonoBehaviour
         isPlaying.instance.addHealth(100);
         HudManager.instance.RecoveryGame();
         isPlaying.instance.time += 30;
-        PlayerData.getData().health++;
+        PlayerData.getData().AddHealth();
         isPlaying.instance.stats = Stats.inGame;
     }
 
