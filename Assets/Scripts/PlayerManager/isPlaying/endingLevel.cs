@@ -30,6 +30,11 @@ public class endingLevel : MonoBehaviour
 
     public void RestartLevel()
     {
+        if (PlayerData.getData().health <= 0)
+        {
+            Popup.instance.openPopup("Alerte", "Vous n'avez pas assez de coeur pour pouvoir relancer une parti ...", 20);
+            return;
+        }
         MenuManager.instance.CloseMenu("PopupDefeat");
         MenuManager.instance.CloseMenu("PopupVictory");
         PlayerManager.instance.changePlayer("idle");
@@ -50,6 +55,7 @@ public class endingLevel : MonoBehaviour
         isPlaying.instance.addHealth(100);
         HudManager.instance.RecoveryGame();
         isPlaying.instance.time += 30;
+        PlayerData.getData().health++;
         isPlaying.instance.stats = Stats.inGame;
     }
 

@@ -13,10 +13,16 @@ public class MainMenu : MonoBehaviour
   
     private void Start() {
         SetLevel(PlayerData.getData().level.ToString());
-        SetHealText(PlayerData.getData().health.ToString());
-        SetHealTimeText("FULL");
         SetMoneyText(string.Format("{0:#,0}", PlayerData.getData().money));
         //SetXpBar(PlayerManager.instance.levelSystem.GetExperienceNormalized());
+    }
+
+    private void FixedUpdate()
+    {
+        SetLevel(PlayerData.getData().level.ToString());
+        SetMoneyText(string.Format("{0:#,0}", PlayerData.getData().money));
+        SetHealText(PlayerData.getData().health.ToString());
+        SetHealTimeText(PlayerData.getData().getTimeHealth());
     }
 
     public void PlayGame(){

@@ -48,15 +48,22 @@ public class LevelButton : MonoBehaviour
         }
         else
         {
-            Popup.instance.setButton("oui", ColorButton.Blue, () => {
-                Popup.instance.closePopup();
-                MenuManager.instance.CloseMenu("Level");
-                LevelManager.instance.openLevel(idLevel);
-            }, 0);
-            Popup.instance.setButton("non", ColorButton.Red, () => {
-                Popup.instance.closePopup();
-            }, 1);
-            Popup.instance.openPopup("Alerte", "être prêt ? Lorsque vous lancez la partie les items que vous mettrez en jeu ne pourront plus revenir jusqu'à la fin du jeu.", 20, 800);
+            if (PlayerData.getData().health <= 0)
+            {
+                Popup.instance.openPopup("Alerte", "Vous n'avez pas assez de coeur pour pouvoir relancer une parti ...", 20);
+            }
+            else
+            {
+                Popup.instance.setButton("oui", ColorButton.Blue, () => {
+                    Popup.instance.closePopup();
+                    MenuManager.instance.CloseMenu("Level");
+                    LevelManager.instance.openLevel(idLevel);
+                }, 0);
+                Popup.instance.setButton("non", ColorButton.Red, () => {
+                    Popup.instance.closePopup();
+                }, 1);
+                Popup.instance.openPopup("Alerte", "être prêt ? Lorsque vous lancez la partie les items que vous mettrez en jeu ne pourront plus revenir jusqu'à la fin du jeu.", 20, 800);
+            }
         }
     }
 }

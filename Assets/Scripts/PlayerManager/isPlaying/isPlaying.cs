@@ -92,6 +92,7 @@ public class isPlaying : MonoBehaviour
     {
         stats = Stats.Ending;
         PlayerMovement.instance.rb.simulated = false;
+        PlayerData.getData().health--;
         HudManager.instance.stopGame();
     }
 
