@@ -101,6 +101,8 @@ public class isPlaying : MonoBehaviour
             return;
         endLevel();
         PlayerData.getData().RemoveHealth();
+        credit /= 10;
+        PlayerData.getData().AddCredit(credit);
         MenuManager.instance.OpenMenu("PopupDefeat", 10);
     }
 
@@ -114,6 +116,7 @@ public class isPlaying : MonoBehaviour
         levelInfo = LevelManager.instance.getLevel(idLevel);
         if (levelInfo != null && levelInfo.star < star)
             LevelManager.instance.editLevel(idLevel, star, true);
+        PlayerData.getData().AddCredit(credit);
         TransferAllItemInMainInventory();
         if (Levels.instance.levels.Length > (idLevel + 1) && LevelManager.instance.getLevel(idLevel + 1) == null)
         {
