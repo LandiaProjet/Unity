@@ -10,8 +10,10 @@ public class EndingMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        Cointext.text = isPlaying.instance.credit.ToString();
-        Scoretext.text = isPlaying.instance.exp.ToString();
+        UpgraderCount anim = new UpgraderCount(0.5f, isPlaying.instance.credit, 0.001f, Cointext);
+        StartCoroutine(anim.StartAnimation());
+        anim = new UpgraderCount(0.5f, isPlaying.instance.exp, 0.001f, Scoretext);
+        StartCoroutine(anim.StartAnimation());
         if (StarList != null)
         {
             for (int i = 1; i <= 3; i++)
