@@ -12,7 +12,7 @@ public class InventoryExchangeUI : MonoBehaviour
 
 	InventorySlot[] slots;
 
-	void Start () {
+	/*void Start () {
 		inventoryExchange = isPlaying.instance;
 		inventoryExchange.onItemChangedCallback += UpdateUI;
 
@@ -20,9 +20,20 @@ public class InventoryExchangeUI : MonoBehaviour
 		slots = itemsParent.GetComponentsInChildren<InventorySlot>();
 
 		UpdateUI();
-	}
-	
-	void UpdateUI ()
+	}*/
+
+    private void OnEnable()
+    {
+		if (inventoryExchange == null)
+        {
+			inventoryExchange = isPlaying.instance;
+			inventoryExchange.onItemChangedCallback += UpdateUI;
+			slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+		}
+		UpdateUI();
+    }
+
+    void UpdateUI ()
 	{
 		Debug.Log("slot =" + inventoryExchange.inventory.Count);
 		for (int i = 0; i < slots.Length; i++)

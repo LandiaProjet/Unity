@@ -20,7 +20,7 @@ public class InventoryUI : MonoBehaviour
 		instance = this;
 	}
 
-	void Start () {
+	/*void Start () {
 		inventory = Inventory.instance;
 		inventory.onItemChangedCallback += UpdateUI;
 
@@ -28,9 +28,20 @@ public class InventoryUI : MonoBehaviour
 		slots = itemsParent.GetComponentsInChildren<InventorySlot>();
 
 		UpdateUI();
-	}
-	
-	void UpdateUI ()
+	}*/
+
+    private void OnEnable()
+    {
+		if (inventory == null)
+        {
+			inventory = Inventory.instance;
+			inventory.onItemChangedCallback += UpdateUI;
+			slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+		}
+		UpdateUI();
+    }
+
+    void UpdateUI ()
 	{
 		for (int i = 0; i < slots.Length; i++)
 		{
