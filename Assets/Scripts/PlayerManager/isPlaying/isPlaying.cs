@@ -34,6 +34,8 @@ public class isPlaying : MonoBehaviour
     public delegate void OnItemChanged();
 	public OnItemChanged onItemChangedCallback;
 
+    private LevelSystem levelSystem;
+
     private void Awake()
     {
         if (instance != null)
@@ -75,6 +77,7 @@ public class isPlaying : MonoBehaviour
     {
         award = new List<Slot>();
         inventory = new List<Slot>();
+        levelSystem = new LevelSystem();
         this.idLevel = idLevel;
         shield = 100f;
         instance.stats = Stats.Starting;
@@ -103,6 +106,8 @@ public class isPlaying : MonoBehaviour
         PlayerData.getData().RemoveHealth();
         credit /= 10;
         PlayerData.getData().AddCredit(credit);
+        exp = credit * 10;
+        levelSystem.AddExperience(exp);
         MenuManager.instance.OpenMenu("PopupDefeat", 10);
     }
 
@@ -116,6 +121,8 @@ public class isPlaying : MonoBehaviour
         levelInfo = LevelManager.instance.getLevel(idLevel);
         if (levelInfo != null && levelInfo.star < star)
             LevelManager.instance.editLevel(idLevel, star, true);
+        exp = (credit * 10) + (star * 250);
+        levelSystem.AddExperience(exp);
         PlayerData.getData().AddCredit(credit);
         TransferAllItemInMainInventory();
         if (Levels.instance.levels.Length > (idLevel + 1) && LevelManager.instance.getLevel(idLevel + 1) == null)
