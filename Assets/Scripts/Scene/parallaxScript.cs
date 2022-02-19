@@ -12,8 +12,9 @@ public class parallaxScript : MonoBehaviour
     private GameObject player;
     private Vector2 positionPlayer;
 
-    void Start()
+    /*void Start()
     {
+        Debug.Log("passe");
         player = GameObject.FindGameObjectWithTag("Player");
         cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
         positionPlayer = new Vector2(0, 0);
@@ -22,18 +23,34 @@ public class parallaxScript : MonoBehaviour
         {
             background[i] = new GameObject[2];
             background[i][0] = transform.GetChild(i).gameObject;
+            background[i][0].transform.position = new Vector3(0, 0, 0);
+            Debug.Log(background[i][0].transform.position);
             background[i][1] = Instantiate(background[i][0]);
             SpriteRenderer spriteRenderer = background[i][0].GetComponent<SpriteRenderer>();
             background[i][1].transform.position = background[i][1].transform.position + new Vector3(spriteRenderer.size.x, 0, 0);
         }
-    }
+    }*/
 
     void FixedUpdate()
     {
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
-            return;
+            if (player == null)
+                return;
+            cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
+            positionPlayer = new Vector2(0, 0);
+            int children = transform.childCount;
+            for (int i = 0; i < children; i++)
+            {
+                background[i] = new GameObject[2];
+                background[i][0] = transform.GetChild(i).gameObject;
+                background[i][0].transform.position = new Vector3(0, 0, 0);
+                Debug.Log(background[i][0].transform.position);
+                background[i][1] = Instantiate(background[i][0]);
+                SpriteRenderer spriteRenderer = background[i][0].GetComponent<SpriteRenderer>();
+                background[i][1].transform.position = background[i][1].transform.position + new Vector3(spriteRenderer.size.x, 0, 0);
+            }
         }
         if (Mathf.Abs(positionPlayer.x - player.transform.position.x) > 0.01)
         {

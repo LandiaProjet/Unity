@@ -22,8 +22,9 @@ public class HudManager : MonoBehaviour
         instance = this;
     }
 
-    public void initGame(string time, string arrow, int star)
+    public void initGame(string time, string arrow, int star, float shield)
     {
+        SetShield(shield);
         SetTime(time);
         SetArrow(arrow);
         SetStar(star.ToString());

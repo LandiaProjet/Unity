@@ -88,7 +88,7 @@ public class isPlaying : MonoBehaviour
         exp = 0;
         credit = 0;
         var ts = TimeSpan.FromSeconds(time);
-        HudManager.instance.initGame(string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds), "0", star);
+        HudManager.instance.initGame(string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds), "0", star, shield);
     }
 
     public void endLevel()

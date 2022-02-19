@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class endingLevel : MonoBehaviour
@@ -40,8 +41,15 @@ public class endingLevel : MonoBehaviour
         PlayerManager.instance.changePlayer("idle");
         PlayerMovement.instance.setDie(false);
         PlayerMovement.instance.rb.simulated = true;
-        PlayerSpawn.instance.spawnPlayer();
         LevelManager.instance.openLevel(isPlaying.instance.idLevel);
+        StartCoroutine(WaitBeforeRespawnPlayer());
+    }
+
+    IEnumerator WaitBeforeRespawnPlayer()
+    {
+        PlayerSpawn.instance.spawnPlayer();
+        yield return new WaitForSeconds(0.5f);
+        PlayerMovement.instance.rb.AddForce(new Vector2(-10, 2));
     }
 
     public void Retrylevel()
