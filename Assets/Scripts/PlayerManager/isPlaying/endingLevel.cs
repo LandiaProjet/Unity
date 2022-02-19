@@ -27,6 +27,7 @@ public class endingLevel : MonoBehaviour
         PlayerMovement.instance.rb.simulated = true;
         SceneManager.LoadScene(1);
         MenuManager.instance.OpenMenu("Level", 10);
+        StartCoroutine(WaitBeforeRespawnPlayer());
     }
 
     public void RestartLevel()
@@ -78,5 +79,6 @@ public class endingLevel : MonoBehaviour
         PlayerMovement.instance.rb.simulated = true;
         SceneManager.LoadScene(1);
         MenuManager.instance.OpenMenu("MainMenu", 10);
+        StartCoroutine(WaitBeforeRespawnPlayer());
     }
 }

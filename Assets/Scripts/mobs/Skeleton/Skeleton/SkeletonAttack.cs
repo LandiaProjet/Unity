@@ -8,6 +8,11 @@ public class SkeletonAttack : MonoBehaviour, ISkeletonAttack
     public Rigidbody2D rb;
     public float dommage;
 
+    public int GiveCountCoins()
+    {
+        return Random.Range(1, 5);
+    }
+
     public void onAttack()
     {
         StartCoroutine(playAnimationAttack(1));

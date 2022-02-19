@@ -9,6 +9,12 @@ public class skeletonArcherAttack : MonoBehaviour, ISkeletonAttack
     public Rigidbody2D rb;
     public GameObject arrowPrefabs;
 
+
+    public int GiveCountCoins()
+    {
+        return Random.Range(3, 8);
+    }
+
     public void onAttack()
     {
         StartCoroutine(PlayAnimationAttack());

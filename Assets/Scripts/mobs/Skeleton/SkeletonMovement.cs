@@ -4,6 +4,8 @@ using UnityEngine;
 
 public interface ISkeletonAttack
 {
+    public int GiveCountCoins();
+
     public void onAttack();
 }
 
@@ -110,5 +112,6 @@ public class SkeletonMovement : Enemy
         rb.simulated = false;
         Collider2D collider = GetComponent<CapsuleCollider2D>();
         collider.isTrigger = true;
+        CoinSpawner.instance.SpawnCoins(skeletonAttack.GiveCountCoins(), transform);
     }
 }

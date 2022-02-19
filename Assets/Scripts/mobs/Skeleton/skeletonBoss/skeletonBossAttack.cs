@@ -16,6 +16,10 @@ public class skeletonBossAttack : MonoBehaviour, ISkeletonAttack
     private bool touchDash;
     private bool stun;
 
+    public int GiveCountCoins()
+    {
+        return Random.Range(5, 15);
+    }
     public void onAttack()
     {
         if (countAttack == 10)

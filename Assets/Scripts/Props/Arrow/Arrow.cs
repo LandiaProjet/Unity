@@ -30,29 +30,30 @@ public class Arrow : MonoBehaviour
         switch (other.tag)
         {
             case "Floor":
-                StartCoroutine(StopColision());
+                StartCoroutine(StopColision(0.04f));
                 break;
             case "Enemy":
                 if (used)
                     return;
                 Enemy enemy = other.GetComponent<Enemy>();
                 enemy.ReceiveDommage(damage);
-                rb.velocity = new Vector2(0, 0);
                 used = true;
                 break;
             case "Player":
                 if (used)
                     return;
                 isPlaying.instance.addDommage(damage);
-                rb.velocity = new Vector2(0, 0);
                 used = true;
+                break;
+            default:
+                StartCoroutine(StopColision(0.01f));
                 break;
         }
     }
 
-    IEnumerator StopColision()
+    IEnumerator StopColision(float time)
     {
-        yield return new WaitForSeconds(0.04f);
+        yield return new WaitForSeconds(time);
         rb.simulated = false;
         yield return new WaitForSeconds(25f);
         Destroy(gameObject);

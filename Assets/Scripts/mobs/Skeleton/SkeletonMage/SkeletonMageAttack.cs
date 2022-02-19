@@ -14,6 +14,11 @@ public class SkeletonMageAttack : MonoBehaviour, ISkeletonAttack
 
     private int countAttack = 0;
 
+    public int GiveCountCoins()
+    {
+        return Random.Range(5, 12);
+    }
+
     public void onAttack()
     {
         float distance = Mathf.Abs(PlayerMovement.instance.transform.position.x - transform.position.x);
