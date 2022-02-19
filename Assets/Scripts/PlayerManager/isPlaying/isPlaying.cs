@@ -31,6 +31,8 @@ public class isPlaying : MonoBehaviour
 
     public Stats stats;
 
+    public bool key;
+
     public delegate void OnItemChanged();
 	public OnItemChanged onItemChangedCallback;
 
@@ -75,6 +77,7 @@ public class isPlaying : MonoBehaviour
 
     public void startLevel(int idLevel)
     {
+        key = false;
         award = new List<Slot>();
         inventory = new List<Slot>();
         levelSystem = new LevelSystem();
