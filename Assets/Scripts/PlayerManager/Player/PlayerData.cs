@@ -4,7 +4,7 @@ using System;
 public class PlayerData : MonoBehaviour
 {
     public float health;
-    public long tickForNextHealth;
+    public int lastTime;
     public float money;
 
     public int level;
@@ -28,7 +28,6 @@ public class PlayerData : MonoBehaviour
     private void Start()
     {
         database = new Database("Player.json", this);
-        NextDateForHealth = new DateTime(tickForNextHealth);
     }
 
     public static PlayerData getData()
@@ -38,17 +37,41 @@ public class PlayerData : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (health < 5 && NextDateForHealth.Ticks <= DateTime.Now.Ticks)
+        int timeNow = calculateSeconds();
+        int result = timeNow - lastTime;
+        
+        if (result > 1800)
         {
-            health++;
-            if (health < 5)
-            {
-                NextDateForHealth = new DateTime(DateTime.Now.AddMinutes(30).Ticks);
-                tickForNextHealth = NextDateForHealth.Ticks;
-            }
-            Debug.Log("changement");
+            int countHealth = result / 1800;
+
+            health += countHealth;
+            if (health > 5)
+                health = 5;
+            lastTime = timeNow;
             database.SaveData();
         }
+    }
+
+    int calculateSeconds()
+    {
+
+        DateTime dt = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Local);
+
+        DateTime dtNow = DateTime.Now;
+
+        TimeSpan result = dtNow.Subtract(dt);
+
+        int seconds = Convert.ToInt32(result.TotalSeconds);
+
+        return seconds;
+
+    }
+
+    DateTime UnixTimeStampToDateTime(double unixTimeStamp)
+    {
+        DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+        dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
+        return dtDateTime;
     }
 
     public void AddHealth()
@@ -77,7 +100,7 @@ public class PlayerData : MonoBehaviour
         }
         else
         {
-            long timeBeforeHealth = NextDateForHealth.Ticks - DateTime.Now.Ticks;
+            long timeBeforeHealth = UnixTimeStampToDateTime(lastTime).AddMinutes(30).Ticks - DateTime.Now.Ticks;
             TimeSpan ts = new TimeSpan(timeBeforeHealth);
 
             return string.Format("{0:00}:{1:00}:{2:00}", ts.Days, ts.Minutes, ts.Seconds);
