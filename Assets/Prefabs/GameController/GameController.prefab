@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - {fileID: 11400000, guid: 8f8377e9df50d3145b472ceed397adc9, type: 2}
-  - {fileID: 11400000, guid: 8f8377e9df50d3145b472ceed397adc9, type: 2}
+  - {fileID: 11400000, guid: 79ef33c3631cbd24abb8f41ae2b53bc8, type: 2}
   - {fileID: 11400000, guid: 8f8377e9df50d3145b472ceed397adc9, type: 2}
 --- !u!1 &1453266707
 GameObject:
@@ -2563,6 +2563,22 @@ PrefabInstance:
     - target: {fileID: 4915045355295388111, guid: 11ca15d81d6b1d34c8b124dcb508fc70, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915045355295388112, guid: 11ca15d81d6b1d34c8b124dcb508fc70, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915045355295388112, guid: 11ca15d81d6b1d34c8b124dcb508fc70, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.9803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915045355295388112, guid: 11ca15d81d6b1d34c8b124dcb508fc70, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.854902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915045355295388112, guid: 11ca15d81d6b1d34c8b124dcb508fc70, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.4039216
       objectReference: {fileID: 0}
     - target: {fileID: 4915045355295388114, guid: 11ca15d81d6b1d34c8b124dcb508fc70, type: 3}
       propertyPath: player
