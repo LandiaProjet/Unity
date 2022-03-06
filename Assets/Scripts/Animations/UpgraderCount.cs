@@ -26,7 +26,7 @@ public class UpgraderCount
         {
             text.text = count.ToString();
             count++;
-            yield return new WaitForSeconds(time);
+            yield return new WaitForSeconds(time * Time.deltaTime);
         }
         text.text = value.ToString();
     }

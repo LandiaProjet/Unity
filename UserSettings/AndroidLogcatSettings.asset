@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "R5CNC16D8AR",
+    "m_SelectedDeviceId": "R58N72EBNAT",
     "m_SelectedPackage": {
-        "deviceId": "R5CNC16D8AR",
+        "deviceId": "R58N72EBNAT",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 5133,
+        "processId": 27273,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -18,6 +18,24 @@
             "deviceId": "R58N72EBNAT",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 26110,
+            "exited": false
+        },
+        {
+            "deviceId": "R58N72EBNAT",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 30695,
+            "exited": false
+        },
+        {
+            "deviceId": "R58N72EBNAT",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 5368,
+            "exited": false
+        },
+        {
+            "deviceId": "R58N72EBNAT",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 27273,
             "exited": false
         },
         {

@@ -81,8 +81,7 @@ public class LevelManager : MonoBehaviour
         {
             if (slotlevel.id == id)
             {
-                TransitionManager.instance.loadingTransition.startLoading(1f);
-                SceneManager.LoadScene(Levels.instance.levels[id].idScene);
+                TransitionManager.instance.loadingTransition.startLoadingLevel(1f, true , Levels.instance.levels[id].idScene);
                 isPlaying.instance.startLevel(id);
                 return true;
             }

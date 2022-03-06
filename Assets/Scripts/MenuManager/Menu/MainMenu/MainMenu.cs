@@ -14,21 +14,18 @@ public class MainMenu : MonoBehaviour
     private void Start() {
         SetLevel(PlayerData.getData().level.ToString());
         SetMoneyText(string.Format("{0:#,0}", PlayerData.getData().money));
-        //SetXpBar(PlayerManager.instance.levelSystem.GetExperienceNormalized());
+        InvokeRepeating("updateValue", 0.5f, 1f);
     }
 
-    private void FixedUpdate()
+    private void updateValue()
     {
-        SetLevel(PlayerData.getData().level.ToString());
-        SetMoneyText(string.Format("{0:#,0}", PlayerData.getData().money));
         SetHealText(PlayerData.getData().health.ToString());
         SetHealTimeText(PlayerData.getData().getTimeHealth());
     }
 
     public void PlayGame(){
-        TransitionManager.instance.loadingTransition.startLoading(0.1f, true);
+        TransitionManager.instance.loadingTransition.startLoadingLevel(0.1f, true, 1);
         MenuManager.instance.CloseMenu("MainMenu");
-        SceneManager.LoadScene(1);
     }
     
     public void ToggleSettings(bool isOpen){
