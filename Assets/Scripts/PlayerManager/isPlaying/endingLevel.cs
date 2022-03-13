@@ -21,11 +21,10 @@ public class endingLevel : MonoBehaviour
         MenuManager.instance.CloseMenu("PopupDefeat");
         MenuManager.instance.CloseMenu("PopupVictory");
         isPlaying.instance.stats = Stats.notHere;
-        TransitionManager.instance.loadingTransition.startLoading(1f);
+        TransitionManager.instance.loadingTransition.startLoadingLevel(1f, false, 1);
         PlayerManager.instance.changePlayer("idle");
         PlayerMovement.instance.setDie(false);
         PlayerMovement.instance.rb.simulated = true;
-        SceneManager.LoadScene(1);
         MenuManager.instance.OpenMenu("Level", 10);
         StartCoroutine(WaitBeforeRespawnPlayer());
     }
@@ -73,11 +72,10 @@ public class endingLevel : MonoBehaviour
         MenuManager.instance.CloseMenu("PopupDefeat");
         MenuManager.instance.CloseMenu("PopupVictory");
         isPlaying.instance.stats = Stats.notHere;
-        TransitionManager.instance.loadingTransition.startLoading(1f);
+        TransitionManager.instance.loadingTransition.startLoadingLevel(1f, false, 1);
         PlayerManager.instance.changePlayer("idle");
         PlayerMovement.instance.setDie(false);
         PlayerMovement.instance.rb.simulated = true;
-        SceneManager.LoadScene(1);
         MenuManager.instance.OpenMenu("MainMenu", 10);
         StartCoroutine(WaitBeforeRespawnPlayer());
     }

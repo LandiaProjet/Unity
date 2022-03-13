@@ -12,7 +12,8 @@ public class MainMenu : MonoBehaviour
     public GameObject healTimeText;
   
     private void Start() {
-        SetLevel(PlayerData.getData().level.ToString());
+        SetLevel(GameManager.instance.GetLevelSystem().GetLevelNumber().ToString());
+        SetExperience(GameManager.instance.GetLevelSystem().GetExperienceNormalized());
         SetMoneyText(string.Format("{0:#,0}", PlayerData.getData().money));
         InvokeRepeating("updateValue", 0.5f, 1f);
     }
@@ -43,7 +44,7 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void SetXpBar(float value){
+    public void SetExperience(float value){
         xpBar.value = value;
     }
 

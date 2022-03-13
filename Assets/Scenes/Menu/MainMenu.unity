@@ -299,6 +299,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 693932324, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
+      propertyPath: levels.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 336e71f03257d394bade034975c8d92f, type: 2}
+    - target: {fileID: 1453266709, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
+      propertyPath: slotLevels.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5673637900132872030, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
       propertyPath: m_Name
       value: GameController

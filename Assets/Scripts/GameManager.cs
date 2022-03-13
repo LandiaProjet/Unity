@@ -6,12 +6,20 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] dontDestroyOnLoad;
     
+    public static GameManager instance;
+
+    public LevelSystem levelSystem = new LevelSystem();
+
     private void Awake() {
-        //Limit FPS
+        instance = this;
 
         foreach (var element in dontDestroyOnLoad)
         {
             DontDestroyOnLoad(element);
         }
+    }
+
+    public LevelSystem GetLevelSystem(){
+        return levelSystem;
     }
 }

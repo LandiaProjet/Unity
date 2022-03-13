@@ -14,8 +14,6 @@ public class PlayerManager : MonoBehaviour
 
     public string mode;
 
-    public LevelSystem levelSystem = new LevelSystem();
-
     private void Awake()
     {
         if (instance != null)
@@ -24,18 +22,10 @@ public class PlayerManager : MonoBehaviour
             return;
         }
         instance = this;
-
-        levelSystem.OnLevelChanged += this.OnPlayerLevelChanged;
-        levelSystem.OnExperienceChanged += this.OnPlayerExperienceChanged;
     }
 
     private void Start() {
         mode = "idle";
-
-        //test Level
-        levelSystem.AddExperience(500);
-        Debug.Log("test-"+levelSystem.GetExperience());
-        PlayerData.getData().database.SaveData();
     }
 
     private void OnEnable() {
@@ -91,13 +81,4 @@ public class PlayerManager : MonoBehaviour
         }
         ButtonManager.instance.checkButtonType();
     }
-
-    private void OnPlayerLevelChanged(object sender, System.EventArgs e){
-        //PlayerData.getData().level = ((LevelSystem)sender).GetLevelNumber();
-    }
-
-    private void OnPlayerExperienceChanged(object sender, System.EventArgs e){
-      //  PlayerData.getData().experience = ((LevelSystem)sender).GetExperience();
-    }
-
 }
