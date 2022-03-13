@@ -20388,6 +20388,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5021b3764fd954e6fa71fb9c5d135adf, type: 3}
   - {fileID: 21300000, guid: d7dac206bb0cd42989f97a102b026e75, type: 3}
   - {fileID: 21300000, guid: ecfda64219ea6442782cfe6e10c91608, type: 3}
+  sfxSlider: {fileID: 929748329}
+  musicSlider: {fileID: 1105324820}
 --- !u!1 &1222064210
 GameObject:
   m_ObjectHideFlags: 0
@@ -56412,6 +56414,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2899d15b881155c4287f6883de0fde88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeHealth: {fileID: 0}
+  Health: {fileID: 0}
+  Credit: {fileID: 0}
+  CountStar: {fileID: 0}
 --- !u!1 &7704288593704681202
 GameObject:
   m_ObjectHideFlags: 0

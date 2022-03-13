@@ -12,6 +12,14 @@ public class SettingsMenu : MonoBehaviour
 
     public Sprite[] flags;
 
+    public Slider sfxSlider;
+    public Slider musicSlider;
+
+    private void Awake() {
+        sfxSlider.onValueChanged.AddListener(setSFXVolume);
+        musicSlider.onValueChanged.AddListener(SetMusicVolume);
+    }
+
     public void OpenLanguage(){
         languagePanel.SetActive(true);
     }
@@ -42,5 +50,13 @@ public class SettingsMenu : MonoBehaviour
         }
         languageText.GetComponent<TMPro.TextMeshProUGUI>().text = name;
         languageFlag.sprite = flags[flagCount];
+    }
+
+    public void SetMusicVolume(float value){
+        SoundManager.instance.SetMusicVolume(value);
+    }
+
+    public void setSFXVolume(float value){
+        SoundManager.instance.setSFXVolume(value);
     }
 }
