@@ -13,6 +13,8 @@ public class Arrow : MonoBehaviour
     private float angle;
     private bool used;
 
+    public bool isPlayer;
+
     public void launchArrow(float force)
     {
         rb.velocity = transform.right * force;
@@ -40,7 +42,7 @@ public class Arrow : MonoBehaviour
                 used = true;
                 break;
             case "Player":
-                if (used)
+                if (used || isPlayer)
                     return;
                 isPlaying.instance.addDommage(damage);
                 used = true;

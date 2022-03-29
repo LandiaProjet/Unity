@@ -71,6 +71,7 @@ public class PlayerAttack : MonoBehaviour
         GameObject arrow = Instantiate(Arrow, AttackPoint.position, AttackPoint.rotation);
         Arrow arrowScript = arrow.GetComponent<Arrow>();
         arrowScript.launchArrow(50f);
+        arrowScript.isPlayer = true;
         isPlaying.instance.RemoveArrow();
     }
 
