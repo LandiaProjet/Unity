@@ -1,10 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+[System.Serializable]
+public class Objective
+{
+    public string description;
+    public Sprite sprite;
+}
 
 public class Objectives : MonoBehaviour
 {
-    public Objectives[] objectives;
+    public Objective[] objectives;
     public static Objectives instance;
 
     private void Awake()

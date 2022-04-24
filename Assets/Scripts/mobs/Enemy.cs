@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     }
 
     public virtual void onDie(){
+        MissionScript.instance.addValueMission(0, 1);
         Debug.Log("SPAWNER");
         CoinSpawner.instance.SpawnCoins(10, this.transform);
     }

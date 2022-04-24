@@ -6,6 +6,7 @@ public class MainMenu : MonoBehaviour
 {
     public Slider xpBar;
     public GameObject levelText;
+    public GameObject notif;
 
     public GameObject moneyText;
     public GameObject healText;
@@ -14,8 +15,17 @@ public class MainMenu : MonoBehaviour
     private void Start() {
         SetLevel(GameManager.instance.GetLevelSystem().GetLevelNumber().ToString());
         SetExperience(GameManager.instance.GetLevelSystem().GetExperienceNormalized());
+        MissionScript.instance.CreateDailyMission();
         SetMoneyText(string.Format("{0:#,0}", PlayerData.getData().money));
         InvokeRepeating("updateValue", 0.5f, 1f);
+    }
+
+    private void Update()
+    {
+        if (!notif.activeSelf && MissionScript.instance.isRead)
+            notif.SetActive(true);
+        if (notif.activeSelf && !MissionScript.instance.isRead)
+            notif.SetActive(false);
     }
 
     private void updateValue()
@@ -40,6 +50,7 @@ public class MainMenu : MonoBehaviour
         if(isOpen){
             MenuManager.instance.OpenMenu("Mission", 15);
         } else {
+            notif.SetActive(false);
             MenuManager.instance.CloseMenu("Mission");
         }
     }

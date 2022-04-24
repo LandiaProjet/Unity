@@ -108,8 +108,10 @@ public class isPlaying : MonoBehaviour
         endLevel();
         PlayerData.getData().RemoveHealth();
         credit /= 10;
+        MissionScript.instance.addValueMission(1, credit);
         PlayerData.getData().AddCredit(credit);
         exp = credit * 10;
+        MissionScript.instance.addValueMission(2, exp);
         levelSystem.AddExperience(exp);
         MenuManager.instance.OpenMenu("PopupDefeat", 10);
     }
@@ -127,6 +129,8 @@ public class isPlaying : MonoBehaviour
         exp = (credit * 10) + (star * 250);
         levelSystem.AddExperience(exp);
         PlayerData.getData().AddCredit(credit);
+        MissionScript.instance.addValueMission(1, credit);
+        MissionScript.instance.addValueMission(1, exp);
         TransferAllItemInMainInventory();
         if (Levels.instance.levels.Length > (idLevel + 1) && LevelManager.instance.getLevel(idLevel + 1) == null)
         {

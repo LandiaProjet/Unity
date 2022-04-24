@@ -64,7 +64,6 @@ public class PlayerData : MonoBehaviour
         int seconds = Convert.ToInt32(result.TotalSeconds);
 
         return seconds;
-
     }
 
     DateTime UnixTimeStampToDateTime(double unixTimeStamp)

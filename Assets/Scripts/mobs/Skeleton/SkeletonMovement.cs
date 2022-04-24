@@ -106,6 +106,7 @@ public class SkeletonMovement : Enemy
 
     public override void onDie()
     {
+        MissionScript.instance.addValueMission(0, 1);
         animator.Play(nameDieAnimation);
         rb.velocity = new Vector2(0, 0);
         isDie = true;
