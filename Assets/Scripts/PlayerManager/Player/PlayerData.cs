@@ -91,6 +91,12 @@ public class PlayerData : MonoBehaviour
         database.SaveData();
     }
 
+    public void RemoveCredit(int credit)
+    {
+        money -= credit;
+        database.SaveData();
+    }
+
     public string getTimeHealth()
     {
         if (health == 5)
