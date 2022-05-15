@@ -708,7 +708,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5237653137294673768}
   m_FillRect: {fileID: 5237653138574253909}
   m_HandleRect: {fileID: 0}
@@ -917,10 +917,6 @@ MonoBehaviour:
   icon: {fileID: 5237653136744835882}
   slider: {fileID: 5237653137294673769}
   button: {fileID: 5237653138543269988}
-  icons:
-  - {fileID: 21300000, guid: 9d099813b1b6f4f568ce383adf31a9c3, type: 3}
-  - {fileID: 21300000, guid: 945c94fa95e16461b814ba86437b2f71, type: 3}
-  - {fileID: 21300000, guid: 72e50234581bc4a629e38e0a5ae465ea, type: 3}
 --- !u!1 &5237653137859379619
 GameObject:
   m_ObjectHideFlags: 0
