@@ -40,6 +40,7 @@ public class SkeletonSpearAttack : MonoBehaviour, ISkeletonAttack
         if (skeletonMovement.isDie == true)
             yield break;
         animator.Play("Skeleton_Spear_Idle");
+        yield return new WaitForSeconds(1.0f);
         skeletonMovement.isAttack = false;
     }
 }

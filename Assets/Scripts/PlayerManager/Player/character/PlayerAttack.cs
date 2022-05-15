@@ -38,7 +38,7 @@ public class PlayerAttack : MonoBehaviour
         if (playerMovement.isGrounded && !playerMovement.isAttack)
         {
             if (PlayerManager.instance.mode == "sword") {
-                StartCoroutine(playAnimationAttack(1));
+                StartCoroutine(playAnimationAttack(2));
             } else if (PlayerManager.instance.mode == "bow") {
                 StartCoroutine(playAnimationShoot());
             }
