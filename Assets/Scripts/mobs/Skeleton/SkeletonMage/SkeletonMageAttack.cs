@@ -64,6 +64,7 @@ public class SkeletonMageAttack : MonoBehaviour, ISkeletonAttack
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + 0.5f);
         if (skeletonMovement.isDie == true)
             yield break;
+        yield return new WaitForSeconds(2.0f);
         if (countAttack > 5)
         {
             StartCoroutine(EscapePlayer());

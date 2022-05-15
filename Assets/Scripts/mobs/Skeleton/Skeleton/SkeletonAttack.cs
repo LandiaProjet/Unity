@@ -39,6 +39,7 @@ public class SkeletonAttack : MonoBehaviour, ISkeletonAttack
         if (skeletonMovement.isDie == true)
             yield break;
         animator.Play("Skeleton_idle");
+        yield return new WaitForSeconds(1.0f);
         skeletonMovement.isAttack = false;
     }
 }

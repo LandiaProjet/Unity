@@ -40,6 +40,7 @@ public class SkeletonShieldAttack : MonoBehaviour, ISkeletonAttack
         if (skeletonMovement.isDie == true)
             yield break;
         animator.Play("Skeleton_Shield_idle");
+        yield return new WaitForSeconds(1.0f);
         skeletonMovement.isAttack = false;
     }
 }
