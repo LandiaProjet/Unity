@@ -60,11 +60,11 @@ public class endingLevel : MonoBehaviour
         PlayerMovement.instance.transform.position = isPlaying.instance.lastPoint;
         PlayerMovement.instance.setDie(false);
         PlayerMovement.instance.rb.simulated = true;
+        isPlaying.instance.stats = Stats.inGame;
         isPlaying.instance.addHealth(100);
         HudManager.instance.RecoveryGame();
         isPlaying.instance.time += 30;
         PlayerData.getData().AddHealth();
-        isPlaying.instance.stats = Stats.inGame;
     }
 
     public void BackToHome()

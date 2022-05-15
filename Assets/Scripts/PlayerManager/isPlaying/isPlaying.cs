@@ -113,7 +113,7 @@ public class isPlaying : MonoBehaviour
         exp = credit * 10;
         MissionScript.instance.addValueMission(2, exp);
         levelSystem.AddExperience(exp);
-        MenuManager.instance.OpenMenu("PopupDefeat", 10);
+        MenuManager.instance.OpenMenu("chance", 10);
     }
 
     public void OnVictory()
@@ -239,6 +239,18 @@ public class isPlaying : MonoBehaviour
         immunity = true;
         yield return new WaitForSeconds(time);
         immunity = false;
+    }
+
+    public bool getChance()
+    {
+        foreach (Slot slot in inventory)
+        {
+            if (slot.id == 3)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void ReloadArrow()
