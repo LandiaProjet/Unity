@@ -44,3 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: "V\xE9g\xE9tations"
+    uniqueID: 4005871745
+    locked: 0
+  - name: Maison
+    uniqueID: 3008131019
+    locked: 0
+  - name: Player
+    uniqueID: 2258698695
+    locked: 0
