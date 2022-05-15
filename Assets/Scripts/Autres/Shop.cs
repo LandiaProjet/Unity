@@ -28,6 +28,10 @@ public class Shop : MonoBehaviour
 			slots[i].AddItem(item, items[i].price);
 		}
     }
+
+    public void CloseShopMenu(){
+        MenuManager.instance.CloseMenu("Shop");
+    }
 }
 
 [System.Serializable]

@@ -25,6 +25,38 @@ MonoBehaviour:
 '
     m_Metadata:
       m_Items: []
+  - m_Id: 14350642679808
+    m_Key: Leave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14671523713024
+    m_Key: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14957529108480
+    m_Key: Inventory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15564151296000
+    m_Key: defeat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15876421423104
+    m_Key: Score
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16586160574464
+    m_Key: complet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17665610846208
+    m_Key: valid
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17948512456704
+    m_Key: Shop
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
