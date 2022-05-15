@@ -1002,6 +1002,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -51.68564
       objectReference: {fileID: 0}
+    - target: {fileID: 5952494558444823106, guid: ad54fdc1ca89fa04a81e2887aae3971e, type: 3}
+      propertyPath: m_Name
+      value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 5952494558444823106, guid: ad54fdc1ca89fa04a81e2887aae3971e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6028549465278309639, guid: ad54fdc1ca89fa04a81e2887aae3971e, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -1076,15 +1084,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6413075817041515755, guid: ad54fdc1ca89fa04a81e2887aae3971e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 1300
       objectReference: {fileID: 0}
     - target: {fileID: 6413075817041515755, guid: ad54fdc1ca89fa04a81e2887aae3971e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 6413075817041515755, guid: ad54fdc1ca89fa04a81e2887aae3971e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 84.65516
+      value: 0.000091552734
       objectReference: {fileID: 0}
     - target: {fileID: 6435715370787355391, guid: ad54fdc1ca89fa04a81e2887aae3971e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
