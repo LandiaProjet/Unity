@@ -91,9 +91,8 @@ public class isPlaying : MonoBehaviour
         exp = 0;
         credit = 0;
         var ts = TimeSpan.FromSeconds(time);
-        HudManager.instance.initGame(string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds), "0", star, shield);
+        HudManager.instance.initGame(string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds), "0", star, shield, GetCount(4), GetCount(5));
     }
-
     public void endLevel()
     {
         stats = Stats.Ending;
@@ -270,5 +269,27 @@ public class isPlaying : MonoBehaviour
     {
         deleteItem(2);
         ReloadArrow();
+    }
+
+    public void UsePotion()
+    {
+        int count = HudManager.instance.getPotion();
+        if (count > 0)
+        {
+            deleteItem(4);
+            HudManager.instance.SetPotion((count - 1).ToString());
+            addHealth(30);
+        }
+    }
+
+    public void UseChrono()
+    {
+        int count = HudManager.instance.getChrono();
+        if (count > 0)
+        {
+            deleteItem(5);
+            HudManager.instance.SetPotion((count - 1).ToString());
+            time += 30;
+        }
     }
 }

@@ -62,6 +62,7 @@ public class endingLevel : MonoBehaviour
         PlayerMovement.instance.rb.simulated = true;
         isPlaying.instance.stats = Stats.inGame;
         isPlaying.instance.addHealth(100);
+        isPlaying.instance.credit *= 10;
         HudManager.instance.RecoveryGame();
         isPlaying.instance.time += 30;
         PlayerData.getData().AddHealth();

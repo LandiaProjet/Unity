@@ -18,7 +18,7 @@ public class skipChance : MonoBehaviour
 
     IEnumerator waitBeforeEnd()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         isPlaying.instance.deleteItem(3);
         MenuManager.instance.CloseMenu("chance");
         endingLevel.instance.Retrylevel();

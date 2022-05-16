@@ -57,5 +57,7 @@ public class InventoryExchangeUI : MonoBehaviour
 		MenuManager.instance.CloseMenu("Exchange");
 		isPlaying.instance.stats = Stats.inGame;
 		isPlaying.instance.ReloadArrow();
+		HudManager.instance.SetPotion(isPlaying.instance.GetCount(4).ToString());
+		HudManager.instance.SetChrono(isPlaying.instance.GetCount(5).ToString());
 	}
 }
