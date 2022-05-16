@@ -26,6 +26,7 @@ public class MainMenu : MonoBehaviour
             notif.SetActive(true);
         if (notif.activeSelf && !MissionScript.instance.isRead)
             notif.SetActive(false);
+        SetMoneyText(string.Format("{0:#,0}", PlayerData.getData().money));
     }
 
     private void updateValue()
