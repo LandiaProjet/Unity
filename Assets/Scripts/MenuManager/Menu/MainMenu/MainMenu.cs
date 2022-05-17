@@ -38,6 +38,12 @@ public class MainMenu : MonoBehaviour
     public void PlayGame(){
         TransitionManager.instance.loadingTransition.startLoadingLevel(0.1f, true, 1);
         MenuManager.instance.CloseMenu("MainMenu");
+        if (!PlayerData.getData().startVillage)
+        {
+            MenuManager.instance.OpenMenu("tutorialVillage", 20);
+            PlayerData.getData().startVillage = true;
+            PlayerData.getData().database.SaveData();
+        }
     }
     
     public void ToggleSettings(bool isOpen){

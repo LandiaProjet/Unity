@@ -10,6 +10,9 @@ public class PlayerData : MonoBehaviour
     public int level;
     public int experience;
 
+    public bool startVillage;
+    public bool startLevel;
+
     public Database database;
     private static PlayerData instance;
 
