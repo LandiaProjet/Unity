@@ -100,4 +100,4 @@ MonoBehaviour:
   player: {fileID: 0}
   timeOffset: 0.2
   minCameraPos: {x: -109, y: -24, z: 0}
-  maxCameraPos: {x: 181, y: 50, z: 0}
+  maxCameraPos: {x: 181, y: 1000, z: 0}

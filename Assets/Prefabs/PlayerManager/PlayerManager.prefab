@@ -117,6 +117,7 @@ MonoBehaviour:
   level: 0
   experience: 0
   startVillage: 0
+  startInventory: 0
   startLevel: 0
 --- !u!1 &6725711167149109957
 GameObject:
