@@ -50,6 +50,9 @@ TagManager:
   - name: Maison
     uniqueID: 3008131019
     locked: 0
+  - name: Mobs
+    uniqueID: 3862060565
+    locked: 0
   - name: Player
     uniqueID: 2258698695
     locked: 0

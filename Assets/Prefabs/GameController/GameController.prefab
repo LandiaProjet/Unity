@@ -4908,6 +4908,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5673637900004950071}
+    - target: {fileID: 1575589684, guid: ad54fdc1ca89fa04a81e2887aae3971e, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: turkey
+      objectReference: {fileID: 0}
     - target: {fileID: 1040061619424087394, guid: ad54fdc1ca89fa04a81e2887aae3971e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

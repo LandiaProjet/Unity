@@ -306,6 +306,22 @@ PrefabInstance:
       propertyPath: waitBeforeStart
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 75148813793077613, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 611851800576
+      objectReference: {fileID: 0}
+    - target: {fileID: 5673637899514675231, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
+      propertyPath: m_Name
+      value: language_india
+      objectReference: {fileID: 0}
+    - target: {fileID: 5673637900100304693, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
+      propertyPath: m_Name
+      value: language_japan
+      objectReference: {fileID: 0}
+    - target: {fileID: 5673637900104262557, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
+      propertyPath: m_Name
+      value: language_russian
+      objectReference: {fileID: 0}
     - target: {fileID: 5673637900132872030, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
       propertyPath: m_Name
       value: GameController
@@ -353,6 +369,10 @@ PrefabInstance:
     - target: {fileID: 5673637900132872031, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5673637901194352030, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
+      propertyPath: m_Name
+      value: language_portugal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}

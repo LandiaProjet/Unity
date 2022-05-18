@@ -14,6 +14,8 @@ public class PlayerData : MonoBehaviour
     public bool startInventory;
     public bool startLevel;
 
+    public string languageCode;
+
     public Database database;
     private static PlayerData instance;
 

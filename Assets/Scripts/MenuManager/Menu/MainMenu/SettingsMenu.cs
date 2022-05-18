@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
+using System.Globalization;
 public class SettingsMenu : MonoBehaviour
 {
     public GameObject languagePanel;
@@ -10,7 +10,7 @@ public class SettingsMenu : MonoBehaviour
     public GameObject languageText;
     public Image languageFlag;
 
-    public Sprite[] flags;
+    public ItemFlag[] flags;
 
     public Slider sfxSlider;
     public Slider musicSlider;
@@ -18,6 +18,7 @@ public class SettingsMenu : MonoBehaviour
     private void Awake() {
         sfxSlider.onValueChanged.AddListener(setSFXVolume);
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
+        UpdateUI(PlayerData.getData().languageCode);
     }
 
     public void OpenLanguage(){
@@ -49,7 +50,10 @@ public class SettingsMenu : MonoBehaviour
             }
         }
         languageText.GetComponent<TMPro.TextMeshProUGUI>().text = name;
-        languageFlag.sprite = flags[flagCount];
+        languageFlag.sprite = flags[flagCount].sprite;
+        LoadLocale(flags[flagCount].code);
+        PlayerData.getData().languageCode = flags[flagCount].code;
+        PlayerData.getData().database.SaveData();
     }
 
     public void SetMusicVolume(float value){
@@ -59,4 +63,29 @@ public class SettingsMenu : MonoBehaviour
     public void setSFXVolume(float value){
         SoundManager.instance.setSFXVolume(value);
     }
+
+    public void LoadLocale(string languageIdentifier)
+    {
+        LocalizationSettings settings = LocalizationSettings.Instance;
+        LocaleIdentifier localeCode = new LocaleIdentifier(languageIdentifier);//can be "en" "de" "ja" etc.
+
+        for(int i = 0; i < LocalizationSettings.AvailableLocales.Locales.Count; i++)
+        {
+            Locale aLocale = LocalizationSettings.AvailableLocales.Locales[i];
+            LocaleIdentifier anIdentifier = aLocale.Identifier;
+            if(anIdentifier == localeCode)
+            {
+                LocalizationSettings.SelectedLocale = aLocale;
+            }
+        }
+    }
+}
+
+[System.Serializable]
+public class ItemFlag{
+
+    public Sprite sprite;
+
+    public string code;
+
 }
