@@ -17,6 +17,7 @@ public class FadeTransition : MonoBehaviour
         animator.SetBool("FadeIn", true);
         yield return new WaitForSeconds(time);
         animator.SetBool("FadeIn", false);
+        yield return new WaitForSeconds(1f);
         gameObject.SetActive(false);
     }
 }

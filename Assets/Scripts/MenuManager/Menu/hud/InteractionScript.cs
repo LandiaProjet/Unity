@@ -1,7 +1,15 @@
 using UnityEngine;
+using System.Collections;
+using System;
 
 public class InteractionScript : MonoBehaviour
 {
+    public bool isMenu;
+
+    public string menu;
+    public int zindex;
+    public Transform position;
+
     public float Radius;
     public LayerMask collisionLayers;
     public Sprite sprite;
@@ -43,8 +51,19 @@ public class InteractionScript : MonoBehaviour
 
     private void Execute()
     {
-        interactManager.InteractButton.SetActive(false);
-        MenuManager.instance.OpenMenu("Level", 10);
+        if (isMenu)
+            MenuManager.instance.OpenMenu(menu, zindex);
+        else
+        {
+            StartCoroutine(executeTeleport());
+        }
+    }
+
+    IEnumerator executeTeleport()
+    {
+        TransitionManager.instance.fadeTransition.EnableFadeTransition(2f);
+        yield return new WaitForSeconds(1f);
+        PlayerMovement.instance.transform.position = position.position;
     }
 
     private void OnDrawGizmos()
