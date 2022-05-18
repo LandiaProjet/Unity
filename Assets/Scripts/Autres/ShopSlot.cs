@@ -36,7 +36,7 @@ public class ShopSlot : MonoBehaviour {
             Inventory.instance.addItem(item.id);
             Debug.Log("Item acheté");
         } else {
-            Debug.Log("peut pas");
+            MenuManager.instance.OpenMenu("PopupNoCoin", 16);
         }
     }
 }

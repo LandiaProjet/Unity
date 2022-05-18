@@ -50,7 +50,7 @@ public class LevelButton : MonoBehaviour
         {
             if (PlayerData.getData().health <= 0)
             {
-                Popup.instance.openPopup("Alerte", "Vous n'avez pas assez de coeur pour pouvoir relancer une parti ...", 20);
+                MenuManager.instance.OpenMenu("PopupNoHealth", 16);
             }
             else
             {
