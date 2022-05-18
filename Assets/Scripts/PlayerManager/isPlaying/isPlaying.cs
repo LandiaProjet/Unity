@@ -85,6 +85,10 @@ public class isPlaying : MonoBehaviour
         shield = 100f;
         instance.stats = Stats.Starting;
         MenuManager.instance.OpenMenu("Exchange", 10);
+        if (!PlayerData.getData().startInventory)
+        {
+            MenuManager.instance.OpenMenu("tutorialInventory", 20);
+        }
         time = Levels.instance.levels[idLevel].secondTimeMax;
         immunity = false;
         star = 3;

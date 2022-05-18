@@ -55,7 +55,17 @@ public class InventoryExchangeUI : MonoBehaviour
 	public void onCloseUI()
     {
 		MenuManager.instance.CloseMenu("Exchange");
-		isPlaying.instance.stats = Stats.inGame;
+		PlayerData.getData().startInventory = true;
+		PlayerData.getData().database.SaveData();
+		if (!PlayerData.getData().startLevel)
+        {
+			MenuManager.instance.OpenMenu("tutorialLevel", 20);
+			PlayerData.getData().startLevel = true;
+			PlayerData.getData().database.SaveData();
+		} else
+        {
+			isPlaying.instance.stats = Stats.inGame;
+        }
 		isPlaying.instance.ReloadArrow();
 		HudManager.instance.SetPotion(isPlaying.instance.GetCount(4).ToString());
 		HudManager.instance.SetChrono(isPlaying.instance.GetCount(5).ToString());

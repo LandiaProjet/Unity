@@ -11,6 +11,7 @@ public class PlayerData : MonoBehaviour
     public int experience;
 
     public bool startVillage;
+    public bool startInventory;
     public bool startLevel;
 
     public Database database;
