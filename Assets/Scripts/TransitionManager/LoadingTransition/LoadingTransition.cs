@@ -38,6 +38,8 @@ public class LoadingTransition : MonoBehaviour
         this.sceneLoad = sceneLoad;
         this.extraTime = extraTime;
         gameObject.SetActive(true);
+        if (InteractManager.instance)
+            InteractManager.instance.InteractButton.SetActive(false);
         StartCoroutine(load(levelIndex));
     }
 
