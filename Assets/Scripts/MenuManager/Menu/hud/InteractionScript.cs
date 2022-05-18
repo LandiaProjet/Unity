@@ -10,6 +10,8 @@ public class InteractionScript : MonoBehaviour
     public int zindex;
     public Transform position;
 
+    public GameObject hover;
+
     public float Radius;
     public LayerMask collisionLayers;
     public Sprite sprite;
@@ -36,6 +38,8 @@ public class InteractionScript : MonoBehaviour
                 interactManager.trigger.triggers.Add(interactManager.entry);
                 interactManager.image.sprite = sprite;
                 interactManager.InteractButton.SetActive(true);
+                if (hover)
+                    hover.SetActive(true);
             }
         } else
         {
@@ -45,6 +49,8 @@ public class InteractionScript : MonoBehaviour
                 interactManager.trigger.triggers.RemoveRange(0, interactManager.trigger.triggers.Count);
                 interactManager.entry.callback.RemoveAllListeners();
                 interactManager.InteractButton.SetActive(false);
+                if (hover)
+                    hover.SetActive(false);
             }
         }
     }
