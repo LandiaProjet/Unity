@@ -52,7 +52,7 @@ public class SettingsMenu : MonoBehaviour
         languageText.GetComponent<TMPro.TextMeshProUGUI>().text = name;
         languageFlag.sprite = flags[flagCount].sprite;
         LoadLocale(flags[flagCount].code);
-        PlayerData.getData().languageCode = flags[flagCount].code;
+        PlayerData.getData().languageCode = name;
         PlayerData.getData().database.SaveData();
     }
 
