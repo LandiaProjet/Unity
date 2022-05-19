@@ -949,6 +949,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5239329381448716198, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 6611402854613496350, guid: c28b9a0ea78c0e3419655433cd935d52, type: 2}
     - target: {fileID: 5673637899514675231, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
       propertyPath: m_Name
       value: language_india
