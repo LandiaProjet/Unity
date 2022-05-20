@@ -14,6 +14,9 @@ public class PlayerData : MonoBehaviour
     public bool startInventory;
     public bool startLevel;
 
+    public float music;
+    public float sfx;
+
     public string languageCode;
 
     public Database database;
@@ -23,6 +26,8 @@ public class PlayerData : MonoBehaviour
 
     private void Awake()
     {
+        music = 1f;
+        sfx = 1f;
         if (instance != null)
         {
             Debug.LogWarning("Il y a plus d'une instance de PlayerData dans la sc�ne");

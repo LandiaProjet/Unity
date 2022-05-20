@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class SoundManager : MonoBehaviour
     public AudioMixer mixer;
 
     public AudioSource[] sounds;
+
+    public Slider music;
+    public Slider sfx;
 
     private void Awake() {
         instance = this;
@@ -20,11 +24,30 @@ public class SoundManager : MonoBehaviour
         sounds[id].Play();
     }
 
-    public void SetMusicVolume(float value){
-        mixer.SetFloat("Music", Mathf.Log10(value)*20);
+    public void reload()
+    {
+        music.value = PlayerData.getData().music;
+        sfx.value = PlayerData.getData().sfx;
     }
 
-    public void setSFXVolume(float value){
-        mixer.SetFloat("SFX", Mathf.Log10(value)*20);
+    public void SetMusicVolume(float value)
+    {
+        if (value < 0.001 || value > 1)
+            return;
+        mixer.SetFloat("MusicVolume", Mathf.Log10(value)*20);
+        PlayerData.getData().music = value;
+    }
+
+    public void setSFXVolume(float value)
+    {
+        if (value < 0.001 || value > 1)
+            return;
+        mixer.SetFloat("SFXVolume", Mathf.Log10(value) *20);
+        PlayerData.getData().sfx = value;
+    }
+
+    public void SaveParameterSound()
+    {
+        PlayerData.getData().database.SaveData();
     }
 }
