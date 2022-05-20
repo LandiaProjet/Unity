@@ -57,6 +57,7 @@ public class InteractionScript : MonoBehaviour
 
     private void Execute()
     {
+        SoundManager.instance.PlayEffectSound(0);
         if (isMenu)
             MenuManager.instance.OpenMenu(menu, zindex);
         else

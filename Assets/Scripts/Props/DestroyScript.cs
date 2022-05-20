@@ -21,6 +21,7 @@ public class DestroyScript : Enemy
     {
         collision.enabled = false;
         animator.SetTrigger("Destroy");
+        SoundManager.instance.PlayEffectSound(2);
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }

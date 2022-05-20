@@ -32,10 +32,10 @@ public class SkeletonAttack : MonoBehaviour, ISkeletonAttack
 
     private IEnumerator playAnimationAttack(int number)
     {
-        animator.Play("Skeleton_attack_" + number);
         skeletonMovement.isAttack = true;
         rb.velocity = new Vector2(0, 0);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + 0.2f);
+        SoundManager.instance.PlayEffectSound(1);
         if (skeletonMovement.isDie == true)
             yield break;
         animator.Play("Skeleton_idle");

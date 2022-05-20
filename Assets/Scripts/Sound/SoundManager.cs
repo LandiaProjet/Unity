@@ -9,24 +9,22 @@ public class SoundManager : MonoBehaviour
 
     public AudioMixer mixer;
 
-    public AudioSource source;
-
-    public AudioClip[] sounds;
+    public AudioSource[] sounds;
 
     private void Awake() {
         instance = this;
     }
 
-    public void playSound(){
-        AudioClip clip = sounds[0];
-        source.PlayOneShot(clip);
+    public void PlayEffectSound(int id)
+    {
+        sounds[id].Play();
     }
 
     public void SetMusicVolume(float value){
-        mixer.SetFloat("MusicVolume", Mathf.Log10(value)*20);
+        mixer.SetFloat("Music", Mathf.Log10(value)*20);
     }
 
     public void setSFXVolume(float value){
-        mixer.SetFloat("SFXVolume", Mathf.Log10(value)*20);
+        mixer.SetFloat("SFX", Mathf.Log10(value)*20);
     }
 }

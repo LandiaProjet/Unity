@@ -113,6 +113,7 @@ public class PlayerAttack : MonoBehaviour
      */
     private IEnumerator playAnimationAttack(int number)
     {
+        SoundManager.instance.PlayEffectSound(1);
         animator.Play("Player_attack_" + number);
         playerMovement.isAttack = true;
         rb.velocity = new Vector2(0, 0);

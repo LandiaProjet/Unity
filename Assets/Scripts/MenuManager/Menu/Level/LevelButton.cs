@@ -42,6 +42,7 @@ public class LevelButton : MonoBehaviour
 
     public void onClick()
     {
+        SoundManager.instance.PlayEffectSound(0);
         if (isActive == false)
         {
             Popup.instance.openPopup("Alerte", "Vous devez débloquer " + Levels.instance.levels[idLevel].RequiredStar.ToString() + " pour pouvoir passer au niveau suivant.", 20);
