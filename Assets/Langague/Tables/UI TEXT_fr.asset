@@ -295,6 +295,10 @@ MonoBehaviour:
     m_Localized: non
     m_Metadata:
       m_Items: []
+  - m_Id: 2116495189839872
+    m_Localized: Chargement...
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
