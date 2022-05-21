@@ -9,7 +9,6 @@ public class LoadingTransition : MonoBehaviour
     bool sceneLoad;
     
     public Slider slider;
-    public GameObject icon;
     public TMPro.TextMeshProUGUI progressText;
 
     private void OnEnable()
@@ -56,7 +55,7 @@ public class LoadingTransition : MonoBehaviour
 
     IEnumerator load(int levelIndex){
         yield return null;
-        slider.value = 1;
+        slider.value = 0;
         //Begin to load the Scene you specify
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(levelIndex);
         //Don't let the Scene activate until you allow it to
@@ -69,9 +68,8 @@ public class LoadingTransition : MonoBehaviour
             float progress = Mathf.Clamp01(asyncOperation.progress / 0.12f);
             progressText.text = (int)(progress * 100f) + "%";
             slider.value = asyncOperation.progress;
-            icon.transform.position = new Vector3(((int)(progress * 100f)) / 100 * 600,20,0);
             // Check if the load has finished
-            if (asyncOperation.progress >= 0.9f)
+            if (asyncOperation.progress >= 0.90f)
             {
                 //Change the Text to show the Scene is ready
                 asyncOperation.allowSceneActivation = true;
