@@ -18,6 +18,7 @@ public class PlayerData : MonoBehaviour
     public float sfx;
 
     public string languageCode;
+    public string languageName;
 
     public Database database;
     private static PlayerData instance;

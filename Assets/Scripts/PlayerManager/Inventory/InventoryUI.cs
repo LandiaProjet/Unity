@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Localization.Settings;
 public class InventoryUI : MonoBehaviour
 {
 	public Transform itemsParent;
@@ -66,7 +66,7 @@ public class InventoryUI : MonoBehaviour
 	public void OpenDesription(Item item){
 		inventoryDescription.SetActive(true);
 		InventoryItemDescriptionUI itemDescription = inventoryDescription.GetComponent<InventoryItemDescriptionUI>();
-		itemDescription.itemName.SetText(item.name);
+		itemDescription.itemName.SetText(LocalizationSettings.StringDatabase.GetLocalizedString(item.name));
 		itemDescription.itemDescription.SetText(item.description);
 		itemDescription.itemIcon.sprite = item.icon;
 	}

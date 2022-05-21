@@ -30,7 +30,7 @@ public class Inventory : MonoBehaviour
         database = new Database("Inventory.json", this);
         // c'est pour les tests tu peux ajouter le addItem aussi pour tester
        // deleteItem(0);
-        addItem(2);
+  //      addItem(2);
     }
 
     public void addItem(int id)
