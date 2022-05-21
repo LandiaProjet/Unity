@@ -117,8 +117,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1927038318776320
-    m_Localized: "\xCAtre pr\xEAt ? Lorsque vous lancez la partie les items que vous
-      mettrez en jeu ne pourront plus revenir jusqu'\xE0 la fin du jeu."
+    m_Localized: Be ready? When you start the game, the items you put into play cannot
+      be returned until the end of the game.
     m_Metadata:
       m_Items: []
   - m_Id: 1928287588028416

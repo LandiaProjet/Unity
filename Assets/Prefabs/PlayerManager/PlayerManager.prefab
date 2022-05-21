@@ -63,7 +63,7 @@ MonoBehaviour:
   objectives:
   - description: Mission kill
     sprite: {fileID: 21300000, guid: 945c94fa95e16461b814ba86437b2f71, type: 3}
-  - description: Gagner -X- d'argent
+  - description: Mission money
     sprite: {fileID: 21300000, guid: 9d099813b1b6f4f568ce383adf31a9c3, type: 3}
   - description: Mission exp
     sprite: {fileID: 21300000, guid: ee0d18b2a22db41f2b4725dc8ff88580, type: 3}
