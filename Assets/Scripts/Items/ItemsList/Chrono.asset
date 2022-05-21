@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   icon: {fileID: 21300000, guid: 715d6ea1f8c8a45c487d18da0f6ec237, type: 3}
-  name: Chrono
+  name: Stopwatch
   description: chrono
   count: 0
   limitExchange: 1

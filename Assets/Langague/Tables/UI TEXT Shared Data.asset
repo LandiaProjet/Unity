@@ -58,7 +58,201 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1145882363138048
-    m_Key: New Entry
+    m_Key: 'tuto.village.step1
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1897957111992320
+    m_Key: tuto.village.step2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898208715706368
+    m_Key: tuto.village.step3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898210800275456
+    m_Key: tuto.village.step4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898212213755904
+    m_Key: tuto.village.step5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1899970377912320
+    m_Key: tuto.village.step6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900435765301248
+    m_Key: tuto.inventory.step1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900993167331328
+    m_Key: tuto.inventory.step2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900994547257344
+    m_Key: tuto.inventory.step3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900996145287168
+    m_Key: tuto.inventory.step4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901036733566976
+    m_Key: tuto.inventory.step5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901037765365760
+    m_Key: tuto.inventory.step6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903124825870336
+    m_Key: tuto.level.step1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903268870852608
+    m_Key: tuto.level.step2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903276848418816
+    m_Key: tuto.level.step3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903315893194752
+    m_Key: tuto.level.step4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903329600180224
+    m_Key: tuto.level.step5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903344032780288
+    m_Key: tuto.level.step6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903366136762368
+    m_Key: tuto.level.step7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903381177536512
+    m_Key: tuto.level.step8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1904847715930112
+    m_Key: tuto.level.step9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1907131367657472
+    m_Key: warning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1907510406909952
+    m_Key: not enough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908064411553792
+    m_Key: watch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908155113377792
+    m_Key: no thanks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908729703665664
+    m_Key: not health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909243816284160
+    m_Key: see ad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909635732049920
+    m_Key: refund all heart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909913566941184
+    m_Key: 1 months heart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910139149193216
+    m_Key: 3 months heart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910298029428736
+    m_Key: 6 months heart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911008808767488
+    m_Key: 1 year heart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911194901647360
+    m_Key: health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911530873786368
+    m_Key: Gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1913101028265984
+    m_Key: Merchant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1916062508879872
+    m_Key: Bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917772610506752
+    m_Key: Arrow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917829191667712
+    m_Key: Clover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917911647490048
+    m_Key: Stopwatch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917987736358912
+    m_Key: Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1918079969103872
+    m_Key: Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921272417456128
+    m_Key: Mission kill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921438738386944
+    m_Key: Mission money
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921637087023104
+    m_Key: Mission exp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1926858253111296
+    m_Key: Levellock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1926884308127744
+    m_Key: alert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1927038318776320
+    m_Key: ready
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1928287588028416
+    m_Key: yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1928288816959488
+    m_Key: no
     m_Metadata:
       m_Items: []
   m_Metadata:

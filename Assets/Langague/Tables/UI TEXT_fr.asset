@@ -60,6 +60,241 @@ MonoBehaviour:
     m_Localized: Magasin
     m_Metadata:
       m_Items: []
+  - m_Id: 1145882363138048
+    m_Localized: Bonjour ! Bienvenue dans le village de Kilawa ! Je suis le chef
+      de ce village ! Je sais, je sais c'est trop bien mais pas de bavardage passons
+      directement au chose serieuse ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1897957111992320
+    m_Localized: "Nous avons besoin de ton aide, je sais que tu es le plus fort de
+      ce village ! Ta tache est simple, tu vas devoir aller chercher la pierre sacr\xE9e
+      qui nous a \xE9t\xE9 vol\xE9 !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898208715706368
+    m_Localized: "Pour sa tu vas devoir t'aventurer dans diff\xE9rent monde et tu
+      devras les r\xE9soudres sans te perdre ! Tu vas me dire comment on fait pour
+      commencer ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898210800275456
+    m_Localized: "Ta juste \xE0 aller dans la grotte qui se trouve \xE0 ta droite
+      et tu vas pouvoir trouver tout les mondes qu'il te faut aventur\xE9 pour trouver
+      la fameuse pierre ! Mais attention !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898212213755904
+    m_Localized: "Tu vas devoir d'\xE9quiper puisqu'il existe plein de monstre !
+      Et pour sa tu vas pouvoir acheter de l'\xE9quipement gr\xE2ce \xE0 de l'argent
+      que tu gagneras pendant ton aventure !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1899970377912320
+    m_Localized: "Tu trouveras le marchant \xE0 ta droite sur le chemin , il est
+      facilement remarquable ne t'inqui\xE8te pas. C'est tout pour moi, va \xE0 l'aventure
+      et rapporte nous cette pierre !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900435765301248
+    m_Localized: "Comment on se retrouve ! Alors tu as pu trouv\xE9 la grotte facilement
+      ? Tant mieux ! Je vais t'expliqu\xE9 comment fonctionne ce menu !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900993167331328
+    m_Localized: "\xE0 ta gauche tu trouveras ton inventaire principale, c'est l\xE0
+      o\xF9 se trouve tout les objets que tu as pu achet\xE9 ou gagn\xE9. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900994547257344
+    m_Localized: "\xE0 ta droite tu trouveras ton inventaire d'aventure. Attention
+      les objets de cette inventaire avec ses  objets sera perdu si tu perds ! Donc
+      fais tr\xE8s attention lorsque tu s\xE9lectionnes t'es objets !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900996145287168
+    m_Localized: "Pour transf\xE8rer les objets entre les inventaires il te suffit
+      de cliqu\xE9 sur l'object en question et tu as r\xE9ussi."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901036733566976
+    m_Localized: "Tu pourras aussi retrouv\xE9 \xE0 ta droite du menu les objets
+      qui te seront utile pendant ton aventure. Enfin si tu as termin\xE9 ta pr\xE9paration
+      tu peux cliqu\xE9 sur valid\xE9 et tu pourras commenc\xE9 !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901037765365760
+    m_Localized: Bonne chance !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903124825870336
+    m_Localized: "Derni\xE8re explication et je te laisse tranquille c'est promis
+      ! C'est pour ton bien j'ai pas envie que tu te perds... Et surtout tu es le
+      seul qui ... Enfin bref !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903268870852608
+    m_Localized: "Ici que tu trouveras la vie qu'il te reste, fais tr\xE8s attention
+      \xE0 celle-ci, si tu en as plus tu perds..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903276848418816
+    m_Localized: "L\xE0 tu pourras voir le temps qu'il te reste pour termin\xE9 le
+      monde, si tu le termine pas dans les temps tu perds !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903315893194752
+    m_Localized: "Ici il y aura ton nombre d'\xE9toile que tu gagnais \xE0 la fin
+      du monde, il te permettra de d\xE9bloquer des mondes et de gagner de l'argent
+      !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903329600180224
+    m_Localized: "Cette endroit repr\xE9sente le nombre de fl\xE8che que tu as pour
+      te battre. C'est tr\xE8s simple !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903344032780288
+    m_Localized: "Ici tu pourras voir le nombre de potion que tu poss\xE8des et si
+      tu as besoin d'utiliser une potion, tu as juste \xE0 cliquer dessus. Les potions
+      de permet de te r\xE9storer de la vie."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903366136762368
+    m_Localized: "Ici tu pourras voir le nombre de chronom\xE8tre que tu poss\xE8des
+      et si tu as besoin d'utiliser un chronom\xE8tre, tu as juste \xE0 cliquer dessus.
+      Le chronom\xE8tre te permet de te rajouter du temps."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903381177536512
+    m_Localized: "Enfin se bouton repr\xE9sente le menu pause. Elle te permettra
+      de voir les missions qu'il te reste et quitter le monde. Attention si tu quittes
+      tu perdras ton inventaire."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1904847715930112
+    m_Localized: "Pour le reste je penses que tu peux tr\xE8s bien t'en sortir tout
+      seul. Je te dis bonne chance et essaye de ramener la pierre vite fait. Aurevoir
+      !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1907131367657472
+    m_Localized: Attention !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1907510406909952
+    m_Localized: "Tu n'as plus de pi\xE8ce ! Tu peux regarder une pub pour te recharger
+      !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908064411553792
+    m_Localized: Regarder !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908155113377792
+    m_Localized: Non merci
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908729703665664
+    m_Localized: Tu n'as plus de coeur ! Tu peux regarder une pub pour te recharger
+      !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909243816284160
+    m_Localized: voir une pub
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909635732049920
+    m_Localized: Recharger tout ses coeurs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909913566941184
+    m_Localized: 1 mois de coeur infini
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910139149193216
+    m_Localized: 3 mois de coeur infini
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910298029428736
+    m_Localized: 6 mois de coeur infini
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911008808767488
+    m_Localized: '1 an de coeur
+
+      infini'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911194901647360
+    m_Localized: Vie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911530873786368
+    m_Localized: Gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1913101028265984
+    m_Localized: Marchand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1916062508879872
+    m_Localized: Arc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917772610506752
+    m_Localized: "Fl\xE8che"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917829191667712
+    m_Localized: "Tr\xE8fle"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917911647490048
+    m_Localized: "Chronom\xE8tre"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917987736358912
+    m_Localized: "\xC9p\xE9e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1918079969103872
+    m_Localized: Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921272417456128
+    m_Localized: Faire {0} kills
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921438738386944
+    m_Localized: Gagner {0} d'argent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921637087023104
+    m_Localized: "Gagner  {0} d'exp\xE9rience"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1926884308127744
+    m_Localized: Alerte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1926858253111296
+    m_Localized: "Vous devez d\xE9bloquer {0} pour pouvoir passer au niveau suivant."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1927038318776320
+    m_Localized: "\xCAtre pr\xEAt ? Lorsque vous lancez la partie les items que vous
+      mettrez en jeu ne pourront plus revenir jusqu'\xE0 la fin du jeu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1928287588028416
+    m_Localized: oui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1928288816959488
+    m_Localized: non
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

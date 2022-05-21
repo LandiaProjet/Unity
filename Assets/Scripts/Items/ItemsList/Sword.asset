@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   icon: {fileID: 21300000, guid: d0e9695c0153948809694226675d9b29, type: 3}
-  name: "\xC9p\xE9e"
+  name: Sword
   description: Pour tuer
   count: 7
   limitExchange: 1

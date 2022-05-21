@@ -18,7 +18,9 @@ public class SettingsMenu : MonoBehaviour
     private void Awake() {
         sfxSlider.onValueChanged.AddListener(setSFXVolume);
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
-        UpdateUI(PlayerData.getData().languageCode);
+        if(PlayerData.getData().languageCode.Length > 0){
+            UpdateUI(PlayerData.getData().languageCode);
+        }
     }
 
     public void OpenLanguage(){

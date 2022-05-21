@@ -26,7 +26,7 @@ public class MissionScript : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogWarning("Il y a plus d'une instance de Mission dans la scène");
+            Debug.LogWarning("Il y a plus d'une instance de Mission dans la scï¿½ne");
             return;
         }
         instance = this;
@@ -93,8 +93,6 @@ public class MissionScript : MonoBehaviour
             if (type != mission.objectiveId)
                 continue;
             mission.count += value;
-            Debug.Log(mission.count);
-            Debug.Log(value);
         }
         database.SaveData();
     }

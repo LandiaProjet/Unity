@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization.Settings;
+using System.Collections.Generic;
 
 public class LevelButton : MonoBehaviour
 {
@@ -45,7 +47,7 @@ public class LevelButton : MonoBehaviour
         SoundManager.instance.PlayEffectSound(0);
         if (isActive == false)
         {
-            Popup.instance.openPopup("Alerte", "Vous devez débloquer " + Levels.instance.levels[idLevel].RequiredStar.ToString() + " pour pouvoir passer au niveau suivant.", 20);
+            Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "Levellock", new List<object>{ Levels.instance.levels[idLevel].RequiredStar.ToString() }), 20);
         }
         else
         {
@@ -55,15 +57,15 @@ public class LevelButton : MonoBehaviour
             }
             else
             {
-                Popup.instance.setButton("oui", ColorButton.Blue, () => {
+                Popup.instance.setButton(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "yes"), ColorButton.Blue, () => {
                     Popup.instance.closePopup();
                     MenuManager.instance.CloseMenu("Level");
                     LevelManager.instance.openLevel(idLevel);
                 }, 0);
-                Popup.instance.setButton("non", ColorButton.Red, () => {
+                Popup.instance.setButton(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "no"), ColorButton.Red, () => {
                     Popup.instance.closePopup();
                 }, 1);
-                Popup.instance.openPopup("Alerte", "être prêt ? Lorsque vous lancez la partie les items que vous mettrez en jeu ne pourront plus revenir jusqu'à la fin du jeu.", 20, 800);
+                Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "ready"), 20, 800);
             }
         }
     }

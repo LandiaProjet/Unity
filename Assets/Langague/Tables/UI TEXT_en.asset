@@ -60,6 +60,125 @@ MonoBehaviour:
     m_Localized: Shop
     m_Metadata:
       m_Items: []
+  - m_Id: 1907131367657472
+    m_Localized: Caution !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911194901647360
+    m_Localized: health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911530873786368
+    m_Localized: Gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1913101028265984
+    m_Localized: Merchant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1916062508879872
+    m_Localized: Bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917772610506752
+    m_Localized: Arrow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917829191667712
+    m_Localized: Clover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917911647490048
+    m_Localized: Stopwatch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917987736358912
+    m_Localized: Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1918079969103872
+    m_Localized: Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921272417456128
+    m_Localized: Making {0} kills
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921438738386944
+    m_Localized: Earn {0} money
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921637087023104
+    m_Localized: Gain {0} of experience
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1926884308127744
+    m_Localized: Alert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1927038318776320
+    m_Localized: "\xCAtre pr\xEAt ? Lorsque vous lancez la partie les items que vous
+      mettrez en jeu ne pourront plus revenir jusqu'\xE0 la fin du jeu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1928287588028416
+    m_Localized: yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1928288816959488
+    m_Localized: no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1926858253111296
+    m_Localized: You must unlock {0} to advance to the next level.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910298029428736
+    m_Localized: 6 months of infinite heart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911008808767488
+    m_Localized: '1 year of heart
+
+      infinity'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910139149193216
+    m_Localized: 3 months of infinite heart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909913566941184
+    m_Localized: 1 month of infinite heart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909635732049920
+    m_Localized: Recharge all your hearts
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909243816284160
+    m_Localized: see an ad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908729703665664
+    m_Localized: You don't have a heart! You can watch a commercial to recharge!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908155113377792
+    m_Localized: No thanks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908064411553792
+    m_Localized: Watch it !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1907510406909952
+    m_Localized: You don't have any more coins! You can watch a commercial to recharge!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1904847715930112
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization.Settings;
 
 public class MissionItem : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class MissionItem : MonoBehaviour
             return;
         mission = item;
         objective = Objectives.instance.objectives[item.objectiveId];
-        description.text = objective.description.Replace("-X-", item.countMax.ToString());
+        description.text = LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", objective.description, new List<object>{ item.countMax.ToString() });
+        //description.text = objective.description.Replace("-X-", item.countMax.ToString());
         money.text = item.money.ToString();
         icon.sprite = objective.sprite;
         slider.value = item.count * 100 / item.countMax;
@@ -33,6 +35,9 @@ public class MissionItem : MonoBehaviour
         slider.value = mission.count * 100 / mission.countMax;
         if (mission.count >= mission.countMax)
             button.SetActive(true);
+
+        description.text = LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", objective.description, new List<object>{ mission.countMax.ToString() });
+        
     }
 
     public void OnClick()

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   icon: {fileID: 21300000, guid: f9370a85701a54a6694e1269307d1681, type: 3}
-  name: Arc
+  name: Bow
   description: "arc qui tire des fl\xE8che"
-  count: 7
+  count: 2
   limitExchange: 1

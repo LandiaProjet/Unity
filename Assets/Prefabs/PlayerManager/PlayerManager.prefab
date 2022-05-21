@@ -61,11 +61,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectives:
-  - description: Faire -X- kills
+  - description: Mission kill
     sprite: {fileID: 21300000, guid: 945c94fa95e16461b814ba86437b2f71, type: 3}
   - description: Gagner -X- d'argent
     sprite: {fileID: 21300000, guid: 9d099813b1b6f4f568ce383adf31a9c3, type: 3}
-  - description: "Gagner -X- d'exp\xE9rience"
+  - description: Mission exp
     sprite: {fileID: 21300000, guid: ee0d18b2a22db41f2b4725dc8ff88580, type: 3}
 --- !u!1 &6725711167078697380
 GameObject:
@@ -119,6 +119,9 @@ MonoBehaviour:
   startVillage: 0
   startInventory: 0
   startLevel: 0
+  music: 0
+  sfx: 0
+  languageCode: 
 --- !u!1 &6725711167149109957
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +308,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2036268601
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 77438a15a6a78a44b8be41331ffa4e8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

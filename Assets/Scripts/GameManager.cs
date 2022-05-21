@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake() {
         instance = this;
-       // LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale(new LocaleIdentifier(Application.systemLanguage));
+
+        //meme nombre d'fps sur toutes les platform
+        Application.targetFrameRate = 30;
 
         foreach (var element in dontDestroyOnLoad)
         {
