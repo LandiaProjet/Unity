@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization.Settings;
 
 public class ShopSlot : MonoBehaviour {
 
@@ -16,7 +17,7 @@ public class ShopSlot : MonoBehaviour {
 	{
         this.price = price;
 		this.item = newItem;
-        text.SetText(this.item.name.ToString());
+        text.SetText(LocalizationSettings.StringDatabase.GetLocalizedString(this.item.name.ToString()));
         priceText.SetText(price.ToString());
 		icon.sprite = this.item.icon;
 		icon.enabled = true;

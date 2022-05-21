@@ -18,9 +18,7 @@ public class SettingsMenu : MonoBehaviour
     private void Awake() {
         sfxSlider.onValueChanged.AddListener(setSFXVolume);
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
-        if(PlayerData.getData().languageCode.Length > 0){
-            UpdateUI(PlayerData.getData().languageCode);
-        }
+        UpdateUI(PlayerData.getData().languageName);
     }
 
     public void OpenLanguage(){
@@ -53,8 +51,9 @@ public class SettingsMenu : MonoBehaviour
         }
         languageText.GetComponent<TMPro.TextMeshProUGUI>().text = name;
         languageFlag.sprite = flags[flagCount].sprite;
-        LoadLocale(flags[flagCount].code);
-        PlayerData.getData().languageCode = name;
+        GameManager.instance.LoadLocale(flags[flagCount].code);
+        PlayerData.getData().languageCode = flags[flagCount].code;
+        PlayerData.getData().languageName = name;
         PlayerData.getData().database.SaveData();
     }
 
@@ -66,21 +65,6 @@ public class SettingsMenu : MonoBehaviour
         SoundManager.instance.setSFXVolume(value);
     }
 
-    public void LoadLocale(string languageIdentifier)
-    {
-        LocalizationSettings settings = LocalizationSettings.Instance;
-        LocaleIdentifier localeCode = new LocaleIdentifier(languageIdentifier);//can be "en" "de" "ja" etc.
-
-        for(int i = 0; i < LocalizationSettings.AvailableLocales.Locales.Count; i++)
-        {
-            Locale aLocale = LocalizationSettings.AvailableLocales.Locales[i];
-            LocaleIdentifier anIdentifier = aLocale.Identifier;
-            if(anIdentifier == localeCode)
-            {
-                LocalizationSettings.SelectedLocale = aLocale;
-            }
-        }
-    }
 }
 
 [System.Serializable]

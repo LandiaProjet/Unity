@@ -22,9 +22,34 @@ public class GameManager : MonoBehaviour
         {
             DontDestroyOnLoad(element);
         }
+
+        StartCoroutine(LoadLanguage());
     }
 
     public LevelSystem GetLevelSystem(){
         return levelSystem;
+    }
+
+    IEnumerator LoadLanguage()
+    {
+        yield return LocalizationSettings.InitializationOperation;
+        if(PlayerData.getData().languageCode.Length > 0)
+            LoadLocale(PlayerData.getData().languageCode);
+    }
+
+    public void LoadLocale(string languageIdentifier)
+    {
+        LocalizationSettings settings = LocalizationSettings.Instance;
+        LocaleIdentifier localeCode = new LocaleIdentifier(languageIdentifier);//can be "en" "de" "ja" etc.
+
+        for(int i = 0; i < LocalizationSettings.AvailableLocales.Locales.Count; i++)
+        {
+            Locale aLocale = LocalizationSettings.AvailableLocales.Locales[i];
+            LocaleIdentifier anIdentifier = aLocale.Identifier;
+            if(anIdentifier == localeCode)
+            {
+                LocalizationSettings.SelectedLocale = aLocale;
+            }
+        }
     }
 }
