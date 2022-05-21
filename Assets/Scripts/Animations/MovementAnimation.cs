@@ -20,7 +20,7 @@ public class MovementAnimation : MonoBehaviour
         Vector3 dir = target.localPosition - transform.localPosition;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
-        if (Vector3.Distance(transform.localPosition, target.localPosition) < 0.3f)
+        if (Vector3.Distance(transform.localPosition, target.localPosition) < 1.5f)
         {
             destPoint = (destPoint + 1) % waypoints.Length;
             target = waypoints[destPoint];
