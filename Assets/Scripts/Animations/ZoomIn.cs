@@ -10,11 +10,19 @@ public class ZoomIn : MonoBehaviour
 
     private Vector3 FinalScale;
 
+    Coroutine coroutine;
+
     private void OnEnable()
     {
         FinalScale = transform.localScale;
         transform.localScale = new Vector3(valueStart, valueStart, 1);
-        StartCoroutine(StartAnimation());
+        coroutine = StartCoroutine(StartAnimation());
+    }
+
+    private void OnDisable()
+    {
+        transform.localScale = FinalScale;
+        StopCoroutine(coroutine);
     }
 
     IEnumerator StartAnimation()
