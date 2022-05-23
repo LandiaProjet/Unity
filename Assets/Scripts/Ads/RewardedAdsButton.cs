@@ -15,7 +15,15 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         //Disable the button until the ad is ready to show:
         _showAdButton.interactable = false;
     }
- 
+
+    private void Start()
+    {
+        // Configure the button to call the ShowAd() method when clicked:
+        _showAdButton.onClick.AddListener(ShowAd);
+        // Enable the button for users to click:
+        _showAdButton.interactable = true;
+    }
+
     // Load content to the Ad Unit:
     public void LoadAd()
     {
@@ -29,20 +37,14 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     {
         Debug.Log("Ad Loaded: " + adUnitId);
  
-        if (adUnitId.Equals(_adUnitId))
-        {
-            // Configure the button to call the ShowAd() method when clicked:
-            _showAdButton.onClick.AddListener(ShowAd);
-            // Enable the button for users to click:
-            _showAdButton.interactable = true;
-        }
+        
     }
  
     // Implement a method to execute when the user clicks the button:
     public void ShowAd()
     {
         // Disable the button:
-        _showAdButton.interactable = false;
+        //_showAdButton.interactable = false;
         // Then show the ad:
         Advertisement.Show(_adUnitId, this);
     }
