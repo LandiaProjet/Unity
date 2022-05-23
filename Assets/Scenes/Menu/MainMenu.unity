@@ -430,5 +430,17 @@ PrefabInstance:
       propertyPath: _testMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8506375058099263042, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
+      propertyPath: notificationList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506375058099263042, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
+      propertyPath: notificationList.Array.data[0]
+      value: ceci est un test !
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506375058099263042, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
+      propertyPath: notificationList.Array.data[1]
+      value: n'oubliez pas de faire vos missions !
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91bda4d897ecb5d41b70806635a776f4, type: 3}
