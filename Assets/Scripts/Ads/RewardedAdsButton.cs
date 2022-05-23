@@ -1,13 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
- 
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
+
 public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     [SerializeField] Button _showAdButton;
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";
-    string _adUnitId = null; // This will remain null for unsupported platforms
- 
+    string _adUnitId = null;
+    [SerializeField] UnityEvent execute;
+
+
     void Awake()
     {   
         // Get the Ad Unit ID for the current platform:
@@ -59,6 +63,12 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 
             // Load another ad:
             Advertisement.Load(_adUnitId, this);
+
+            BaseEventData eventData = new BaseEventData(EventSystem.current);
+            eventData.selectedObject = this.gameObject;
+
+            if (execute != null)
+                execute.Invoke();
         }
     }
  

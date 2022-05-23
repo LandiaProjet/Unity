@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.Localization.Settings;
 
 public class PlayerData : MonoBehaviour
 {
@@ -107,6 +108,20 @@ public class PlayerData : MonoBehaviour
     {
         money -= credit;
         database.SaveData();
+    }
+
+    public void AddHealthByVideo()
+    {
+        health += (health < 5) ? 1 : 0;
+        database.SaveData();
+        Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "win health"), 20);
+    }
+
+    public void AddCreditByVideo()
+    {
+        money += 500;
+        database.SaveData();
+        Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "win credit"), 20);
     }
 
     public string getTimeHealth()
