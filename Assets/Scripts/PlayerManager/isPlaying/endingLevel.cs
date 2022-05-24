@@ -41,7 +41,9 @@ public class endingLevel : MonoBehaviour
         PlayerManager.instance.changePlayer("idle");
         PlayerMovement.instance.setDie(false);
         PlayerMovement.instance.rb.simulated = true;
+        InterstitialAds.interstitialAds.LoadAd();
         LevelManager.instance.openLevel(isPlaying.instance.idLevel);
+        InterstitialAds.interstitialAds.ShowAd();
         StartCoroutine(WaitBeforeRespawnPlayer());
     }
 

@@ -60,7 +60,9 @@ public class LevelButton : MonoBehaviour
                 Popup.instance.setButton(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "yes"), ColorButton.Blue, () => {
                     Popup.instance.closePopup();
                     MenuManager.instance.CloseMenu("Level");
+                    InterstitialAds.interstitialAds.LoadAd();
                     LevelManager.instance.openLevel(idLevel);
+                    InterstitialAds.interstitialAds.ShowAd();
                 }, 0);
                 Popup.instance.setButton(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "no"), ColorButton.Red, () => {
                     Popup.instance.closePopup();
