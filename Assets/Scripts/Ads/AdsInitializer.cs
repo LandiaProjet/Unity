@@ -25,6 +25,15 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
     public void OnInitializationComplete()
     {
         Debug.Log("Unity Ads initialization complete.");
+        Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
+        BannerLoadOptions options = new BannerLoadOptions();
+
+        // Load the Ad Unit with banner content:
+        Advertisement.Banner.Load("Banner_Android", options);
+        BannerOptions option = new BannerOptions();
+
+        // Show the loaded Banner Ad Unit:
+        Advertisement.Banner.Show("Banner_Android", option);
     }
  
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)
