@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Levels/Levels/Level04.unity.meta
 guid: 06dd336c08b830a4984a0e591665db7e
+========
+guid: e18143bd99297b84689afa090116c1ed
+>>>>>>>> 7cf22b100e69f4dce6df49b975e82625bbe99b04:Assets/Scenes/Levels/LevelTest/LevelTest.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
