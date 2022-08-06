@@ -7,6 +7,7 @@ public class MovementJoystick : MonoBehaviour
 {
 
     public GameObject joystick;
+    public RectTransform rect;
     public GameObject joystickBG;
     public Vector2 joystickVec;
     private Vector2 joystickTouchPos;
@@ -20,11 +21,14 @@ public class MovementJoystick : MonoBehaviour
         joystickRadius = joystickBG.GetComponent<RectTransform>().sizeDelta.y / 16;
     }
 
-    public void PointerDown()
+    public void PointerDown(BaseEventData data)
     {
-        joystick.transform.position = Input.mousePosition;
-        joystickBG.transform.position = Input.mousePosition;
-        joystickTouchPos = Input.mousePosition;
+        PointerEventData pointerEventData = data as PointerEventData;
+        Debug.Log(pointerEventData.position);
+        Debug.Log(pointerEventData.pressPosition);
+        joystick.transform.position = pointerEventData.position;
+        joystickBG.transform.position = pointerEventData.position;
+        joystickTouchPos = pointerEventData.position;
     }
 
     public void Drag(BaseEventData baseEventData)
