@@ -4918,7 +4918,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774837951}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3ac5461cf89abb40baa8ff9429e1df6, type: 3}
   m_Name: 
@@ -10095,6 +10095,10 @@ PrefabInstance:
     - target: {fileID: 8617251634655151621, guid: ad54fdc1ca89fa04a81e2887aae3971e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617251634934781369, guid: ad54fdc1ca89fa04a81e2887aae3971e, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8617251635174839487, guid: ad54fdc1ca89fa04a81e2887aae3971e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
