@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4e1a7aba3494b4d831afc26dcf3511, type: 3}
-  m_Name: Level03
+  m_Name: Level 9
   m_EditorClassIdentifier: 
-  idScene: 4
-  secondTimeMax: 180
+  idScene: 10
+  secondTimeMax: 350
   timeStar: 500000006400000078000000
   itemsRecommanded:
   - count: 5

@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class VictoryZone : MonoBehaviour
 {
-    private void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (PlayerMovement.instance != null && PlayerMovement.instance.transform.position.x > transform.position.x)
-            isPlaying.instance.OnVictory();
+        isPlaying.instance.OnVictory();
     }
 }
