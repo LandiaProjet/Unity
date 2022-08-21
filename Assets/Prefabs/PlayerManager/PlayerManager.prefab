@@ -122,6 +122,7 @@ MonoBehaviour:
   music: 0
   sfx: 0
   languageCode: 
+  languageName: 
 --- !u!1 &6725711167149109957
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +310,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2036268601
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: 105
   m_Sprite: {fileID: 21300000, guid: 77438a15a6a78a44b8be41331ffa4e8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

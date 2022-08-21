@@ -4,8 +4,13 @@ using System;
 
 public class InteractionScript : MonoBehaviour
 {
-    public bool isMenu;
-
+    public enum Action
+     {
+         Teleport, 
+         Menu, 
+         Lever
+     };
+    public Action isMenu;
     public string menu;
     public int zindex;
     public Transform position;
@@ -58,11 +63,12 @@ public class InteractionScript : MonoBehaviour
     private void Execute()
     {
         SoundManager.instance.PlayEffectSound(0);
-        if (isMenu)
+        if (isMenu.Equals(Action.Menu)){
             MenuManager.instance.OpenMenu(menu, zindex);
-        else
-        {
+        } if (isMenu.Equals(Action.Teleport)){
             StartCoroutine(executeTeleport());
+        } else {
+            GetComponent<LeverScript>().onDie();
         }
     }
 

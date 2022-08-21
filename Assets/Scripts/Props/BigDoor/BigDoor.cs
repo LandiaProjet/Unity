@@ -35,7 +35,7 @@ public class BigDoor : MonoBehaviour
         {
             foreach (LeverScript lever in levers)
             {
-                if (!lever.Enable)
+                if (!lever.isEnable)
                     return;
             }
             Opening = true;

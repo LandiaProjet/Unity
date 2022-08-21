@@ -34,13 +34,13 @@ public class Arrow : MonoBehaviour
             case "Floor":
                 StartCoroutine(StopColision(0.04f));
                 break;
-            case "Enemy":
+            /*case "Enemy":
                 if (used)
                     return;
                 Enemy enemy = other.GetComponent<Enemy>();
                 enemy.ReceiveDommage(damage);
                 used = true;
-                break;
+                break;*/
             case "Player":
                 if (used || isPlayer)
                     return;
