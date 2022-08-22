@@ -18,7 +18,7 @@ public class MovementAnimation : MonoBehaviour
     void Update()
     {
         var step =  speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        transform.localPosition = Vector3.MoveTowards(transform.localPosition, target.localPosition, step);
 
         if (Vector3.Distance(transform.localPosition, target.localPosition) < 0.01f)
         {

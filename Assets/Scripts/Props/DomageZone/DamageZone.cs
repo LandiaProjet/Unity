@@ -30,7 +30,7 @@ public class DamageZone : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if (force) {
+        if (collider.tag == "Player" && force) {
             isPlaying.instance.OnDefeat();
         }
     }

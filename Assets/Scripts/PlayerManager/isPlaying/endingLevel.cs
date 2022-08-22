@@ -40,6 +40,7 @@ public class endingLevel : MonoBehaviour
         MenuManager.instance.CloseMenu("PopupVictory");
         PlayerManager.instance.changePlayer("idle");
         PlayerMovement.instance.setDie(false);
+        PlayerData.getData().RemoveHealth();
         PlayerMovement.instance.rb.simulated = true;
         InterstitialAds.interstitialAds.LoadAd();
         LevelManager.instance.openLevel(isPlaying.instance.idLevel);

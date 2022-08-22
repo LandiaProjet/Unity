@@ -20,7 +20,7 @@ public class RotationAnimation : MonoBehaviour
         transform.Rotate(dir.normalized * speed * Time.deltaTime, Space.World);
 
         Vector3 finalPosition = eulerAngles + dir;
-        if (Mathf.Abs(Quaternion.Angle(transform.rotation, Quaternion.Euler(finalPosition.x, finalPosition.y, finalPosition.z))) < 1.0f)
+        if (Mathf.Abs(Quaternion.Angle(transform.rotation, Quaternion.Euler(finalPosition.x, finalPosition.y, finalPosition.z))) < 5.0f)
         {
             Angle *= -1;
         }

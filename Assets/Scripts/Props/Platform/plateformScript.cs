@@ -23,11 +23,17 @@ public class plateformScript : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        co.isTrigger = true;
+        if (collision.gameObject.tag == "Player")
+        {
+            co.isTrigger = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        co.isTrigger = true;
+        if (collision.CompareTag("Player"))
+        {
+            co.isTrigger = true;
+        }
     }
 }
