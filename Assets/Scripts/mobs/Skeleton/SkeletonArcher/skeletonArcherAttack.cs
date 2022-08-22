@@ -27,6 +27,7 @@ public class skeletonArcherAttack : MonoBehaviour, ISkeletonAttack
         rotation.z = (skeletonMovement.transform.localScale.x > 0) ? 0 : 180;
         GameObject arrow = Instantiate(arrowPrefabs, skeletonMovement.AttackPoint.position, rotation);
         Arrow arrowScript = arrow.GetComponent<Arrow>();
+        arrowScript.owner = gameObject;
         arrowScript.launchArrow(50f);
     }
 

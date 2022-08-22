@@ -8,6 +8,7 @@ public class Arrow : MonoBehaviour
     public float speed = 10f;
     public Rigidbody2D rb;
     public BoxCollider2D box;
+    public GameObject owner;
     public float damage;
 
     private float angle;
@@ -34,16 +35,19 @@ public class Arrow : MonoBehaviour
             case "Floor":
                 StartCoroutine(StopColision(0.04f));
                 break;
-            /*case "Enemy":
+            case "Enemy":
                 if (used)
+                    return;
+                if (owner == other.gameObject)
                     return;
                 Enemy enemy = other.GetComponent<Enemy>();
                 enemy.ReceiveDommage(damage);
                 used = true;
-                break;*/
+                break;
             case "Player":
                 if (used || isPlayer)
                     return;
+                Debug.Log("je passes");
                 isPlaying.instance.addDommage(damage);
                 used = true;
                 break;

@@ -41,6 +41,7 @@ public class CrossBow : Enemy
         animator.SetBool("Shoot", false);
         GameObject arrow = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Arrow arrowScript = arrow.GetComponent<Arrow>();
+        arrowScript.owner = gameObject;
         arrowScript.launchArrow(50f);
     }
     public override void onDie()

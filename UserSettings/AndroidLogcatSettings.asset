@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R5CNC16D8AR",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 8033,
+        "processId": 21213,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -96,6 +96,12 @@
             "deviceId": "R5CNC16D8AR",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 8033,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CNC16D8AR",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 21213,
             "exited": false
         }
     ],
