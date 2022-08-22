@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
+  backgroundColor: {r: 0.40392157, g: 0.85490197, b: 0.98039216, a: 0}
 --- !u!1 &1946995256371561154
 GameObject:
   m_ObjectHideFlags: 0

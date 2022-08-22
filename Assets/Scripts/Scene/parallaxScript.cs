@@ -6,12 +6,23 @@ using UnityEngine.UI;
 public class parallaxScript : MonoBehaviour
 {
     public float speed;
+    public Color backgroundColor;
     
     private GameObject[][] background = new GameObject[5][];
     private Transform cam;
     private GameObject player;
     private Vector3 velocity;
     private Vector2 positionPlayer;
+
+    private void Start()
+    {
+        if (backgroundColor != null)
+        {
+            GameObject cam = GameObject.FindGameObjectWithTag("MainCamera");
+            Camera camera = cam.GetComponent<Camera>();
+            camera.backgroundColor = backgroundColor;
+        }
+    }
 
     /*void Start()
     {
