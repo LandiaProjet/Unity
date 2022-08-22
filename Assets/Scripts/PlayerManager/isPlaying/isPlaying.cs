@@ -109,7 +109,6 @@ public class isPlaying : MonoBehaviour
         if (stats != Stats.inGame)
             return;
         endLevel();
-        PlayerData.getData().RemoveHealth();
         credit /= 10;
         MissionScript.instance.addValueMission(1, credit);
         PlayerData.getData().AddCredit(credit);
@@ -131,6 +130,7 @@ public class isPlaying : MonoBehaviour
             LevelManager.instance.editLevel(idLevel, star, true);
         exp = (credit * 10) + (star * 250);
         levelSystem.AddExperience(exp);
+        PlayerData.getData().AddHealth();
         PlayerData.getData().AddCredit(credit);
         MissionScript.instance.addValueMission(1, credit);
         MissionScript.instance.addValueMission(1, exp);

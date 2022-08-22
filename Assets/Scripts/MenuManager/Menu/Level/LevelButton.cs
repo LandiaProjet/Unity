@@ -57,17 +57,11 @@ public class LevelButton : MonoBehaviour
             }
             else
             {
-                Popup.instance.setButton(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "yes"), ColorButton.Blue, () => {
-                    Popup.instance.closePopup();
-                    MenuManager.instance.CloseMenu("Level");
-                    InterstitialAds.interstitialAds.LoadAd();
-                    LevelManager.instance.openLevel(idLevel);
-                    InterstitialAds.interstitialAds.ShowAd();
-                }, 0);
-                Popup.instance.setButton(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "no"), ColorButton.Red, () => {
-                    Popup.instance.closePopup();
-                }, 1);
-                Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "ready"), 20, 800);
+                PlayerData.getData().RemoveHealth();
+                MenuManager.instance.CloseMenu("Level");
+                InterstitialAds.interstitialAds.LoadAd();
+                LevelManager.instance.openLevel(idLevel);
+                InterstitialAds.interstitialAds.ShowAd();
             }
         }
     }

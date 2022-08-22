@@ -59,7 +59,10 @@ public class PlayerManager : MonoBehaviour
                 changePlayer("idle");
                 break;
             case "idle":
-                changePlayer("sword");
+                if (isPlaying.instance.GetCount(1) > 0)
+                    changePlayer("sword");
+                else
+                    changePlayer("bow");
                 break;
         }
     }

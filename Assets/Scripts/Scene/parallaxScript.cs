@@ -46,9 +46,7 @@ public class parallaxScript : MonoBehaviour
             {
                 background[i] = new GameObject[2];
                 background[i][0] = transform.GetChild(i).gameObject;
-                background[i][0].transform.position = new Vector3(0, 0, 0);
-                Debug.Log(background[i][0].transform.position);
-                background[i][1] = Instantiate(background[i][0]);
+                background[i][1] = Instantiate(background[i][0], transform);
                 SpriteRenderer spriteRenderer = background[i][0].GetComponent<SpriteRenderer>();
                 background[i][1].transform.position = background[i][1].transform.position + new Vector3(spriteRenderer.size.x, 0, 0);
             }
