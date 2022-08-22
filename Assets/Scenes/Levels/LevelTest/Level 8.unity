@@ -16010,7 +16010,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 85
+  m_RootOrder: 86
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1138640734
 PrefabInstance:
@@ -17161,6 +17161,22 @@ PrefabInstance:
     - target: {fileID: 1946995256187224388, guid: 04a3e0235c431fb40885bcfd3f0f221a, type: 3}
       propertyPath: SpawnPosition
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946995256187224388, guid: 04a3e0235c431fb40885bcfd3f0f221a, type: 3}
+      propertyPath: backgroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946995256187224388, guid: 04a3e0235c431fb40885bcfd3f0f221a, type: 3}
+      propertyPath: backgroundColor.b
+      value: 0.9294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946995256187224388, guid: 04a3e0235c431fb40885bcfd3f0f221a, type: 3}
+      propertyPath: backgroundColor.g
+      value: 0.8117648
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946995256187224388, guid: 04a3e0235c431fb40885bcfd3f0f221a, type: 3}
+      propertyPath: backgroundColor.r
+      value: 0.44705886
       objectReference: {fileID: 0}
     - target: {fileID: 1946995256187224389, guid: 04a3e0235c431fb40885bcfd3f0f221a, type: 3}
       propertyPath: m_RootOrder
