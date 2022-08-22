@@ -75,12 +75,14 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     // Implement Load and Show Listener error callbacks:
     public void OnUnityAdsFailedToLoad(string adUnitId, UnityAdsLoadError error, string message)
     {
+        Popup.instance.openPopup(adUnitId, error.ToString() + " " + message, 20);
         Debug.Log($"Error loading Ad Unit {adUnitId}: {error.ToString()} - {message}");
         // Use the error details to determine whether to try to load another ad.
     }
  
     public void OnUnityAdsShowFailure(string adUnitId, UnityAdsShowError error, string message)
     {
+        Popup.instance.openPopup(adUnitId, error.ToString() + " " + message, 20);
         Debug.Log($"Error showing Ad Unit {adUnitId}: {error.ToString()} - {message}");
         // Use the error details to determine whether to try to load another ad.
     }
