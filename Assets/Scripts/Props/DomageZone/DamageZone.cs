@@ -5,6 +5,7 @@ using UnityEngine;
 public class DamageZone : MonoBehaviour
 {
     public float damage;
+    public bool force;
 
     private bool isExecuting = false;
     private bool isStaying = false;
@@ -24,6 +25,13 @@ public class DamageZone : MonoBehaviour
         {
             isStaying = true;
             StartCoroutine(StartDamage());
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D collider)
+    {
+        if (force) {
+            isPlaying.instance.OnDefeat();
         }
     }
 

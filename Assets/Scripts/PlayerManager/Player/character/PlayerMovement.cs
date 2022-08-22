@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
     private float lastPosY = 0;
 
+    public float maxVelocity;
+
     public MovementJoystick movementJoystick;
 
     public static PlayerMovement instance;
@@ -122,7 +124,10 @@ public class PlayerMovement : MonoBehaviour
                MovePlayer(movementJoystick.joystickVec.x * moveSpeed); 
             }
         }
-
+        var v = rb.velocity;
+        if(v.sqrMagnitude > (maxVelocity * maxVelocity)){
+            rb.velocity = v.normalized * maxVelocity;
+        }
     }
 
     void MovePlayer(float _horizontalMovement)

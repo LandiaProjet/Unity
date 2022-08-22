@@ -34,15 +34,16 @@ public class InteractionScript : MonoBehaviour
         {
             if (inited == false)
             {
+                interactManager = InteractManager.instance;
                 InteractManager.instance.applyChange();
             }
             if (inside == false)
             {
                 inside = true;
-                interactManager.entry.callback.AddListener((data) => { Execute(); });
-                interactManager.trigger.triggers.Add(interactManager.entry);
-                interactManager.image.sprite = sprite;
-                interactManager.InteractButton.SetActive(true);
+                InteractManager.instance.entry.callback.AddListener((data) => { Execute(); });
+                InteractManager.instance.trigger.triggers.Add(InteractManager.instance.entry);
+                InteractManager.instance.image.sprite = sprite;
+                InteractManager.instance.InteractButton.SetActive(true);
                 if (hover)
                     hover.SetActive(true);
             }
@@ -51,9 +52,9 @@ public class InteractionScript : MonoBehaviour
             if (inside == true)
             {
                 inside = false;
-                interactManager.trigger.triggers.RemoveRange(0, interactManager.trigger.triggers.Count);
-                interactManager.entry.callback.RemoveAllListeners();
-                interactManager.InteractButton.SetActive(false);
+                InteractManager.instance.trigger.triggers.RemoveRange(0, InteractManager.instance.trigger.triggers.Count);
+                InteractManager.instance.entry.callback.RemoveAllListeners();
+                InteractManager.instance.InteractButton.SetActive(false);
                 if (hover)
                     hover.SetActive(false);
             }

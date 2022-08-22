@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "R5CNC16D8AR",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "R5CNC16D8AR",
+        "name": "com.DefaultCompany.com.unity.template.mobile2D",
+        "processId": 16963,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -90,6 +90,12 @@
             "deviceId": "R5CNC16D8AR",
             "name": "com.sec.android.app.launcher",
             "processId": 3011,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CNC16D8AR",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 16963,
             "exited": false
         }
     ],
