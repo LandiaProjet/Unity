@@ -38,7 +38,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame(){
         TransitionManager.instance.loadingTransition.startLoadingLevel(0.1f, true, 1);
         MenuManager.instance.CloseMenu("MainMenu");
-        MenuManager.instance.OpenMenu("Level");
+        MenuManager.instance.OpenMenu("Level", 25);
         // if (!PlayerData.getData().startVillage)
         // {
         //     MenuManager.instance.OpenMenu("tutorialVillage", 20);
