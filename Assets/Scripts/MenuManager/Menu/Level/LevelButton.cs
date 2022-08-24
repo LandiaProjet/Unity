@@ -51,7 +51,12 @@ public class LevelButton : MonoBehaviour
         }
         else
         {
-            if (PlayerData.getData().health <= 0)
+            PlayerData.getData().RemoveHealth();
+            MenuManager.instance.CloseMenu("Level");
+            InterstitialAds.interstitialAds.LoadAd();
+            LevelManager.instance.openLevel(idLevel);
+            InterstitialAds.interstitialAds.ShowAd();
+            /*if (PlayerData.getData().health <= 0)
             {
                 MenuManager.instance.OpenMenu("PopupNoHealth", 16);
             }
@@ -62,7 +67,7 @@ public class LevelButton : MonoBehaviour
                 InterstitialAds.interstitialAds.LoadAd();
                 LevelManager.instance.openLevel(idLevel);
                 InterstitialAds.interstitialAds.ShowAd();
-            }
+            }*/
         }
     }
 }
