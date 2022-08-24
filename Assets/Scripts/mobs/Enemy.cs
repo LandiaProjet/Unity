@@ -10,9 +10,11 @@ public class Enemy : MonoBehaviour
     public virtual void ReceiveDommage(float damage){
         this.health -= damage;
         if (health <= 0)
+        {
             onDie();
-        else
+        } else {
             HitAnimation();
+        }
     }
 
     public virtual void onDie(){

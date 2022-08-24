@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f76a933df539274e9689817aacbf1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 150
   AttackScript: {fileID: 3841117364067360739}
   animator: {fileID: 3841117364067360741}
   rb: {fileID: 3841117364067360744}
