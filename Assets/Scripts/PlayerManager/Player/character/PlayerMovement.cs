@@ -92,10 +92,6 @@ public class PlayerMovement : MonoBehaviour
                 lastPosY = transform.position.y;
             }
             animator.SetFloat("Speed", characterVelocityX);
-
-            if(transform.position.y < -100){
-                setDie(true);
-            }
         }
     }
 

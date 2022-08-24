@@ -99720,6 +99720,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1649084422482667004, guid: af540f664c3011b4181827639a42ddf6, type: 3}
+      propertyPath: isMenu
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9127463080556974478, guid: af540f664c3011b4181827639a42ddf6, type: 3}
       propertyPath: m_Name
       value: Lever

@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993a24140b9c1504aaeb2ab26ee24989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMenu: 0
+  isMenu: 2
   menu: 
   zindex: 0
   position: {fileID: 9127463080556974481}
