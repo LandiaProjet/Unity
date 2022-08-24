@@ -4,6 +4,9 @@ public class VictoryZone : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isPlaying.instance.OnVictory();
+        if (collision.CompareTag("Player"))
+        {
+            isPlaying.instance.OnVictory();
+        }
     }
 }
