@@ -42,10 +42,12 @@ public class endingLevel : MonoBehaviour
         PlayerMovement.instance.setDie(false);
         PlayerData.getData().RemoveHealth();
         PlayerMovement.instance.rb.simulated = true;
-        InterstitialAds.interstitialAds.LoadAd();
-        LevelManager.instance.openLevel(isPlaying.instance.idLevel);
+        InterstitialAds.interstitialAds.OnEnd.AddListener(() =>
+        {
+            LevelManager.instance.openLevel(isPlaying.instance.idLevel);
+            StartCoroutine(WaitBeforeRespawnPlayer());
+        });
         InterstitialAds.interstitialAds.ShowAd();
-        StartCoroutine(WaitBeforeRespawnPlayer());
     }
 
     IEnumerator WaitBeforeRespawnPlayer()

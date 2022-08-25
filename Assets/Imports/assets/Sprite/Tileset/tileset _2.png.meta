@@ -401,7 +401,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -459,6 +459,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -3150,8 +3174,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tileset _2_20: 4860785493227705932
-      tileset _2_39: 1504610771988267422
+      tileset _2_84: -8009906710510552554
+      tileset _2_7: -5810255499851940667
       tileset _2_33: -6111668648337142959
       tileset _2_71: -3237152402397761693
       tileset _2_104: 7753499814846064855
@@ -3185,9 +3209,9 @@ TextureImporter:
       tileset _2_90: -2346808062608826600
       tileset _2_38: 1408589789785093587
       tileset _2_91: 2337195075528574535
+      tileset _2_50: -5624335983900647900
       tileset _2_55: -3009173357783977290
       tileset _2_61: 4872665480012675758
-      tileset _2_50: -5624335983900647900
       tileset _2_0: 5433579854117113656
       tileset _2_125: -6386474990719720667
       tileset _2_40: 5252567892631723146
@@ -3274,9 +3298,9 @@ TextureImporter:
       tileset _2_103: 3825786010569055062
       tileset _2_21: -2108920981453744252
       tileset _2_65: 8137407726249956986
-      tileset _2_84: -8009906710510552554
+      tileset _2_39: 1504610771988267422
       tileset _2_63: -503555812289504544
-      tileset _2_7: -5810255499851940667
+      tileset _2_20: 4860785493227705932
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

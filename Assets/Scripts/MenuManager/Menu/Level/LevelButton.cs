@@ -52,9 +52,11 @@ public class LevelButton : MonoBehaviour
         else
         {
             PlayerData.getData().RemoveHealth();
-            MenuManager.instance.CloseMenu("Level");
-            InterstitialAds.interstitialAds.LoadAd();
-            LevelManager.instance.openLevel(idLevel);
+            InterstitialAds.interstitialAds.OnEnd.AddListener(() =>
+            {
+                MenuManager.instance.CloseMenu("Level");
+                LevelManager.instance.openLevel(idLevel);
+            });
             InterstitialAds.interstitialAds.ShowAd();
             /*if (PlayerData.getData().health <= 0)
             {

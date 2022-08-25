@@ -1,45 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.Advertisements;
+using GoogleMobileAds.Api;
 
 public class BannerAds : MonoBehaviour
 {
-    void Start()
-    {
-        Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
-        BannerLoadOptions options = new BannerLoadOptions
-        {
-            loadCallback = OnBannerLoaded,
-            errorCallback = OnBannerError
-        };
+    private BannerView bannerView;
 
-        // Load the Ad Unit with banner content:
-        Advertisement.Banner.Load("Banner_Android", options);
+    public void Start()
+    {
+        this.RequestBanner();
     }
 
-    void showBanner()
+    private void RequestBanner()
     {
-        BannerOptions option = new BannerOptions
-        {
-            clickCallback = OnBannerClicked,
-            hideCallback = OnBannerHidden,
-            showCallback = OnBannerShown
-        };
-
-        // Show the loaded Banner Ad Unit:
-        Advertisement.Banner.Show("Banner_Android", option);
+#if UNITY_ANDROID
+        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
+#elif UNITY_IPHONE
+            string adUnitId = "ca-app-pub-3940256099942544/2934735716";
+#else
+            string adUnitId = "unexpected_platform";
+#endif
+        this.bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
+        AdRequest request = new AdRequest.Builder().Build();
+        this.bannerView.LoadAd(request);
     }
-
-    void OnBannerLoaded()
-    {
-    }
-
-    void OnBannerError(string message)
-    {
-    }
-
-    void OnBannerClicked() { }
-    void OnBannerShown() { }
-    void OnBannerHidden() { }
 }
