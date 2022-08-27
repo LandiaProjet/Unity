@@ -25,4 +25,14 @@ public class LevelHeader : MonoBehaviour
         Credit.text = string.Format("{0:#,0}", PlayerData.getData().money);
         CountStar.text = LevelManager.instance.getCountStar().ToString();
     }
+
+    public void OpenShop()
+    {
+        MenuManager.instance.OpenMenu("Shop", 17);
+    }
+
+    public void OpenInventory()
+    {
+        MenuManager.instance.OpenMenu("Inventory", 18);
+    }
 }

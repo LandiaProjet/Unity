@@ -30,6 +30,8 @@ public class PlayerData : MonoBehaviour
     {
         music = 1f;
         sfx = 1f;
+        languageCode = LocalizationSettings.SelectedLocale.Identifier.Code;
+        languageName = LocalizationSettings.SelectedLocale.Identifier.CultureInfo.DisplayName.ToLower();
         if (instance != null)
         {
             Debug.LogWarning("Il y a plus d'une instance de PlayerData dans la sc�ne");

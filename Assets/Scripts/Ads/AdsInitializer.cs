@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using GoogleMobileAds.Api;
 using UnityEngine.Events;
+using System;
 
 public class AdsInitializer : MonoBehaviour
 {
@@ -49,9 +50,15 @@ public class AdsInitializer : MonoBehaviour
         SoundManager.instance.mixer.SetFloat("SFXVolume", Mathf.Log10(PlayerData.getData().sfx) * 20);
     }
 
+    private bool success;
+
     private IEnumerator DoEnd()
     {
         yield return new WaitForSeconds(0.01f);
+        if (success)
+            OnSuccess.Invoke();
+        else
+            OnFailure.Invoke();
         restartSound();
         LoadRewardAd();
         OnSuccess.RemoveAllListeners();
@@ -92,7 +99,6 @@ public class AdsInitializer : MonoBehaviour
         {
             Debug.Log("Reward ad failed to show with error: " + args.AdError.GetMessage());
             OnAdFailedToShowEvent.Invoke();
-            OnFailure.Invoke();
             StartCoroutine(DoEnd());
         };
         rewardedAd.OnAdClosed += (sender, args) =>
@@ -105,7 +111,7 @@ public class AdsInitializer : MonoBehaviour
         {
             Debug.Log("User earned Reward ad reward: " + args.Amount);
             OnUserEarnedRewardEvent.Invoke();
-            OnSuccess.Invoke();
+            success = true;
         };
         rewardedAd.OnAdDidRecordImpression += (sender, args) =>
         {
@@ -129,6 +135,7 @@ public class AdsInitializer : MonoBehaviour
             stopSound();
             this.OnFailure.AddListener(OnFailure);
             this.OnSuccess.AddListener(OnSuccess);
+            success = false;
             rewardedAd.Show();
         } else
         {
