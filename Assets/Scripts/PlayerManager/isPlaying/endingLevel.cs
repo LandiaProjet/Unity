@@ -57,16 +57,40 @@ public class endingLevel : MonoBehaviour
         PlayerMovement.instance.rb.AddForce(new Vector2(-10, 2));
     }
 
+    Vector3 GetClosestPoint(Collider2D[] results, Vector3 currentPosition)
+    {
+        Transform bestTarget = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        foreach (Collider2D potentialTarget in results)
+        {
+            Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
+            float dSqrToTarget = directionToTarget.sqrMagnitude;
+            if (dSqrToTarget < closestDistanceSqr)
+            {
+                closestDistanceSqr = dSqrToTarget;
+                bestTarget = potentialTarget.transform;
+            }
+        }
+        if (bestTarget == null)
+            return currentPosition;
+        return bestTarget.position;
+    }
+
     public void Retrylevel()
     {
         MenuManager.instance.CloseMenu("PopupDefeat");
         MenuManager.instance.CloseMenu("PopupVictory");
         StartCoroutine(isPlaying.instance.StartImmunity(5f));
-        PlayerMovement.instance.transform.position = isPlaying.instance.lastPoint;
+        if (!PlayerMovement.instance.isGrounded)
+        {
+            Collider2D[] results = Physics2D.OverlapCircleAll(PlayerMovement.instance.groundCheck.position, 50f, LayerMask.GetMask("RespawnPoint"));
+            PlayerMovement.instance.transform.position = GetClosestPoint(results, PlayerMovement.instance.groundCheck.position);
+            PlayerMovement.instance.transform.position += new Vector3(0, 0, 105);
+        }
         PlayerMovement.instance.setDie(false);
         PlayerMovement.instance.rb.simulated = true;
         isPlaying.instance.stats = Stats.inGame;
-        isPlaying.instance.addHealth(100);
+        isPlaying.instance.shield = 100;
         isPlaying.instance.credit *= 10;
         HudManager.instance.RecoveryGame();
         isPlaying.instance.time += 30;

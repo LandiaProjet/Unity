@@ -45,6 +45,7 @@ public class HudManager : MonoBehaviour
         areaInformation.SetActive(true);
         itemArea.SetActive(true);
         ButtonManager.instance.ToggleAdditionalButton(true);
+        SetShield(100);
     }
 
     public void stopGame()

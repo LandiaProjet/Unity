@@ -110,7 +110,8 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, collisionLayers);
             if (isGrounded == true)
             {
-                isPlaying.instance.lastPoint = transform.position;
+                //Debug.Log(transform.localPosition);
+                //isPlaying.instance.lastPoint = transform.localPosition;
                 animator.SetBool("isFall", !isGrounded);
             }
             float h = Input.GetAxis("Horizontal");
