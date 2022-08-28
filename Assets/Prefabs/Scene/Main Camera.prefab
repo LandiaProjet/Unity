@@ -99,5 +99,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   timeOffset: 0.2
-  minCameraPos: {x: -109, y: -24, z: 0}
-  maxCameraPos: {x: 181, y: 1000, z: 0}
+  minCameraPos: {x: -10900, y: -24000, z: 0}
+  maxCameraPos: {x: 181000, y: 1000000, z: 0}
