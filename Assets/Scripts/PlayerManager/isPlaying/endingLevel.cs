@@ -83,7 +83,7 @@ public class endingLevel : MonoBehaviour
         StartCoroutine(isPlaying.instance.StartImmunity(5f));
         if (!PlayerMovement.instance.isGrounded)
         {
-            Collider2D[] results = Physics2D.OverlapCircleAll(PlayerMovement.instance.groundCheck.position, 50f, LayerMask.GetMask("RespawnPoint"));
+            Collider2D[] results = Physics2D.OverlapCircleAll(PlayerMovement.instance.groundCheck.position, 25f, LayerMask.GetMask("RespawnPoint"));
             PlayerMovement.instance.transform.position = GetClosestPoint(results, PlayerMovement.instance.groundCheck.position);
             PlayerMovement.instance.transform.position += new Vector3(0, 0, 105);
         }
