@@ -9,6 +9,8 @@ public class ShopSlot : MonoBehaviour {
 
     public TMPro.TextMeshProUGUI priceText;
 
+    public Button btnInfo;
+
 	public Item item;
 
     public int price;

@@ -35,4 +35,10 @@ public class LevelHeader : MonoBehaviour
     {
         MenuManager.instance.OpenMenu("Inventory", 18);
     }
+
+    public void OpenMainMenu()
+    {
+        MenuManager.instance.CloseMenu("MainMenu");
+        MenuManager.instance.OpenMenu("MainMenu", 15);
+    }
 }
