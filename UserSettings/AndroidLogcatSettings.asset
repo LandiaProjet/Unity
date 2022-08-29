@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "R5CNC16D8AR",
+    "m_SelectedDeviceId": "5200cdbab21ac4f1",
     "m_SelectedPackage": {
-        "deviceId": "R5CNC16D8AR",
+        "deviceId": "5200cdbab21ac4f1",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 7336,
+        "processId": 16817,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -151,6 +151,12 @@
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 27535,
             "exited": true
+        },
+        {
+            "deviceId": "5200cdbab21ac4f1",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 16817,
+            "exited": false
         }
     ],
     "m_Tags": {
