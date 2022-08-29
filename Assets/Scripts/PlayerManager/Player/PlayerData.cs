@@ -119,9 +119,9 @@ public class PlayerData : MonoBehaviour
         Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "win health"), 20);
     }
 
-    public void AddCreditByVideo()
+    public void AddCreditByVideo(int value)
     {
-        money += 500;
+        money += value;
         database.SaveData();
         Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "win credit"), 20);
     }

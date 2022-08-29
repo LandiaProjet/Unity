@@ -80,6 +80,7 @@ public class endingLevel : MonoBehaviour
     {
         MenuManager.instance.CloseMenu("PopupDefeat");
         MenuManager.instance.CloseMenu("PopupVictory");
+        MenuManager.instance.CloseMenu("PopupRetry");
         StartCoroutine(isPlaying.instance.StartImmunity(5f));
         if (!PlayerMovement.instance.isGrounded)
         {

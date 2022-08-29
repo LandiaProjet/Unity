@@ -12,6 +12,7 @@ public class skipChance : MonoBehaviour
         } else
         {
             MenuManager.instance.CloseMenu("chance");
+            MenuManager.instance.OpenMenu("PopupRetry", 11);
             MenuManager.instance.OpenMenu("PopupDefeat", 10);
         }
     }

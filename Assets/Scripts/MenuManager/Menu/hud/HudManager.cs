@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,9 @@ public class HudManager : MonoBehaviour
     public GameObject chrono;
 
     public GameObject itemArea;
+
+    public GameObject PopupPotion;
+    public GameObject PopupChrono;
 
     public static HudManager instance;
 
@@ -94,5 +98,22 @@ public class HudManager : MonoBehaviour
     public void SetTime(string text)
     {
         time.GetComponent<TMPro.TextMeshProUGUI>().text = text;
+    }
+
+    IEnumerator WaitBeforeDisable(GameObject wanted, float time)
+    {
+        wanted.SetActive(true);
+        yield return new WaitForSeconds(time);
+        wanted.SetActive(false);
+    }
+
+    public void EnablePopupPotion()
+    {
+        StartCoroutine(WaitBeforeDisable(PopupPotion, 5f));
+    }
+
+    public void EnablePopupChrono()
+    {
+        StartCoroutine(WaitBeforeDisable(PopupChrono, 5f));
     }
 }

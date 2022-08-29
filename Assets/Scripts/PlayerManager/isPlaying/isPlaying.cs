@@ -62,6 +62,8 @@ public class isPlaying : MonoBehaviour
             {
                 star--;
                 HudManager.instance.SetStar(star.ToString());
+                if (HudManager.instance.getChrono() > 0)
+                    HudManager.instance.EnablePopupChrono();
             }
             if (star < 3 && Levels.instance.levels[idLevel].timeStar[star] < time)
             {
@@ -147,7 +149,7 @@ public class isPlaying : MonoBehaviour
                 LevelManager.instance.addLevel(idLevel + 1, 0, false);
             }
         }
-        MenuManager.instance.OpenMenu("PopupVictory", 10);
+        MenuManager.instance.OpenMenu("PopupMulti2", 10);
     }
 
     public void TransferAllItemInMainInventory()
@@ -223,6 +225,8 @@ public class isPlaying : MonoBehaviour
         HudManager.instance.SetShield(shield);
         if (shield <= 0)
             OnDefeat();
+        if (shield > 0 && shield < 50 && HudManager.instance.getPotion() > 0)
+            HudManager.instance.EnablePopupPotion();
     }
 
     public void addHealth(int health)
@@ -235,6 +239,17 @@ public class isPlaying : MonoBehaviour
         HudManager.instance.SetShield(shield);
         if (shield > 100)
             shield = 100;
+    }
+
+    public void OnDoubleCredit()
+    {
+        PlayerData.getData().AddCredit(credit);
+        MenuManager.instance.OpenMenu("PopupVictory", 10);
+    }
+
+    public void SkipDoubleCredit()
+    {
+        MenuManager.instance.OpenMenu("PopupVictory", 10);
     }
 
     public IEnumerator StartImmunity(float time)

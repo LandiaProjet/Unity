@@ -23,6 +23,8 @@ public class LevelUI : MonoBehaviour
 
     private void OnEnable()
     {
+        if (Random.Range(0.0f, 100.0f) < 40)
+            MenuManager.instance.OpenMenu("PopupMoreCoin", 20);
         foreach (GameObject button in Buttons)
         {
             button.GetComponent<LevelButton>().Refresh();
