@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Level 17
   m_EditorClassIdentifier: 
   idScene: 18
-  secondTimeMax: 350
-  timeStar: 500000006400000078000000
-  itemsRecommanded:
-  - count: 5
-    id: 0
-  RequiredStar: 2
+  secondTimeMax: 330
+  timeStar: 04010000180100002c010000
+  itemsRecommanded: []
+  RequiredStar: 0
