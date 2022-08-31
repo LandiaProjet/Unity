@@ -77,7 +77,7 @@ public class MissionScript : MonoBehaviour
 
         if (timeNow >= timeStamp)
         {
-            Mission missionNode = addMission(UnityEngine.Random.Range(5, 500), UnityEngine.Random.Range(0, Objectives.instance.objectives.Length - 1), UnityEngine.Random.Range(5, 50));
+            Mission missionNode = addMission(UnityEngine.Random.Range(5, 50), UnityEngine.Random.Range(0, Objectives.instance.objectives.Length - 1), UnityEngine.Random.Range(5, 50));
             timeStamp = timeNow + 86400;
             isRead = true;
             database.SaveData();

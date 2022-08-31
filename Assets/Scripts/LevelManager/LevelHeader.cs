@@ -18,11 +18,11 @@ public class LevelHeader : MonoBehaviour
     {
         timeHealth.text = PlayerData.getData().getTimeHealth();
         Health.text = PlayerData.getData().health.ToString();
+        Credit.text = string.Format("{0:#,0}", PlayerData.getData().money);
     }
 
     private void OnEnable()
     {
-        Credit.text = string.Format("{0:#,0}", PlayerData.getData().money);
         CountStar.text = LevelManager.instance.getCountStar().ToString();
     }
 
