@@ -664,7 +664,13 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: AutoLocalization
+    Lumin: AutoLocalization
+    PS4: AutoLocalization
+    Standalone: AutoLocalization
+    WebGL: AutoLocalization
+    iPhone: AutoLocalization
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

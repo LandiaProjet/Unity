@@ -17,7 +17,286 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: cf5d022cf7372a74d9f8fc280cedb82c, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 7125438464
+    m_Localized: "G\xF6rev Kurulumu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 611851800576
+    m_Localized: '
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14350642679808
+    m_Localized: "\xC7\u0131k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14671523713024
+    m_Localized: Duraklat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14957529108480
+    m_Localized: Envanter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15564151296000
+    m_Localized: Yenil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15876421423104
+    m_Localized: Puan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16586160574464
+    m_Localized: TAMAM!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17665610846208
+    m_Localized: Onayla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17948512456704
+    m_Localized: "Sat\u0131n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1145882363138048
+    m_Localized: "Merhaba! Kilawa kasabas\u0131na ho\u015F geldiniz! Ben bu k\xF6y\xFCn
+      patronuyum! Biliyorum, bunun \xE7ok iyi oldu\u011Funu biliyorum ama bunun hakk\u0131nda
+      konu\u015Fmayal\u0131m, do\u011Frudan ciddi \u015Feylere ge\xE7elim..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1897957111992320
+    m_Localized: "Yard\u0131m\u0131na ihtiyac\u0131m\u0131z var, bu kasabadaki en
+      g\xFC\xE7l\xFC ki\u015Fi oldu\u011Funu biliyorum! G\xF6revin basit, bizden
+      \xE7al\u0131nan kutsal ta\u015F\u0131 bulman gerekecek!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898208715706368
+    m_Localized: "Bunu yapmak i\xE7in farkl\u0131 d\xFCnyalara girmen ve onlar\u0131
+      kaybolmadan \xE7\xF6zmen gerekecek! Bana nas\u0131l ba\u015Flayaca\u011F\u0131m\u0131
+      s\xF6yleyecek misin?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1904847715930112
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1907131367657472
+    m_Localized: Dikkat edin!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1907510406909952
+    m_Localized: "Daha fazla jetonunuz yok! \u015Earj etmek i\xE7in bir reklam izleyebilirsiniz!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908064411553792
+    m_Localized: "\u0130zleyin!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908155113377792
+    m_Localized: "Hay\u0131r te\u015Fekk\xFCrler"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908729703665664
+    m_Localized: "Kalbin yok! \u015Earj etmek i\xE7in bir reklam izleyebilirsiniz!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909243816284160
+    m_Localized: reklam izle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909635732049920
+    m_Localized: "T\xFCm kalplerinizi \u015Farj edin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909913566941184
+    m_Localized: 1 ay sonsuz kalp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910139149193216
+    m_Localized: 3 ay sonsuz kalp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910298029428736
+    m_Localized: 6 ay sonsuz kalp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911008808767488
+    m_Localized: "Kalpten 1 y\u0131l\nsonsuz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911194901647360
+    m_Localized: "sa\u011Fl\u0131k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911530873786368
+    m_Localized: "Alt\u0131n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1913101028265984
+    m_Localized: "T\xFCccar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1916062508879872
+    m_Localized: Yay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917772610506752
+    m_Localized: Ok
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917829191667712
+    m_Localized: Yonca
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917911647490048
+    m_Localized: "Zamanlay\u0131c\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917987736358912
+    m_Localized: "K\u0131l\u0131\xE7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1918079969103872
+    m_Localized: "\u0130ksir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921272417456128
+    m_Localized: "{0} \xF6ld\xFCrme yapmak"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921438738386944
+    m_Localized: Kazanmak { 0} para
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921637087023104
+    m_Localized: '{0} deneyim kazan'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1926858253111296
+    m_Localized: "Bir sonraki seviyeye ge\xE7mek i\xE7in {0} kilidini a\xE7mal\u0131s\u0131n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1926884308127744
+    m_Localized: "Uyar\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1927038318776320
+    m_Localized: "Haz\u0131r m\u0131s\u0131n? Oyuna ba\u015Flad\u0131\u011F\u0131n\u0131zda,
+      oyuna koydu\u011Funuz e\u015Fyalar oyunun sonuna kadar iade edilemez."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1928287588028416
+    m_Localized: evet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1928288816959488
+    m_Localized: "hay\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2116495189839872
+    m_Localized: "Y\xFCkleniyor..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898210800275456
+    m_Localized: "Sadece sa\u011F\u0131ndaki ma\u011Faraya git ve \xFCnl\xFC ta\u015F\u0131
+      bulmak i\xE7in ke\u015Ffetmen gereken t\xFCm d\xFCnyalar\u0131 bulacaks\u0131n!
+      Ama dikkatli ol!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898212213755904
+    m_Localized: "Kendini donatman gerekecek \xE7\xFCnk\xFC \xE7ok fazla canavar
+      var! Ve bunun i\xE7in maceran\u0131z boyunca kazanaca\u011F\u0131n\u0131z para
+      sayesinde ekipman sat\u0131n alabileceksiniz!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1899970377912320
+    m_Localized: "Yolda sa\u011F\u0131n\u0131zda y\xFCr\xFCte\xE7 bulacaks\u0131n\u0131z,
+      kolayca fark edilir merak etmeyin. Benim i\xE7in bu kadar, bir maceraya at\u0131l
+      ve o ta\u015F\u0131 bize geri getir!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900435765301248
+    m_Localized: "Birbirimizi nas\u0131l bulaca\u011F\u0131z! Yani ma\u011Faray\u0131
+      kolayca bulabildin mi? Aferin! Size bu men\xFCn\xFCn nas\u0131l \xE7al\u0131\u015Ft\u0131\u011F\u0131n\u0131
+      anlataca\u011F\u0131m!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900993167331328
+    m_Localized: "Solunuzda ana envanterinizi bulacaks\u0131n\u0131z, burada sat\u0131n
+      ald\u0131\u011F\u0131n\u0131z veya kazand\u0131\u011F\u0131n\u0131z t\xFCm
+      e\u015Fyalar\u0131 bulacaks\u0131n\u0131z. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900994547257344
+    m_Localized: "sa\u011F\u0131n\u0131zda macera envanterinizi bulacaks\u0131n\u0131z.
+      Dikkatli olun, bu envanterdeki e\u015Fyalar kaybederseniz kaybolur! Bu y\xFCzden
+      e\u015Fyalar\u0131n\u0131z\u0131 se\xE7erken \xE7ok dikkatli olun!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900996145287168
+    m_Localized: "Envanterler aras\u0131nda e\u015Fya aktarmak i\xE7in s\xF6z konusu
+      e\u015Fyaya t\u0131klaman\u0131z yeterli ve ba\u015Far\u0131l\u0131 oldunuz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901036733566976
+    m_Localized: "Ayr\u0131ca men\xFCn\xFCn sa\u011F taraf\u0131nda bulunan e\u015Fyalar\u0131
+      da bulabilirsiniz. maceran\u0131z s\u0131ras\u0131nda faydal\u0131 olacakt\u0131r.
+      Sonunda haz\u0131rl\u0131\u011F\u0131n\u0131z\u0131 tamamlad\u0131ysan\u0131z,
+      onayland\u0131'ya t\u0131klayabilir ve ba\u015Flayabilirsiniz!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901037765365760
+    m_Localized: "\u0130yi \u015Fanslar!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903124825870336
+    m_Localized: "Son a\xE7\u0131klama ve sizi yaln\u0131z b\u0131rakaca\u011F\u0131m,
+      s\xF6z veriyorum! Bu senin iyili\u011Fin i\xE7in, kaybolman\u0131 istemiyorum...
+      Ve \xF6zellikle de tek olan sensin... Neyse !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903268870852608
+    m_Localized: "Burada b\u0131rakt\u0131\u011F\u0131n hayat\u0131 bulacaks\u0131n,
+      ona \xE7ok dikkat et, daha fazlas\u0131na sahipsen kaybedersin..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903276848418816
+    m_Localized: "Orada d\xFCnyay\u0131 bitirmek i\xE7in ne kadar zaman\u0131n kald\u0131\u011F\u0131n\u0131
+      g\xF6rebilirsin, zaman\u0131nda bitiremezsen kaybedersin!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903315893194752
+    m_Localized: "Burada y\u0131ld\u0131zlar\u0131n say\u0131s\u0131 olacak D\xFCnyan\u0131n
+      sonunda kazand\u0131\u011F\u0131n, d\xFCnyalar\u0131n kilidini a\xE7mana ve
+      para kazanmana izin verecek!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903329600180224
+    m_Localized: "Bu yer, sava\u015Fman gereken ok say\u0131s\u0131n\u0131 temsil
+      ediyor. \xC7ok basit!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903344032780288
+    m_Localized: "Burada ka\xE7 tane iksiriniz oldu\u011Funu g\xF6rebilirsiniz ve
+      bir iksir kullanman\u0131z gerekiyorsa \xFCzerine t\u0131klaman\u0131z yeterli.
+      \u0130ksirler hayat\u0131n\u0131z\u0131 geri kazanman\u0131za izin verir."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903366136762368
+    m_Localized: "Burada ka\xE7 tane kronometreniz oldu\u011Funu g\xF6rebilirsiniz
+      ve bir kronometre kullanman\u0131z gerekiyorsa \xFCzerine t\u0131klaman\u0131z
+      yeterlidir. Kronometre kendinize zaman eklemenizi sa\u011Flar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903381177536512
+    m_Localized: "Son olarak bu d\xFC\u011Fme duraklatma men\xFCs\xFCn\xFC temsil
+      eder. B\u0131rakt\u0131\u011F\u0131n\u0131z g\xF6revleri g\xF6rmenizi ve d\xFCnyadan
+      ayr\u0131lman\u0131z\u0131 sa\u011Flayacakt\u0131r. Dikkatli olun, ayr\u0131l\u0131rsan\u0131z
+      envanterinizi kaybedersiniz."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

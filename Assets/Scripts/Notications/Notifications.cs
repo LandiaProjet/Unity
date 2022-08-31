@@ -9,7 +9,9 @@ public class Notifications : MonoBehaviour
 
     void Start()
     {
-       var channel = new AndroidNotificationChannel()
+        AndroidNotificationCenter.CancelAllDisplayedNotifications();
+
+        var channel = new AndroidNotificationChannel()
         {
             Id = "channel_1",
             Name = "Kilawa Notications",
@@ -21,8 +23,18 @@ public class Notifications : MonoBehaviour
         var notification = new AndroidNotification();
         notification.Title = "Kilawa's adventure";
         notification.Text = notificationList[Random.Range(0, notificationList.Length)];
-        notification.FireTime = System.DateTime.Now.AddHours(6);
+        //TODO : changer les valeurs ici (1-2) -> (6-24)
+        notification.FireTime = System.DateTime.Now.AddHours(Random.Range(1, 2));
 
-        AndroidNotificationCenter.SendNotification(notification, "channel_1");
+        var id = AndroidNotificationCenter.SendNotification(notification, "channel_1");
+
+        if(AndroidNotificationCenter.CheckScheduledNotificationStatus(id) == NotificationStatus.Scheduled){
+            AndroidNotificationCenter.CancelAllNotifications();
+            AndroidNotificationCenter.SendNotification(notification, "channel_1");
+        }
+    
+    
     }
+
+
 }

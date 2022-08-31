@@ -19,17 +19,17 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 7125438464
-    m_Localized: Mission
+    m_Localized: Mission Setup
     m_Metadata:
       m_Items: []
   - m_Id: 611851800576
-    m_Localized: 'Settings
+    m_Localized: '
 
 '
     m_Metadata:
       m_Items: []
   - m_Id: 14350642679808
-    m_Localized: Leave
+    m_Localized: Quit
     m_Metadata:
       m_Items: []
   - m_Id: 14671523713024
@@ -53,15 +53,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17665610846208
-    m_Localized: Valider
+    m_Localized: Confirm
     m_Metadata:
       m_Items: []
   - m_Id: 17948512456704
-    m_Localized: Shop
+    m_Localized: Buy
     m_Metadata:
       m_Items: []
   - m_Id: 1907131367657472
-    m_Localized: Caution !
+    m_Localized: Watch out!
     m_Metadata:
       m_Items: []
   - m_Id: 1911194901647360
@@ -89,7 +89,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1917911647490048
-    m_Localized: Stopwatch
+    m_Localized: Timer
     m_Metadata:
       m_Items: []
   - m_Id: 1917987736358912
@@ -105,11 +105,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1921438738386944
-    m_Localized: Earn {0} money
+    m_Localized: Win { 0} money
     m_Metadata:
       m_Items: []
   - m_Id: 1921637087023104
-    m_Localized: Gain {0} of experience
+    m_Localized: Earn {0} experience
     m_Metadata:
       m_Items: []
   - m_Id: 1926884308127744
@@ -117,8 +117,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1927038318776320
-    m_Localized: Be ready? When you start the game, the items you put into play cannot
-      be returned until the end of the game.
+    m_Localized: Are you ready? When you start the game, the items you put into play
+      cannot be returned until the end of the game.
     m_Metadata:
       m_Items: []
   - m_Id: 1928287588028416
@@ -134,21 +134,21 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1910298029428736
-    m_Localized: 6 months of infinite heart
+    m_Localized: 6 months infinite heart
     m_Metadata:
       m_Items: []
   - m_Id: 1911008808767488
-    m_Localized: '1 year of heart
+    m_Localized: '1 year from the heart
 
-      infinity'
+      infinite'
     m_Metadata:
       m_Items: []
   - m_Id: 1910139149193216
-    m_Localized: 3 months of infinite heart
+    m_Localized: 3 months infinite heart
     m_Metadata:
       m_Items: []
   - m_Id: 1909913566941184
-    m_Localized: 1 month of infinite heart
+    m_Localized: 1 month infinite heart
     m_Metadata:
       m_Items: []
   - m_Id: 1909635732049920
@@ -156,11 +156,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1909243816284160
-    m_Localized: see an ad
+    m_Localized: watch an ad
     m_Metadata:
       m_Items: []
   - m_Id: 1908729703665664
-    m_Localized: You don't have a heart! You can watch a commercial to recharge!
+    m_Localized: You have no heart! You can watch a commercial to recharge!
     m_Metadata:
       m_Items: []
   - m_Id: 1908155113377792
@@ -168,7 +168,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1908064411553792
-    m_Localized: Watch it !
+    m_Localized: Watch it!
     m_Metadata:
       m_Items: []
   - m_Id: 1907510406909952
@@ -181,6 +181,113 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 2116495189839872
     m_Localized: Loading...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1145882363138048
+    m_Localized: Hello! Welcome to the town of Kilawa! I am the boss of this village!
+      I know, I know it's too good but let's not talk about it, let's get straight
+      to the serious stuff...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1897957111992320
+    m_Localized: We need your help, I know you're the strongest in this town! Your
+      task is simple, you will have to go find the sacred stone that was stolen from
+      us!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898208715706368
+    m_Localized: To do this you will have to venture into different worlds and solve
+      them without getting lost! Are you going to tell me how to start?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898210800275456
+    m_Localized: Just go to the cave on your right and you will find all the worlds
+      you need to explore to find the famous stone! But be careful!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898212213755904
+    m_Localized: You will have to equip yourself because there are a lot of monsters!
+      And for that you will be able to buy equipment thanks to the money you will
+      earn during your adventure!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1899970377912320
+    m_Localized: You'll find the walker on your right on the path, he is easily noticeable
+      don't worry. That's it for me, go on an adventure and bring us back that stone!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900435765301248
+    m_Localized: How do we find each other! So you were able to find the cave easily?
+      Good for you! I'll explain you how this menu works!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900993167331328
+    m_Localized: 'on your left you will find your main inventory, this is where you
+      will find all the items you have bought or earned. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900994547257344
+    m_Localized: on your right you will find your adventure inventory. Be careful,
+      the items in this inventory will be lost if you lose them! So be very careful
+      when you select your items!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900996145287168
+    m_Localized: To transfer objects between inventories you just have to click on
+      the object in question and you have succeeded.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901036733566976
+    m_Localized: You can also find on the right side of the menu the items that will
+      be useful during your adventure. Finally if you have finished your preparation
+      you can click on validated and you can start!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901037765365760
+    m_Localized: Good luck!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903124825870336
+    m_Localized: Last explanation and I'll leave you alone, I promise! It's for your
+      own good I don't want you to get lost... And especially you are the only one
+      who ... Anyway !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903268870852608
+    m_Localized: Here you will find the life that you have left, be very careful
+      with it, if you have more you lose...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903276848418816
+    m_Localized: There you can see how much time you have left to finish the world,
+      if you don't finish it in time you lose!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903315893194752
+    m_Localized: Here there will be your number of stars that you earned at the end
+      of the world, it will allow you to unlock worlds and earn money!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903329600180224
+    m_Localized: This place represents the number of arrows you have to fight. It
+      is very simple!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903344032780288
+    m_Localized: Here you can see how many potions you have and if you need to use
+      a potion, just click on it. The potions allow you to restore your life.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903366136762368
+    m_Localized: Here you can see how many stopwatches you have and if you need to
+      use a stopwatch, just click on it. The stopwatch allows you to add time to
+      yourself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903381177536512
+    m_Localized: Finally this button represents the pause menu. It will allow you
+      to see the missions you have left and leave the world. Be careful if you leave
+      you will lose your inventory.
     m_Metadata:
       m_Items: []
   references:

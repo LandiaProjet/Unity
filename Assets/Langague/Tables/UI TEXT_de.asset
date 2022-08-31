@@ -19,11 +19,285 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1145882363138048
-    m_Localized: 
+    m_Localized: "Hallo! Willkommen in der Stadt Kilawa! Ich bin der Chef dieses
+      Dorfes! Ich wei\xDF, ich wei\xDF, es ist zu gut, aber lass uns nicht dar\xFCber
+      reden, lass uns direkt zu den ernsten Dingen kommen..."
     m_Metadata:
       m_Items: []
   - m_Id: 1911008808767488
+    m_Localized: '1 Jahr vom Herzen
+
+      unendlich'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7125438464
+    m_Localized: Missionsaufbau
+    m_Metadata:
+      m_Items: []
+  - m_Id: 611851800576
+    m_Localized: '
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14350642679808
+    m_Localized: Beenden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14671523713024
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14957529108480
+    m_Localized: Inventar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15564151296000
+    m_Localized: Besiegen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15876421423104
+    m_Localized: Ergebnis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16586160574464
+    m_Localized: FERTIG!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17665610846208
+    m_Localized: "Best\xE4tigen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17948512456704
+    m_Localized: Kaufen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1897957111992320
+    m_Localized: "Wir brauchen deine Hilfe, ich wei\xDF, dass du der St\xE4rkste
+      in dieser Stadt bist! Deine Aufgabe ist einfach, du musst den heiligen Stein
+      finden, der uns gestohlen wurde!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1904847715930112
     m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1907131367657472
+    m_Localized: Pass auf!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1907510406909952
+    m_Localized: "Du hast keine M\xFCnzen mehr! Du kannst dir einen Werbespot ansehen,
+      um dich wieder aufzuladen!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908064411553792
+    m_Localized: Schau es dir an!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908155113377792
+    m_Localized: Nein danke
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908729703665664
+    m_Localized: "Du hast kein Herz! Sie k\xF6nnen sich einen Werbespot ansehen,
+      um wieder aufzuladen!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909243816284160
+    m_Localized: Anzeige ansehen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909635732049920
+    m_Localized: Laden Sie all Ihre Herzen auf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909913566941184
+    m_Localized: 1 Monat unendliches Herz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910139149193216
+    m_Localized: 3 Monate unendliches Herz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910298029428736
+    m_Localized: 6 Monate unendliches Herz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911194901647360
+    m_Localized: Gesundheit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911530873786368
+    m_Localized: Gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1913101028265984
+    m_Localized: "H\xE4ndler"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1916062508879872
+    m_Localized: Bogen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917772610506752
+    m_Localized: Pfeil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917829191667712
+    m_Localized: Kleeblatt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917911647490048
+    m_Localized: Timer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917987736358912
+    m_Localized: Schwert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1918079969103872
+    m_Localized: Trank
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921272417456128
+    m_Localized: Erziele {0} Kills
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921438738386944
+    m_Localized: Gewinne { 0} Geld
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921637087023104
+    m_Localized: Sammle {0} Erfahrung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1926858253111296
+    m_Localized: "Du musst {0} freischalten, um zum n\xE4chsten Level aufzusteigen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1926884308127744
+    m_Localized: Warnung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1927038318776320
+    m_Localized: "Bist du bereit? Wenn Sie das Spiel starten, k\xF6nnen die Gegenst\xE4nde,
+      die Sie ins Spiel gebracht haben, bis zum Ende des Spiels nicht zur\xFCckgegeben
+      werden."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1928287588028416
+    m_Localized: ja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1928288816959488
+    m_Localized: nein
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2116495189839872
+    m_Localized: Wird geladen...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898208715706368
+    m_Localized: "Um dies zu tun, musst du dich in verschiedene Welten wagen und
+      sie l\xF6sen, ohne dich zu verlaufen! Verr\xE4tst du mir, wie ich anfangen
+      soll?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898210800275456
+    m_Localized: "Geh einfach in die H\xF6hle zu deiner Rechten und du wirst alle
+      Welten finden, die du erkunden musst, um den ber\xFChmten Stein zu finden!
+      Aber sei vorsichtig!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898212213755904
+    m_Localized: "Du musst dich ausr\xFCsten, denn es gibt viele Monster! Und daf\xFCr
+      kannst du dank des Geldes, das du w\xE4hrend deines Abenteuers verdienst, Ausr\xFCstung
+      kaufen!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1899970377912320
+    m_Localized: "Du findest den Wanderer zu deiner Rechten auf dem Weg, er ist leicht
+      zu erkennen, keine Sorge. Das war's f\xFCr mich, gehe auf ein Abenteuer und
+      bring uns diesen Stein zur\xFCck!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900435765301248
+    m_Localized: "Wie finden wir einander! Du konntest die H\xF6hle also leicht finden?
+      Sch\xF6n f\xFCr dich! Ich erkl\xE4re dir, wie dieses Men\xFC funktioniert!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900993167331328
+    m_Localized: 'Zu deiner Linken findest du dein Hauptinventar, hier findest du
+      alle Items, die du gekauft oder verdient hast. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900994547257344
+    m_Localized: "Auf der rechten Seite finden Sie Ihr Abenteuerinventar. Seien Sie
+      vorsichtig, die Gegenst\xE4nde in diesem Inventar gehen verloren, wenn Sie
+      sie verlieren! Seien Sie also sehr vorsichtig, wenn Sie Ihre Gegenst\xE4nde
+      ausw\xE4hlen!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900996145287168
+    m_Localized: "Um Gegenst\xE4nde zwischen den Inventaren zu \xFCbertragen, m\xFCssen
+      Sie nur auf das betreffende Objekt klicken und Sie haben es geschafft."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901036733566976
+    m_Localized: "Sie finden auch auf der rechten Seite des Men\xFCs die Gegenst\xE4nde,
+      die wird w\xE4hrend Ihres Abenteuers n\xFCtzlich sein. Schlie\xDFlich, wenn
+      Sie Ihre Vorbereitung abgeschlossen haben, k\xF6nnen Sie auf validiert klicken
+      und Sie k\xF6nnen beginnen!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901037765365760
+    m_Localized: "Viel Gl\xFCck!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903124825870336
+    m_Localized: "Letzte Erkl\xE4rung und ich lasse Sie in Ruhe, versprochen! Es
+      ist zu deinem Besten, ich m\xF6chte nicht, dass du dich verirrst ... Und vor
+      allem bist du der einzige, der ... Wie auch immer!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903268870852608
+    m_Localized: Hier wirst du das Leben finden, das dir geblieben ist, sei sehr
+      vorsichtig damit, wenn du mehr hast, verlierst du...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903276848418816
+    m_Localized: Dort kannst du sehen, wie viel Zeit du noch hast, um die Welt zu
+      beenden, wenn du sie nicht rechtzeitig beendest, verlierst du!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903315893194752
+    m_Localized: "Hier wird deine Anzahl an Sternen angezeigt die du am Ende der
+      Welt verdient hast, erm\xF6glicht es dir, Welten freizuschalten und Geld zu
+      verdienen!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903329600180224
+    m_Localized: "Dieser Ort repr\xE4sentiert die Anzahl der Pfeile, die du bek\xE4mpfen
+      musst. Es ist ganz einfach!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903344032780288
+    m_Localized: "Hier k\xF6nnen Sie sehen, wie viele Tr\xE4nke Sie haben, und wenn
+      Sie einen Trank ben\xF6tigen, klicken Sie einfach darauf. Mit den Tr\xE4nken
+      k\xF6nnen Sie Ihr Leben wiederherstellen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903366136762368
+    m_Localized: "Hier k\xF6nnen Sie sehen, wie viele Stoppuhren Sie haben, und wenn
+      Sie eine Stoppuhr verwenden m\xFCssen, klicken Sie einfach darauf. Mit der
+      Stoppuhr k\xF6nnen Sie Zeit f\xFCr sich selbst hinzuf\xFCgen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903381177536512
+    m_Localized: "Schlie\xDFlich repr\xE4sentiert diese Schaltfl\xE4che das Pausenmen\xFC.
+      Es erm\xF6glicht Ihnen, die Missionen zu sehen, die Sie verlassen haben, und
+      die Welt zu verlassen. Sei vorsichtig, wenn du gehst, verlierst du dein Inventar."
     m_Metadata:
       m_Items: []
   references:

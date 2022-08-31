@@ -17,7 +17,284 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: cf5d022cf7372a74d9f8fc280cedb82c, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 7125438464
+    m_Localized: "Configura\xE7\xE3o da miss\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 611851800576
+    m_Localized: '
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14350642679808
+    m_Localized: Sair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14671523713024
+    m_Localized: Pausar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14957529108480
+    m_Localized: "Invent\xE1rio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15564151296000
+    m_Localized: Derrota
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15876421423104
+    m_Localized: "Pontua\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16586160574464
+    m_Localized: "CONCLU\xCDDA!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17665610846208
+    m_Localized: Confirmar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17948512456704
+    m_Localized: Comprar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1145882363138048
+    m_Localized: "Ol\xE1! Bem-vindo \xE0 cidade de Kilawa! Eu sou o chefe desta aldeia!
+      Eu sei, eu sei que \xE9 bom demais, mas n\xE3o vamos falar sobre isso, vamos
+      direto ao assunto s\xE9rio..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1897957111992320
+    m_Localized: "Precisamos da sua ajuda, eu sei que voc\xEA \xE9 o mais forte desta
+      cidade! Sua tarefa \xE9 simples, voc\xEA ter\xE1 que encontrar a pedra sagrada
+      que nos foi roubada!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1904847715930112
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1907131367657472
+    m_Localized: Cuidado!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1907510406909952
+    m_Localized: "Voc\xEA n\xE3o tem mais moedas! Voc\xEA pode assistir a um comercial
+      para recarregar!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908064411553792
+    m_Localized: Assista!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908155113377792
+    m_Localized: "N\xE3o, obrigado"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1908729703665664
+    m_Localized: "Voc\xEA n\xE3o tem cora\xE7\xE3o! Voc\xEA pode assistir a um comercial
+      para recarregar!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909243816284160
+    m_Localized: "veja um an\xFAncio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909635732049920
+    m_Localized: "Recarregue todos os seus cora\xE7\xF5es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1909913566941184
+    m_Localized: "1 m\xEAs cora\xE7\xE3o infinito"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910139149193216
+    m_Localized: "3 meses cora\xE7\xE3o infinito"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1910298029428736
+    m_Localized: "6 meses cora\xE7\xE3o infinito"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911008808767488
+    m_Localized: "1 ano do cora\xE7\xE3o\ninfinito"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911194901647360
+    m_Localized: "sa\xFAde"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1911530873786368
+    m_Localized: Ouro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1913101028265984
+    m_Localized: Mercador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1916062508879872
+    m_Localized: Arco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917772610506752
+    m_Localized: Flecha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917829191667712
+    m_Localized: Trevo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917911647490048
+    m_Localized: Temporizador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1917987736358912
+    m_Localized: Espada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1918079969103872
+    m_Localized: "Po\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921272417456128
+    m_Localized: Fazendo {0} mortes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921438738386944
+    m_Localized: Vence { 0} dinheiro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1921637087023104
+    m_Localized: "Ganhe {0} experi\xEAncia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1926858253111296
+    m_Localized: "Voc\xEA deve desbloquear {0} para avan\xE7ar para o pr\xF3ximo
+      n\xEDvel."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1926884308127744
+    m_Localized: Alerta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1927038318776320
+    m_Localized: "Voc\xEA est\xE1 pronto? Ao iniciar o jogo, os itens colocados em
+      jogo n\xE3o podem ser devolvidos at\xE9 o final do jogo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1928287588028416
+    m_Localized: sim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1928288816959488
+    m_Localized: "n\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2116495189839872
+    m_Localized: Carregando...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898208715706368
+    m_Localized: "Para fazer isso, voc\xEA ter\xE1 que se aventurar em diferentes
+      mundos e resolv\xEA-los sem se perder! Voc\xEA vai me dizer como come\xE7ar?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898210800275456
+    m_Localized: "Basta ir para a caverna \xE0 sua direita e voc\xEA encontrar\xE1
+      todos os mundos que voc\xEA precisa explorar para encontrar a famosa pedra!
+      Mas tenha cuidado!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1898212213755904
+    m_Localized: "Voc\xEA ter\xE1 que se equipar porque h\xE1 muitos monstros! E
+      para isso voc\xEA poder\xE1 comprar equipamentos gra\xE7as ao dinheiro que
+      ganhar\xE1 durante sua aventura!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1899970377912320
+    m_Localized: "Voc\xEA encontrar\xE1 o caminhante \xE0 sua direita no caminho,
+      ele \xE9 facilmente percept\xEDvel, n\xE3o se preocupe. \xC9 isso para mim,
+      v\xE1 em uma aventura e traga-nos de volta aquela pedra!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900435765301248
+    m_Localized: "Como nos encontramos! Ent\xE3o voc\xEA foi capaz de encontrar a
+      caverna facilmente? Bom para voc\xEA! Eu vou te explicar como funciona este
+      menu!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900993167331328
+    m_Localized: "\xE0 sua esquerda voc\xEA encontrar\xE1 seu invent\xE1rio principal,
+      \xE9 onde voc\xEA encontrar\xE1 todos os itens que voc\xEA comprou ou ganhou. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900994547257344
+    m_Localized: "\xE0 sua direita voc\xEA encontrar\xE1 seu invent\xE1rio de aventuras.
+      Tenha cuidado, os itens neste invent\xE1rio ser\xE3o perdidos se voc\xEA os
+      perder! Portanto, tome muito cuidado ao selecionar seus itens!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1900996145287168
+    m_Localized: "Para transferir objetos entre invent\xE1rios, basta clicar no objeto
+      em quest\xE3o e voc\xEA ter\xE1 sucesso."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901036733566976
+    m_Localized: "Voc\xEA tamb\xE9m pode encontrar no lado direito do menu os itens
+      que ser\xE1 \xFAtil durante a sua aventura. Finalmente, se voc\xEA terminou
+      sua prepara\xE7\xE3o, pode clicar em validado e pode come\xE7ar!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1901037765365760
+    m_Localized: Boa sorte!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903124825870336
+    m_Localized: "\xDAltima explica\xE7\xE3o e vou deixar voc\xEA em paz, prometo!
+      \xC9 para o seu pr\xF3prio bem que n\xE3o quero que voc\xEA se perca... E principalmente
+      voc\xEA \xE9 o \xFAnico que... Enfim !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903268870852608
+    m_Localized: "Aqui voc\xEA encontrar\xE1 a vida que lhe resta, tenha muito cuidado
+      com ela, se voc\xEA tiver mais voc\xEA perde..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903276848418816
+    m_Localized: "Aqui voc\xEA pode ver quanto tempo voc\xEA tem para terminar o
+      mundo, se voc\xEA n\xE3o terminar a tempo voc\xEA perde!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903315893194752
+    m_Localized: "Aqui estar\xE1 o seu n\xFAmero de estrelas que voc\xEA ganhou no
+      fim do mundo, ele permitir\xE1 que voc\xEA desbloqueie mundos e ganhe dinheiro!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903329600180224
+    m_Localized: "Este lugar representa o n\xFAmero de flechas que voc\xEA tem que
+      lutar. \xC9 muito simples!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903344032780288
+    m_Localized: "Aqui voc\xEA pode ver quantas po\xE7\xF5es voc\xEA tem e se precisar
+      usar uma po\xE7\xE3o, basta clicar nela. As po\xE7\xF5es permitem que voc\xEA
+      restaure sua vida."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903366136762368
+    m_Localized: "Aqui voc\xEA pode ver quantos cron\xF4metros voc\xEA tem e se precisar
+      usar um cron\xF4metro, basta clicar nele. O cron\xF4metro permite que voc\xEA
+      adicione tempo para si mesmo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1903381177536512
+    m_Localized: "Finalmente, este bot\xE3o representa o menu de pausa. Ele permitir\xE1
+      que voc\xEA veja as miss\xF5es que voc\xEA deixou e deixe o mundo. Tenha cuidado
+      se voc\xEA sair, voc\xEA perder\xE1 seu invent\xE1rio."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
