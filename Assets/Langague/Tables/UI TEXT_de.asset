@@ -31,11 +31,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7125438464
-    m_Localized: Missionsaufbau
+    m_Localized: Mission
     m_Metadata:
       m_Items: []
   - m_Id: 611851800576
-    m_Localized: 
+    m_Localized: Einstellungen
     m_Metadata:
       m_Items: []
   - m_Id: 14350642679808
@@ -77,7 +77,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1904847715930112
-    m_Localized: 
+    m_Localized: "Ich denke, du kannst das auch alleine schaffen. Ich w\xFCnsche
+      dir viel Gl\xFCck. Ade!"
     m_Metadata:
       m_Items: []
   - m_Id: 1907131367657472
@@ -163,7 +164,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1921438738386944
-    m_Localized: Gewinne { 0} Geld
+    m_Localized: Gewinne {0} Geld
     m_Metadata:
       m_Items: []
   - m_Id: 1921637087023104
@@ -296,6 +297,84 @@ MonoBehaviour:
     m_Localized: "Schlie\xDFlich repr\xE4sentiert diese Schaltfl\xE4che das Pausenmen\xFC.
       Es erm\xF6glicht Ihnen, die Missionen zu sehen, die Sie verlassen haben, und
       die Welt zu verlassen. Sei vorsichtig, wenn du gehst, verlierst du dein Inventar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39496612464021504
+    m_Localized: Schau dir eine Werbung an, um 150 Credits extra zu verdienen!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497020322336768
+    m_Localized: "Entdecke die verf\xFCgbaren Missionen!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497359389872128
+    m_Localized: Komm und entdecke den Laden!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497674931556352
+    m_Localized: "Klicke auf das Objekt f\xFCr weitere Informationen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39499405417500672
+    m_Localized: Schnell benutze einen Trank!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39499592621871104
+    m_Localized: Sie haben mehr Zeit Aufmerksamkeit!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39500076678107136
+    m_Localized: Sie haben gerade 1 Herz gewonnen, Bravo!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39500136904118272
+    m_Localized: Sie haben Ihr Geld gut erhalten, Bravo!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39464034428243968
+    m_Localized: Schau dir einen Werbespot an, damit du nicht alles verlierst!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39463188848168960
+    m_Localized: Achtung!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39463832006938624
+    m_Localized: Verdoppeln Sie Ihre Gewinne, indem Sie sich eine Werbung ansehen!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39460263023333376
+    m_Localized: Schau dir eine Werbung an, um 150 Credits extra zu verdienen!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39503779048968192
+    m_Localized: Erholen Sie sich
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502496913149952
+    m_Localized: Der Pfeil begleitet den Bogen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502513367404544
+    m_Localized: "Mit dem Bogen kann man Monster t\xF6ten oder durch einen Pfeil
+      lange Mechanismen aktivieren."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502626609418240
+    m_Localized: "Mit dem Timer kann man w\xE4hrend eines Levels Zeit zur\xFCckgewinnen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502628480077824
+    m_Localized: "Das Kleeblatt erm\xF6glicht eine zweite Chance auf einer Ebene. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502669861081088
+    m_Localized: "Der Trank stellt f\xFCr eine Stufe Leben wieder her."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502670624444416
+    m_Localized: "Mit dem Schwert k\xF6nnen Sie auf kurze Distanz Monster t\xF6ten
+      oder Mechanismen aktivieren."
     m_Metadata:
       m_Items: []
   references:

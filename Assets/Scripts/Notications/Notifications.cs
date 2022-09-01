@@ -13,7 +13,7 @@ public class Notifications : MonoBehaviour
     protected GameNotificationsManager manager;
 
     public const string ChannelId = "game_channel0";
-    
+
     public Notifications instance;
 
     private void Awake() {
@@ -26,11 +26,10 @@ public class Notifications : MonoBehaviour
         var c1 = new GameNotificationChannel(ChannelId, "Default Game Channel", "Generic notifications");
 
         manager.Initialize(c1);
-
+        manager.CancelAllNotifications();
 
         DateTime deliveryTime = DateTime.Now.ToLocalTime().AddSeconds(UnityEngine.Random.Range(6, 24));
         SendNotification("Kilawa's adventure", notificationList[UnityEngine.Random.Range(0, notificationList.Length)], deliveryTime, channelId: Notifications.ChannelId);
-        
     }
 
     public void SendNotification(string title, string body, DateTime deliveryTime, int? badgeNumber = null,

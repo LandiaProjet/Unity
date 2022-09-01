@@ -19,13 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 7125438464
-    m_Localized: "Configuraci\xF3n de la misi\xF3n"
+    m_Localized: "Misi\xF3n"
     m_Metadata:
       m_Items: []
   - m_Id: 611851800576
-    m_Localized: '
-
-'
+    m_Localized: "Par\xE1metros"
     m_Metadata:
       m_Items: []
   - m_Id: 14350642679808
@@ -78,7 +76,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1904847715930112
-    m_Localized: 
+    m_Localized: "Por lo dem\xE1s, creo que puedes hacerlo muy bien por tu cuenta.
+      Yo digo que buena suerte. \xA1Adi\xF3s!"
     m_Metadata:
       m_Items: []
   - m_Id: 1907131367657472
@@ -167,7 +166,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1921438738386944
-    m_Localized: Gana { 0} dinero
+    m_Localized: Gana {0} dinero
     m_Metadata:
       m_Items: []
   - m_Id: 1921637087023104
@@ -290,6 +289,84 @@ MonoBehaviour:
     m_Localized: "Finalmente, este bot\xF3n representa el men\xFA de pausa. Te permitir\xE1
       ver las misiones que te quedan y salir del mundo. Ten cuidado si te vas perder\xE1s
       tu inventario."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39464034428243968
+    m_Localized: "\xA1Mira un anuncio para no perderlo todo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39463188848168960
+    m_Localized: "\xA1Observa!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39463832006938624
+    m_Localized: Duplique sus ganancias viendo un anuncio.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39460263023333376
+    m_Localized: "Vea un anuncio para ganar 150 cr\xE9ditos extra."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39496612464021504
+    m_Localized: "Vea un anuncio para ganar 150 cr\xE9ditos extra."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497020322336768
+    m_Localized: "\xA1Descubre las misiones disponibles!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497359389872128
+    m_Localized: "\xA1Venga a descubrir la tienda!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497674931556352
+    m_Localized: "Haga clic en el objeto para obtener m\xE1s informaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39499405417500672
+    m_Localized: "\xA1R\xE1pido, usa una poci\xF3n!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39499592621871104
+    m_Localized: "Tienes m\xE1s tiempo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39500076678107136
+    m_Localized: "Acabas de ganar un coraz\xF3n, \xA1Bravo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39500136904118272
+    m_Localized: "Ha recibido su dinero, \xA1bien hecho!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502496913149952
+    m_Localized: "La flecha acompa\xF1a al arco."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502513367404544
+    m_Localized: El arco puede usarse para matar monstruos o activar mecanismos largos
+      con una flecha.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502626609418240
+    m_Localized: El temporizador te permite recuperar tiempo durante un nivel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502628480077824
+    m_Localized: "El tr\xE9bol te permite tener una segunda oportunidad en un nivel. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502669861081088
+    m_Localized: "La poci\xF3n te permite recuperar vida durante un nivel."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502670624444416
+    m_Localized: La espada puede usarse para matar monstruos o activar mecanismos
+      a corta distancia.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39503779048968192
+    m_Localized: "Extra\xEDdo de"
     m_Metadata:
       m_Items: []
   references:

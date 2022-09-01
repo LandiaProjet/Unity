@@ -19,13 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 7125438464
-    m_Localized: "Configura\xE7\xE3o da miss\xE3o"
+    m_Localized: "Miss\xE3o"
     m_Metadata:
       m_Items: []
   - m_Id: 611851800576
-    m_Localized: '
-
-'
+    m_Localized: "Par\xE2metros"
     m_Metadata:
       m_Items: []
   - m_Id: 14350642679808
@@ -73,7 +71,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1904847715930112
-    m_Localized: 
+    m_Localized: "Quanto ao resto penso que pode fazer muito bem por si pr\xF3prio.
+      Digo boa sorte. Adeus!"
     m_Metadata:
       m_Items: []
   - m_Id: 1907131367657472
@@ -163,7 +162,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1921438738386944
-    m_Localized: Vence { 0} dinheiro
+    m_Localized: Vence {0} dinheiro
     m_Metadata:
       m_Items: []
   - m_Id: 1921637087023104
@@ -293,6 +292,84 @@ MonoBehaviour:
     m_Localized: "Finalmente, este bot\xE3o representa o menu de pausa. Ele permitir\xE1
       que voc\xEA veja as miss\xF5es que voc\xEA deixou e deixe o mundo. Tenha cuidado
       se voc\xEA sair, voc\xEA perder\xE1 seu invent\xE1rio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39464034428243968
+    m_Localized: "Veja um an\xFAncio para n\xE3o perder tudo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39463188848168960
+    m_Localized: Observem!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39463832006938624
+    m_Localized: "Duplique os seus ganhos assistindo a um an\xFAncio!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39460263023333376
+    m_Localized: "Veja um an\xFAncio para ganhar 150 cr\xE9ditos extra!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39496612464021504
+    m_Localized: "Veja um an\xFAncio para ganhar 150 cr\xE9ditos extra!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497359389872128
+    m_Localized: Venha e descubra a loja!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497020322336768
+    m_Localized: "Descubra as miss\xF5es dispon\xEDveis!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39503779048968192
+    m_Localized: Recuperado de
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497674931556352
+    m_Localized: "Clique sobre o objecto para mais informa\xE7\xF5es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39499405417500672
+    m_Localized: "R\xE1pido, use uma po\xE7\xE3o!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39499592621871104
+    m_Localized: Tem mais tempo!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39500076678107136
+    m_Localized: "Acabou de ganhar 1 cora\xE7\xE3o, Bravo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39500136904118272
+    m_Localized: Recebeu o seu dinheiro, bom trabalho!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502496913149952
+    m_Localized: A seta acompanha o arco.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502513367404544
+    m_Localized: O arco pode ser usado para matar monstros ou activar mecanismos
+      longos com uma seta.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502626609418240
+    m_Localized: "O temporizador permite-lhe recuperar tempo durante um n\xEDvel."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502628480077824
+    m_Localized: "O trevo permite-lhe ter uma segunda oportunidade a um n\xEDvel. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502669861081088
+    m_Localized: "A po\xE7\xE3o permite-lhe recuperar a vida por um n\xEDvel."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502670624444416
+    m_Localized: "A espada pode ser usada para matar monstros ou activar mecanismos
+      a curta dist\xE2ncia."
     m_Metadata:
       m_Items: []
   references:

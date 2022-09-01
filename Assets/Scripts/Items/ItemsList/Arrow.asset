@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 2
   icon: {fileID: 21300000, guid: fe5f9801809014030a5f78696df51a59, type: 3}
   name: Arrow
-  description: tire
-  count: 86
+  description: DescArrow
+  count: 106
   limitExchange: 32

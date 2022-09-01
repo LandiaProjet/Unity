@@ -37,7 +37,6 @@ public class ShopSlot : MonoBehaviour {
         if(PlayerData.getData().money >= price){
             PlayerData.getData().RemoveCredit(price);
             Inventory.instance.addItem(item.id);
-            Debug.Log("Item acheté");
         } else {
             MenuManager.instance.OpenMenu("PopupNoCoin", 18);
         }

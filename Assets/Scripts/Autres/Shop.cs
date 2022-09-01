@@ -42,7 +42,7 @@ public class Shop : MonoBehaviour
         inventoryDescription.SetActive(true);
         InventoryItemDescriptionUI itemDescription = inventoryDescription.GetComponent<InventoryItemDescriptionUI>();
         itemDescription.itemName.SetText(LocalizationSettings.StringDatabase.GetLocalizedString(item.name));
-        itemDescription.itemDescription.SetText(item.description);
+        itemDescription.itemDescription.SetText(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", item.description));
         itemDescription.itemIcon.sprite = item.icon;
     }
 }

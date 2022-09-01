@@ -55,7 +55,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 17948512456704
-    m_Localized: Acheter
+    m_Localized: Magasin
     m_Metadata:
       m_Items: []
   - m_Id: 1145882363138048
@@ -95,8 +95,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1900435765301248
-    m_Localized: Comment on se retrouve ! Vous avez donc pu trouver la grotte facilement
-      ? Bien pour vous! Je vais vous expliquer comment fonctionne ce menu !
+    m_Localized: "Bonjour \xE0 toi jeune aventurier ! Je vais t'expliqu\xE9 comment
+      fonctionne ce menu !"
     m_Metadata:
       m_Items: []
   - m_Id: 1900993167331328
@@ -127,9 +127,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1903124825870336
-    m_Localized: "Derni\xE8re explication et je vous laisse tranquille, promis !
-      C'est pour ton bien je ne veux pas que tu te perdes... Et surtout tu es le
-      seul qui... Quoi qu'il en soit !"
+    m_Localized: "Derni\xE8re explication et je te laisse tranquille c'est promis
+      !"
     m_Metadata:
       m_Items: []
   - m_Id: 1903268870852608
@@ -172,7 +171,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1904847715930112
-    m_Localized: 
+    m_Localized: "Pour le reste je penses que tu peux tr\xE8s bien t'en sortir tout
+      seul. Je te dis bonne chance. Aurevoir !"
     m_Metadata:
       m_Items: []
   - m_Id: 1907131367657472
@@ -262,7 +262,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1921438738386944
-    m_Localized: "Gagner { 0}\_argent"
+    m_Localized: "Gagner {0}\_argent"
     m_Metadata:
       m_Items: []
   - m_Id: 1921637087023104
@@ -308,6 +308,68 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 39464034428243968
     m_Localized: "Regarde une pub pour \xE9viter de tout perdre !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39496612464021504
+    m_Localized: "Regarde une pub pour gagner 150 cr\xE9dits en plus !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497020322336768
+    m_Localized: "D\xE9couvre les missions disponible !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497359389872128
+    m_Localized: "Viens d\xE9couvrir le magasin !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497674931556352
+    m_Localized: Clique sur l'objet pour plus d'information
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39499405417500672
+    m_Localized: Vite utilise une potion !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39499592621871104
+    m_Localized: Vous avez plus de temps attention !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39500136904118272
+    m_Localized: "Vous avez bien re\xE7u votre argent, Bravo !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39500076678107136
+    m_Localized: Vous venez de gagner 1 coeur, Bravo !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502496913149952
+    m_Localized: "La fl\xE8che accompagne l'arc."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39503779048968192
+    m_Localized: "R\xE9cuperez"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502513367404544
+    m_Localized: "L'arc permet de tuer des monstres ou d'activer des m\xE9canismes
+      de long gr\xE2ce \xE0 une fl\xE8che."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502670624444416
+    m_Localized: "L'\xE9p\xE9e permet de tuer des monstres ou d'activer des m\xE9canismes
+      \xE0 courte distance."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502669861081088
+    m_Localized: "La potion permet de r\xE9cup\xE9rer de la vie pendant un niveau."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502626609418240
+    m_Localized: "Le chrono permet de r\xE9cup\xE9rer du temps pendant un niveau."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502628480077824
+    m_Localized: "Le tr\xE8fle permet d'avoir une seconde chance sur un niveau. "
     m_Metadata:
       m_Items: []
   references:

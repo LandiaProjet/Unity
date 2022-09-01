@@ -33,10 +33,6 @@ MonoBehaviour:
     m_Key: Watch
     m_Metadata:
       m_Items: []
-  - m_Id: 39464195627929600
-    m_Key: Watc
-    m_Metadata:
-      m_Items: []
   - m_Id: 1907131367657472
     m_Key: warning
     m_Metadata:
@@ -279,6 +275,66 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1909913566941184
     m_Key: 1 months heart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39496612464021504
+    m_Key: WatchPUB150
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497020322336768
+    m_Key: DecouvreMission
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497359389872128
+    m_Key: DecouvrirMagasin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497674931556352
+    m_Key: InfoItems
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39499405417500672
+    m_Key: PotionUse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39499592621871104
+    m_Key: ChronoTime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39500076678107136
+    m_Key: winhealth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39500136904118272
+    m_Key: wincredit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502496913149952
+    m_Key: DescArrow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502513367404544
+    m_Key: DescBow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502626609418240
+    m_Key: DescStopwatch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502628480077824
+    m_Key: DescClover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502669861081088
+    m_Key: DescPotion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502670624444416
+    m_Key: DescSword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39503779048968192
+    m_Key: Claim
     m_Metadata:
       m_Items: []
   m_Metadata:

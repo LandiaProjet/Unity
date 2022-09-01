@@ -15,6 +15,6 @@ MonoBehaviour:
   id: 5
   icon: {fileID: 21300000, guid: 715d6ea1f8c8a45c487d18da0f6ec237, type: 3}
   name: Stopwatch
-  description: chrono
+  description: DescStopwatch
   count: 0
   limitExchange: 1

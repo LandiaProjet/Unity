@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 7125438464
-    m_Localized: Mission Setup
+    m_Localized: Mission
     m_Metadata:
       m_Items: []
   - m_Id: 611851800576
@@ -103,7 +103,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1921438738386944
-    m_Localized: Win { 0} money
+    m_Localized: Win {0} money
     m_Metadata:
       m_Items: []
   - m_Id: 1921637087023104
@@ -174,7 +174,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1904847715930112
-    m_Localized: 
+    m_Localized: For the rest I think you can do very well on your own. I say good
+      luck. Goodbye!
     m_Metadata:
       m_Items: []
   - m_Id: 2116495189839872
@@ -290,6 +291,80 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 39463188848168960
     m_Localized: Watch !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39496612464021504
+    m_Localized: Watch a commercial to earn 150 extra credits!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497020322336768
+    m_Localized: Discover the available missions!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497359389872128
+    m_Localized: Come and discover the store!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39497674931556352
+    m_Localized: Click on the object for more information
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39499405417500672
+    m_Localized: Quickly use a potion!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39499592621871104
+    m_Localized: You have more time attention!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39500136904118272
+    m_Localized: You have received your money, Congratulations!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39500076678107136
+    m_Localized: You have just won 1 heart, Congratulations !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39503779048968192
+    m_Localized: Claim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39464034428243968
+    m_Localized: Watch a commercial to avoid losing everything!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39463832006938624
+    m_Localized: Multiply your earnings by 2 by watching a commercial!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39460263023333376
+    m_Localized: Watch a commercial to win 150 extra credits!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502496913149952
+    m_Localized: The arrow accompanies the bow.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502513367404544
+    m_Localized: The bow allows you to kill monsters or activate long mechanisms
+      with an arrow.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502626609418240
+    m_Localized: The timer allows you to recover time during a level.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502628480077824
+    m_Localized: 'The clover allows you to have a second chance on a level. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502669861081088
+    m_Localized: The potion allows to recover life during one level.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39502670624444416
+    m_Localized: The sword allows you to kill monsters or activate mechanisms at
+      close range.
     m_Metadata:
       m_Items: []
   references:
