@@ -19,13 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 7125438464
-    m_Localized: Configuration de la mission
+    m_Localized: Mission
     m_Metadata:
       m_Items: []
   - m_Id: 611851800576
-    m_Localized: '
-
-'
+    m_Localized: "Param\xE8tres"
     m_Metadata:
       m_Items: []
   - m_Id: 14350642679808
@@ -294,6 +292,22 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 2116495189839872
     m_Localized: Chargement en cours...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39460263023333376
+    m_Localized: "Regarde une pub pour gagner 150 cr\xE9dits en plus !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39463188848168960
+    m_Localized: Regarder !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39463832006938624
+    m_Localized: Multipliez vos gains par 2 en regardant une pub !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39464034428243968
+    m_Localized: "Regarde une pub pour \xE9viter de tout perdre !"
     m_Metadata:
       m_Items: []
   references:

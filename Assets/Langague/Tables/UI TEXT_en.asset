@@ -23,9 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 611851800576
-    m_Localized: '
-
-'
+    m_Localized: Settings
     m_Metadata:
       m_Items: []
   - m_Id: 14350642679808
@@ -288,6 +286,10 @@ MonoBehaviour:
     m_Localized: Finally this button represents the pause menu. It will allow you
       to see the missions you have left and leave the world. Be careful if you leave
       you will lose your inventory.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39463188848168960
+    m_Localized: Watch !
     m_Metadata:
       m_Items: []
   references:

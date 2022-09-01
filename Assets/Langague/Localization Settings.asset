@@ -27,7 +27,7 @@ MonoBehaviour:
     - rid: 6653561929294938160
   m_ProjectLocaleIdentifier:
     m_Code: en
-  m_InitializeSynchronously: 1
+  m_InitializeSynchronously: 0
   references:
     version: 2
     RefIds:
@@ -49,7 +49,7 @@ MonoBehaviour:
       data:
         m_DefaultTableReference:
           m_TableCollectionName: UI TEXT
-        m_UseFallback: 0
+        m_UseFallback: 1
     - rid: 6653561929294938141
       type: {class: LocalizedStringDatabase, ns: UnityEngine.Localization.Settings, asm: Unity.Localization}
       data:
