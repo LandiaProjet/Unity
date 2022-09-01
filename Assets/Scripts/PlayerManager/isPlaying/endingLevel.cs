@@ -31,11 +31,11 @@ public class endingLevel : MonoBehaviour
 
     public void RestartLevel()
     {
-        /*if (PlayerData.getData().health <= 0)
+        if (PlayerData.getData().health <= 0)
         {
-            Popup.instance.openPopup("Alerte", "Vous n'avez pas assez de coeur pour pouvoir relancer une parti ...", 20);
+            MenuManager.instance.OpenMenu("PopupNoHealth", 16);
             return;
-        }*/
+        }
         MenuManager.instance.CloseMenu("PopupDefeat");
         MenuManager.instance.CloseMenu("PopupVictory");
         PlayerManager.instance.changePlayer("idle");
