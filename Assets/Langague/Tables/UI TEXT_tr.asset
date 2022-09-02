@@ -381,6 +381,10 @@ MonoBehaviour:
     m_Localized: "reddedilen i\u015Flem"
     m_Metadata:
       m_Items: []
+  - m_Id: 39890026853781504
+    m_Localized: "Aferin sana! Art\u0131k sonsuz kalbin var!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

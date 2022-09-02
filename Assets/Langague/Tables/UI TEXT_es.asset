@@ -373,6 +373,10 @@ MonoBehaviour:
     m_Localized: "transacci\xF3n rechazada"
     m_Metadata:
       m_Items: []
+  - m_Id: 39890026853781504
+    m_Localized: "\xA1Bien por ti! \xA1Ahora tienes corazones infinitos!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

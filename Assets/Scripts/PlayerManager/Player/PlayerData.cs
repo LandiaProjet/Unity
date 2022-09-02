@@ -8,6 +8,7 @@ public class PlayerData : MonoBehaviour
     public float health;
     public int lastTime;
     public float money;
+    public bool infiniHealth;
 
     public int level;
     public int experience;
@@ -97,6 +98,8 @@ public class PlayerData : MonoBehaviour
 
     public void RemoveHealth()
     {
+        if (infiniHealth == true)
+            return;
         health--;
         database.SaveData();
     }
@@ -122,9 +125,9 @@ public class PlayerData : MonoBehaviour
 
     public void AddInfinityHealth()
     {
-        health += 99999999;
+        infiniHealth = true;
         database.SaveData();
-        Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "winhealth"), 20);
+        Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "wininfinihealth"), 20);
     }
 
     public void AddCreditByVideo(int value)
@@ -140,6 +143,8 @@ public class PlayerData : MonoBehaviour
 
     public string getTimeHealth()
     {
+        if (infiniHealth == true)
+            return "infini";
         if (health == 5)
         {
             return "full";

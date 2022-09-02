@@ -376,6 +376,10 @@ MonoBehaviour:
     m_Localized: "transaction refus\xE9e"
     m_Metadata:
       m_Items: []
+  - m_Id: 39890026853781504
+    m_Localized: "Bravo ! Vous avez \xE0 pr\xE9sent des coeurs \xE0 l'infini !"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

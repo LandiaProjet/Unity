@@ -381,6 +381,10 @@ MonoBehaviour:
     m_Localized: abgelehnte Transaktion
     m_Metadata:
       m_Items: []
+  - m_Id: 39890026853781504
+    m_Localized: Bravo! Sie haben jetzt unendlich viele Herzen!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
