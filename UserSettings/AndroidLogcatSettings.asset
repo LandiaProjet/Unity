@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R5CNC16D8AR",
         "name": "com.landiagames.kilawaadventure",
-        "processId": 22840,
+        "processId": 26380,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -150,6 +150,12 @@
             "deviceId": "R5CNC16D8AR",
             "name": "com.landiagames.kilawaadventure",
             "processId": 22840,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CNC16D8AR",
+            "name": "com.landiagames.kilawaadventure",
+            "processId": 26380,
             "exited": false
         },
         {
