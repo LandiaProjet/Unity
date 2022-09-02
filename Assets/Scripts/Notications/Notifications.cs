@@ -28,7 +28,7 @@ public class Notifications : MonoBehaviour
         manager.Initialize(c1);
         manager.CancelAllNotifications();
 
-        DateTime deliveryTime = DateTime.Now.ToLocalTime().AddSeconds(UnityEngine.Random.Range(6, 24));
+        DateTime deliveryTime = DateTime.Now.ToLocalTime().AddHours(UnityEngine.Random.Range(6, 24));
         SendNotification("Kilawa's adventure", notificationList[UnityEngine.Random.Range(0, notificationList.Length)], deliveryTime, channelId: Notifications.ChannelId);
     }
 
