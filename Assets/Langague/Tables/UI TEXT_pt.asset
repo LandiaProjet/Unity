@@ -114,7 +114,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1910298029428736
-    m_Localized: "6 meses cora\xE7\xE3o infinito"
+    m_Localized: "Cora\xE7\xE3o infinito"
     m_Metadata:
       m_Items: []
   - m_Id: 1911008808767488
@@ -370,6 +370,10 @@ MonoBehaviour:
   - m_Id: 39502670624444416
     m_Localized: "A espada pode ser usada para matar monstros ou activar mecanismos
       a curta dist\xE2ncia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39883377267953664
+    m_Localized: "transac\xE7\xE3o rejeitada"
     m_Metadata:
       m_Items: []
   references:

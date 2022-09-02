@@ -120,7 +120,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1910298029428736
-    m_Localized: 6 Monate unendliches Herz
+    m_Localized: Unendliches Herz
     m_Metadata:
       m_Items: []
   - m_Id: 1911194901647360
@@ -375,6 +375,10 @@ MonoBehaviour:
   - m_Id: 39502670624444416
     m_Localized: "Mit dem Schwert k\xF6nnen Sie auf kurze Distanz Monster t\xF6ten
       oder Mechanismen aktivieren."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39883377267953664
+    m_Localized: abgelehnte Transaktion
     m_Metadata:
       m_Items: []
   references:

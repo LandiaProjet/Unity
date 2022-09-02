@@ -214,7 +214,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1910298029428736
-    m_Localized: "6\_mois de c\u0153ur infini"
+    m_Localized: "C\u0153ur infini"
     m_Metadata:
       m_Items: []
   - m_Id: 1911008808767488
@@ -370,6 +370,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 39502628480077824
     m_Localized: "Le tr\xE8fle permet d'avoir une seconde chance sur un niveau. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39883377267953664
+    m_Localized: "transaction refus\xE9e"
     m_Metadata:
       m_Items: []
   references:

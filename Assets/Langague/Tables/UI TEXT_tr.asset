@@ -119,7 +119,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1910298029428736
-    m_Localized: 6 ay sonsuz kalp
+    m_Localized: Sonsuz kalp
     m_Metadata:
       m_Items: []
   - m_Id: 1911008808767488
@@ -375,6 +375,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 39503779048968192
     m_Localized: "Eri\u015Fim adresi"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39883377267953664
+    m_Localized: "reddedilen i\u015Flem"
     m_Metadata:
       m_Items: []
   references:

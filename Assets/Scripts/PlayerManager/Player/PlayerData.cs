@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using UnityEngine.Localization.Settings;
+using UnityEngine.Purchasing;
 
 public class PlayerData : MonoBehaviour
 {
@@ -119,11 +120,22 @@ public class PlayerData : MonoBehaviour
         Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "winhealth"), 20);
     }
 
+    public void AddInfinityHealth()
+    {
+        health += 99999999;
+        database.SaveData();
+        Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "winhealth"), 20);
+    }
+
     public void AddCreditByVideo(int value)
     {
         money += value;
         database.SaveData();
         Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "wincredit"), 20);
+    }
+
+    public void OnPurchaseFailed(Product product, PurchaseFailureReason failureReason){
+        Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "errortransaction") + " (" + failureReason+")", 20);
     }
 
     public string getTimeHealth()

@@ -337,6 +337,10 @@ MonoBehaviour:
     m_Key: Claim
     m_Metadata:
       m_Items: []
+  - m_Id: 39883377267953664
+    m_Key: errortransaction
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

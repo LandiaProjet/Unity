@@ -132,7 +132,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1910298029428736
-    m_Localized: 6 months infinite heart
+    m_Localized: Infinite heart
     m_Metadata:
       m_Items: []
   - m_Id: 1911008808767488
@@ -365,6 +365,10 @@ MonoBehaviour:
   - m_Id: 39502670624444416
     m_Localized: The sword allows you to kill monsters or activate mechanisms at
       close range.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39883377267953664
+    m_Localized: rejected transaction
     m_Metadata:
       m_Items: []
   references:
