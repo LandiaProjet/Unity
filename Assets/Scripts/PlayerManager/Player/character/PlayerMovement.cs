@@ -71,6 +71,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            ScreenCapture.CaptureScreenshot("screenshot.png");
+            Debug.Log("A screenshot was taken!");
+        }
         if (Input.GetKeyDown(KeyCode.A) == true)
         {
             Debug.Log(isDie);
