@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idScene: 15
   secondTimeMax: 240
-  timeStar: a0000000be000000d2000000
+  timeStar: 1e0000003200000050000000
   itemsRecommanded: []
   RequiredStar: 0
