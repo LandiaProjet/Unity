@@ -36,7 +36,7 @@ public class PlayerManager : MonoBehaviour
         MenuManager.instance.CloseMenu("HUD");
     }
 
-    void Update()
+    /*void Update()
     {
         if (Input.GetKeyDown(KeyCode.C))
             changePlayer("bow");
@@ -44,7 +44,7 @@ public class PlayerManager : MonoBehaviour
             changePlayer("sword");
         if (Input.GetKeyDown(KeyCode.B))
             changePlayer("idle");
-    }
+    }*/
 
     public void SwitchModePlayer()
     {
@@ -53,7 +53,10 @@ public class PlayerManager : MonoBehaviour
         switch (mode)
         {
             case "sword":
-                changePlayer("bow");
+                if (isPlaying.instance.GetCount(0) > 0)
+                    changePlayer("bow");
+                else
+                    changePlayer("idle");
                 break;
             case "bow":
                 changePlayer("idle");
@@ -62,7 +65,10 @@ public class PlayerManager : MonoBehaviour
                 if (isPlaying.instance.GetCount(1) > 0)
                     changePlayer("sword");
                 else
-                    changePlayer("bow");
+                    if (isPlaying.instance.GetCount(0) > 0)
+                        changePlayer("bow");
+                    else
+                        changePlayer("idle");
                 break;
         }
     }
