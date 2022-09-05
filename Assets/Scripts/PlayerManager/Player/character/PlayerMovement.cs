@@ -76,6 +76,10 @@ public class PlayerMovement : MonoBehaviour
             ScreenCapture.CaptureScreenshot("screenshot.png");
             Debug.Log("A screenshot was taken!");
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
         if (Input.GetKeyDown(KeyCode.A) == true)
         {
             Debug.Log(isDie);
