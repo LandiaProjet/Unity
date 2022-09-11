@@ -37,7 +37,7 @@ public class InterstitialAds : MonoBehaviour
 #if UNITY_EDITOR
             string adUnitId = "unused";
 #elif UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+        string adUnitId = "ca-app-pub-1927631574874259/1068104007";
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else
