@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void Jump(){
-        if (isGrounded == true && isRoll == false)
+        if (isGrounded == true && isRoll == false && isAttack == false)
         {
             rb.AddForce(new Vector2(0f, jumpForce));
             isJumping = true;
