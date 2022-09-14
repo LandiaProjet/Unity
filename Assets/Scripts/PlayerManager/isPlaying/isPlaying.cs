@@ -149,7 +149,8 @@ public class isPlaying : MonoBehaviour
                 LevelManager.instance.addLevel(idLevel + 1, 0, false);
             }
         }
-        MenuManager.instance.OpenMenu("PopupMulti2", 10);
+        MenuManager.instance.OpenMenu("PopupVictory", 10);
+        MenuManager.instance.OpenMenu("PopupMulti2", 11);
     }
 
     public void TransferAllItemInMainInventory()
@@ -244,12 +245,10 @@ public class isPlaying : MonoBehaviour
     public void OnDoubleCredit()
     {
         PlayerData.getData().AddCredit(credit);
-        MenuManager.instance.OpenMenu("PopupVictory", 10);
     }
 
     public void SkipDoubleCredit()
     {
-        MenuManager.instance.OpenMenu("PopupVictory", 10);
     }
 
     public IEnumerator StartImmunity(float time)

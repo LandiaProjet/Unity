@@ -39,7 +39,8 @@ public class LoadingTransition : MonoBehaviour
         gameObject.SetActive(true);
         if (InteractManager.instance)
             InteractManager.instance.InteractButton.SetActive(false);
-        StartCoroutine(load(levelIndex));
+        SceneManager.LoadScene(levelIndex);
+        //StartCoroutine(load(levelIndex));
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
