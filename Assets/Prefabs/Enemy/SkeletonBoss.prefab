@@ -222,7 +222,7 @@ MonoBehaviour:
   skeletonMovement: {fileID: 7304369706039695459}
   animator: {fileID: 3841117364067360741}
   rb: {fileID: 3841117364067360744}
-  dommage: 60
+  dommage: 20
   speedDash: 5
 --- !u!1 &3841117365141955277
 GameObject:

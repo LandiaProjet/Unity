@@ -29,6 +29,11 @@ public class InterstitialAds : MonoBehaviour
         return new AdRequest.Builder()
             .Build();
     }
+    private IEnumerator waitAfterReload()
+    {
+        yield return new WaitForSeconds(60.0f);
+        LoadAd();
+    }
 
     public void LoadAd()
     {
@@ -60,6 +65,7 @@ public class InterstitialAds : MonoBehaviour
         {
             Debug.Log("Interstitial ad failed to load with error: " + args.LoadAdError.GetMessage());
             OnAdFailedToLoadEvent.Invoke();
+            //StartCoroutine(waitAfterReload());
         };
         interstitialAd.OnAdOpening += (sender, args) =>
         {

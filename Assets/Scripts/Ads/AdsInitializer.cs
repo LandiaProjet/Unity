@@ -65,6 +65,12 @@ public class AdsInitializer : MonoBehaviour
         OnFailure.RemoveAllListeners();
     }
 
+    private IEnumerator waitAfterReload()
+    {
+        yield return new WaitForSeconds(60.0f);
+        LoadRewardAd();
+    }
+
     public void LoadRewardAd()
     {
         Debug.Log("Requesting Rewarded ad.");
@@ -89,6 +95,7 @@ public class AdsInitializer : MonoBehaviour
         {
             Debug.Log("Reward ad failed to load.");
             OnAdFailedToLoadEvent.Invoke();
+            //StartCoroutine(waitAfterReload());
         };
         rewardedAd.OnAdOpening += (sender, args) =>
         {
@@ -139,6 +146,7 @@ public class AdsInitializer : MonoBehaviour
             rewardedAd.Show();
         } else
         {
+            LoadRewardAd();
             OnFailure.Invoke();
         }
     }

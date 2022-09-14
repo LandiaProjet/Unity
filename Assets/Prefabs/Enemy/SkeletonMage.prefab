@@ -222,7 +222,7 @@ MonoBehaviour:
   skeletonMovement: {fileID: 7734489285537083133}
   animator: {fileID: 7734489285537083122}
   rb: {fileID: 7734489285537083120}
-  dommage: 0
+  dommage: 10
   attack1Radius: 1.5
   attack2Radius: 4
 --- !u!1 &7734489286841352802

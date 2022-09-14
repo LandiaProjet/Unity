@@ -125,6 +125,7 @@ public class skeletonBossAttack : MonoBehaviour, ISkeletonAttack
         if (skeletonMovement.isDie == true)
             yield break;
         animator.Play("Skeleton_Boss_idle");
+        yield return new WaitForSeconds(1.5f);
         skeletonMovement.isAttack = false;
     }
 }
