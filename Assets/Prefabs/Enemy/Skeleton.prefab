@@ -222,7 +222,7 @@ MonoBehaviour:
   skeletonMovement: {fileID: 2036051188696103388}
   animator: {fileID: 2036051188696103389}
   rb: {fileID: 2036051188696103391}
-  dommage: 10
+  dommage: 20
 --- !u!1 &2036051189497222778
 GameObject:
   m_ObjectHideFlags: 0

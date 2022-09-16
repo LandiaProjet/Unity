@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R5CNC16D8AR",
         "name": "com.landiagames.kilawaadventure",
-        "processId": 11977,
+        "processId": 19364,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -189,6 +189,24 @@
             "exited": false
         },
         {
+            "deviceId": "R5CNC16D8AR",
+            "name": "com.landiagames.kilawaadventure",
+            "processId": 32051,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CNC16D8AR",
+            "name": "com.landiagames.kilawaadventure",
+            "processId": 4605,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CNC16D8AR",
+            "name": "com.landiagames.kilawaadventure",
+            "processId": 19364,
+            "exited": false
+        },
+        {
             "deviceId": "5200cdbab21ac4f1",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 4861,
@@ -210,6 +228,12 @@
             "deviceId": "5200cdbab21ac4f1",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 16817,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCRA0G00SK",
+            "name": "com.landiagames.kilawaadventure",
+            "processId": 13975,
             "exited": false
         }
     ],

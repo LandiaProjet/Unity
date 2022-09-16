@@ -253,4 +253,4 @@ MonoBehaviour:
   skeletonMovement: {fileID: 1626242280766369830}
   animator: {fileID: 1626242280766369831}
   rb: {fileID: 1626242280766369829}
-  dommage: 10
+  dommage: 20

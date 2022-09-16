@@ -112,7 +112,7 @@ public class InterstitialAds : MonoBehaviour
 
     private IEnumerator DoEnd()
     {
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.20f);
         OnEnd.Invoke();
         OnEnd.RemoveAllListeners();
         restartSound();
