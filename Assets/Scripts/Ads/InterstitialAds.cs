@@ -1,7 +1,8 @@
-using GoogleMobileAds.Api;
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using System.Threading.Tasks;
+using Unity.Services.Mediation;
 using UnityEngine;
+using Unity.Services.Core;
 using UnityEngine.Events;
 
 public class InterstitialAds : MonoBehaviour
@@ -9,125 +10,70 @@ public class InterstitialAds : MonoBehaviour
 
     public static InterstitialAds interstitialAds;
 
-    private InterstitialAd interstitialAd;
-    public UnityEvent OnAdLoadedEvent;
-    public UnityEvent OnAdFailedToLoadEvent;
-    public UnityEvent OnAdOpeningEvent;
-    public UnityEvent OnAdFailedToShowEvent;
-    public UnityEvent OnUserEarnedRewardEvent;
-    public UnityEvent OnAdClosedEvent;
     public UnityEvent OnEnd;
 
-    void Start()
+    public string androidAdUnitId;
+    public string iosAdUnitId;
+    IInterstitialAd interstitialAd;
+
+    async void Start()
     {
         interstitialAds = this;
-        LoadAd();
-    }
 
-    private AdRequest CreateAdRequest()
-    {
-        return new AdRequest.Builder()
-            .Build();
-    }
-    private IEnumerator waitAfterReload()
-    {
-        yield return new WaitForSeconds(60.0f);
-        LoadAd();
-    }
-
-    public void LoadAd()
-    {
-        Debug.Log("Requesting Interstitial ad.");
-
-#if UNITY_EDITOR
-            string adUnitId = "unused";
-#elif UNITY_ANDROID
-        string adUnitId = "ca-app-pub-1927631574874259/1068104007";
-#elif UNITY_IPHONE
-        string adUnitId = "ca-app-pub-3940256099942544/4411468910";
-#else
-        string adUnitId = "unexpected_platform";
-#endif
-        if (interstitialAd != null)
+        // Instantiate an interstitial ad object with platform-specific Ad Unit ID
+        if (Application.platform == RuntimePlatform.Android)
         {
-            interstitialAd.Destroy();
+            interstitialAd = MediationService.Instance.CreateInterstitialAd(androidAdUnitId);
+        }
+        else if (Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            interstitialAd = MediationService.Instance.CreateInterstitialAd(iosAdUnitId);
+        }
+#if UNITY_EDITOR
+        else
+        {
+            interstitialAd = MediationService.Instance.CreateInterstitialAd("myExampleAdUnitId");
         }
 
-        interstitialAd = new InterstitialAd(adUnitId);
+        try
+        {
+            // Load an ad:
+            await interstitialAd.LoadAsync();
+            // Here our load succeeded.
 
-        // Add Event Handlers
-        interstitialAd.OnAdLoaded += (sender, args) =>
+            // This is for demonstration purposes, we recommend you load the
+            // ad in advance, and show when needed as load may take some time
+            //await ShowAd();
+        }
+        catch (Exception e)
         {
-            Debug.Log("Interstitial ad loaded.");
-            OnAdLoadedEvent.Invoke();
-        };
-        interstitialAd.OnAdFailedToLoad += (sender, args) =>
-        {
-            Debug.Log("Interstitial ad failed to load with error: " + args.LoadAdError.GetMessage());
-            OnAdFailedToLoadEvent.Invoke();
-            //StartCoroutine(waitAfterReload());
-        };
-        interstitialAd.OnAdOpening += (sender, args) =>
-        {
-            Debug.Log("Interstitial ad opening.");
-            OnAdOpeningEvent.Invoke();
-        };
-        interstitialAd.OnAdClosed += (sender, args) =>
-        {
-            Debug.Log("Interstitial ad closed.");
-            OnAdClosedEvent.Invoke();
-            StartCoroutine(DoEnd());
-        };
-        interstitialAd.OnAdDidRecordImpression += (sender, args) =>
-        {
-            Debug.Log("Interstitial ad recorded an impression.");
-        };
-        interstitialAd.OnAdFailedToShow += (sender, args) =>
-        {
-            Debug.Log("Interstitial ad failed to show.");
-            StartCoroutine(DoEnd());
-        };
-        interstitialAd.OnPaidEvent += (sender, args) =>
-        {
-            string msg = string.Format("{0} (currency: {1}, value: {2}",
-                                        "Interstitial ad received a paid event.",
-                                        args.AdValue.CurrencyCode,
-                                        args.AdValue.Value);
-            Debug.Log(msg);
-        };
-        interstitialAd.LoadAd(CreateAdRequest());
+            // Here our load failed.
+        }
+#endif
     }
 
-    private void stopSound()
+    public async Task ShowAd()
     {
-        SoundManager.instance.mixer.SetFloat("MusicVolume", Mathf.Log10(0.00001f) * 20);
-        SoundManager.instance.mixer.SetFloat("SFXVolume", Mathf.Log10(0.00001f) * 20);
+        // Ensure the ad has loaded, then show it.
+        if (interstitialAd.AdState == AdState.Loaded)
+        {
+            try
+            {
+                await interstitialAd.ShowAsync();
+                // Here show succeeded.
+            }
+            catch (Exception e)
+            {
+                // Here show failed.
+            }
+        }
+        await DoEnd();
     }
 
-    private void restartSound()
+    async Task DoEnd()
     {
-        SoundManager.instance.mixer.SetFloat("MusicVolume", Mathf.Log10(PlayerData.getData().music) * 20);
-        SoundManager.instance.mixer.SetFloat("SFXVolume", Mathf.Log10(PlayerData.getData().sfx) * 20);
-    }
-
-    private IEnumerator DoEnd()
-    {
-        yield return new WaitForSeconds(0.20f);
         OnEnd.Invoke();
         OnEnd.RemoveAllListeners();
-        restartSound();
-        LoadAd();
-    }
-
-    public void ShowAd()
-    {
-        if (this.interstitialAd.IsLoaded())
-        {
-            stopSound();
-            this.interstitialAd.Show();
-        } else
-        {
-            StartCoroutine(DoEnd());
-        }
+        await interstitialAd.LoadAsync();
     }
 }
