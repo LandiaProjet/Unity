@@ -47,7 +47,10 @@ public class LevelButton : MonoBehaviour
         SoundManager.instance.PlayEffectSound(0);
         if (isActive == false)
         {
-            Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "Levellock", new List<object>{ Levels.instance.levels[idLevel].RequiredStar.ToString() }), 20);
+            if (Levels.instance.levels[idLevel].RequiredStar != 0)
+                Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "Levellock", new List<object>{ Levels.instance.levels[idLevel].RequiredStar.ToString() }), 20);
+            else
+                Popup.instance.openPopup(LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "alert"), LocalizationSettings.StringDatabase.GetLocalizedString("UI TEXT", "LevellockA"), 20);
         }
         else
         {

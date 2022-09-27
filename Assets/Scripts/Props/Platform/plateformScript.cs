@@ -13,11 +13,21 @@ public class plateformScript : MonoBehaviour
             if (transform.position.y < collision.transform.position.y)
             {
                 co.isTrigger = false;
+                collision.transform.SetParent(transform);
             }
             else
             {
+                collision.transform.SetParent(null);
                 co.isTrigger = true;
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.transform.SetParent(transform);
         }
     }
 
@@ -25,6 +35,7 @@ public class plateformScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            collision.transform.SetParent(null);
             co.isTrigger = true;
         }
     }
@@ -33,6 +44,7 @@ public class plateformScript : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            //collision.transform.SetParent(null);
             co.isTrigger = true;
         }
     }

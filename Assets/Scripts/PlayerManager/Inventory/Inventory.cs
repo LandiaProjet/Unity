@@ -27,10 +27,10 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
+        Slot slot = new Slot { count = 5, id = 1 };
+        inventory.Add(slot);
         database = new Database("Inventory.json", this);
-        // c'est pour les tests tu peux ajouter le addItem aussi pour tester
-       // deleteItem(0);
-  //      addItem(2);
+        
     }
 
     public void addItem(int id)

@@ -60,7 +60,7 @@ public class Arrow : MonoBehaviour
     IEnumerator StopColision(float time)
     {
         yield return new WaitForSeconds(time);
-        rb.simulated = false;
+        //rb.simulated = false;
         yield return new WaitForSeconds(25f);
         Destroy(gameObject);
     }
