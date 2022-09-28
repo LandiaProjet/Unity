@@ -377,6 +377,10 @@ MonoBehaviour:
     m_Localized: "\xA1Bien por ti! \xA1Ahora tienes corazones infinitos!"
     m_Metadata:
       m_Items: []
+  - m_Id: 48990455689900032
+    m_Localized: tienes que desbloquear el nivel anterior para pasar a este nivel
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

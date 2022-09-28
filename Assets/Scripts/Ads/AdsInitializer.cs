@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System;
+using System.Collections;
 using Unity.Services.Core;
 using Unity.Services.Mediation;
 using System.Threading.Tasks;
@@ -85,9 +86,11 @@ public class AdsInitializer : MonoBehaviour
                 this.OnFailure.AddListener(OnFailure);
                 this.OnSuccess.AddListener(OnSuccess);
                 await rewardedAd.ShowAsync();
+                Debug.Log("c bon");
             }
             catch (Exception e)
             {
+                Debug.Log("erreur");
                 await DoEnd();
             }
         } else
@@ -99,12 +102,18 @@ public class AdsInitializer : MonoBehaviour
     void UserRewarded(object sender, RewardEventArgs args)
     {
         success = true;
-        DoEnd();
+        Debug.Log("success");
     }
 
     void AdClosed(object sender, EventArgs e)
     {
-        success = false;
+        Debug.Log("closed");
+        StartCoroutine(WaitBeforeDoEnd());
+    }
+
+    private IEnumerator WaitBeforeDoEnd()
+    {
+        yield return new WaitForSeconds(0.1f);
         DoEnd();
     }
 

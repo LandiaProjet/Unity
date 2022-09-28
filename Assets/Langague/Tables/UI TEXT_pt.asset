@@ -380,6 +380,11 @@ MonoBehaviour:
     m_Localized: "Ainda bem para si! Tendes agora cora\xE7\xF5es sem fim!"
     m_Metadata:
       m_Items: []
+  - m_Id: 48990455689900032
+    m_Localized: "\xE9 necess\xE1rio desbloquear o n\xEDvel anterior para ir para
+      este n\xEDvel"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

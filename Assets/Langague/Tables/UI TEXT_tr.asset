@@ -385,6 +385,11 @@ MonoBehaviour:
     m_Localized: "Aferin sana! Art\u0131k sonsuz kalbin var!"
     m_Metadata:
       m_Items: []
+  - m_Id: 48990455689900032
+    m_Localized: "bu seviyeye ge\xE7mek i\xE7in bir \xF6nceki seviyenin kilidini
+      a\xE7man\u0131z gerekir"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

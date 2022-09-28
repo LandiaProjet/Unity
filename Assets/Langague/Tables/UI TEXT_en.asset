@@ -375,6 +375,11 @@ MonoBehaviour:
     m_Localized: Congratulations! You now have endless hearts!
     m_Metadata:
       m_Items: []
+  - m_Id: 48990455689900032
+    m_Localized: "vous devez d\xE9bloquer le niveau pr\xE9c\xE9dent pour acc\xE9der
+      \xE0 ce niveau"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

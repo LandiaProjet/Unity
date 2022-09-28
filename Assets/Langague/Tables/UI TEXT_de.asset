@@ -385,6 +385,11 @@ MonoBehaviour:
     m_Localized: Bravo! Sie haben jetzt unendlich viele Herzen!
     m_Metadata:
       m_Items: []
+  - m_Id: 48990455689900032
+    m_Localized: "Sie m\xFCssen das vorherige Level freischalten, um zu diesem Level
+      zu gelangen"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
